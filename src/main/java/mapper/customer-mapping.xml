@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapping>
-	<class name="mapper.Customer">
+	<class name="Customer">
  
 		<map-to xml="customer" />
  

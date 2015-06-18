@@ -10,7 +10,7 @@ public class App {
 	private static final String XML_FILE_NAME = "customer.xml";
 	 
 	public static void main(String[] args) throws IOException {
-		ApplicationContext appContext = new ClassPathXmlApplicationContext("/config/spring/*-context.xml");
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("/config/*-context.xml");
 		XMLConverter converter = (XMLConverter) appContext.getBean("XMLConverter");
 
 
