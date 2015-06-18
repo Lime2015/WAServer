@@ -9,7 +9,7 @@
 		<property name="unmarshaller" ref="castorMarshaller" />
 	</bean>
 	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller" >
-		<property name="mappingLocation" value="classpath*:config/customer-mapping.xml" /> 
+		<property name="mappingLocation" value="classpath:/config/customer-mapping.xml" /> 
 	 </bean> 
 </beans>
 
