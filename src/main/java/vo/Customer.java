@@ -1,4 +1,4 @@
-package mapper;
+package vo;
 
 public class Customer {
 	String name;

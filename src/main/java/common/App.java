@@ -1,10 +1,10 @@
 package common;
 import java.io.IOException;
 
-import mapper.Customer;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import vo.Customer;
 
 public class App {
 	private static final String XML_FILE_NAME = "customer.xml";
