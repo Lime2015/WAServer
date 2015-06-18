@@ -1,4 +1,4 @@
-package common;
+package mapper;
 
 public class Customer {
 	String name;

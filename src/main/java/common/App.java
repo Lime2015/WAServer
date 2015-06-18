@@ -1,5 +1,8 @@
 package common;
 import java.io.IOException;
+
+import mapper.Customer;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,7 +10,7 @@ public class App {
 	private static final String XML_FILE_NAME = "customer.xml";
 	 
 	public static void main(String[] args) throws IOException {
-		ApplicationContext appContext = new ClassPathXmlApplicationContext("/spring/application-context.xml");
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("/config/spring/*-context.xml");
 		XMLConverter converter = (XMLConverter) appContext.getBean("XMLConverter");
 
 
