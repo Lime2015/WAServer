@@ -1,13 +1,13 @@
 package common;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.exolab.castor.xml.Unmarshaller;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import vo.Customer;
-import vo.CustomerList;
 
 public class ViewCustomerList {
 		private static final String XML_FILE_NAME = "customer.xml";
@@ -16,7 +16,7 @@ public class ViewCustomerList {
 			ApplicationContext appContext = new ClassPathXmlApplicationContext("/config/*-context.xml");
 			XMLConverter converter = (XMLConverter) appContext.getBean("XMLConverter");
 			/*converter.setUnmarshaller(CustomerList.class);*/
-			Unmarshaller un2 = new Unmarshaller(CustomerList.class);
+			/*Unmarshaller un2 = new Unmarshaller(CustomerList.class);*/
 
 	/*
 			Customer customer = new Customer();
@@ -34,8 +34,9 @@ public class ViewCustomerList {
 			System.out.println("Convert XML back to Object!");
 			System.out.println();
 			//from XML to object
-			Customer customer2 = (Customer)converter.convertFromXMLToObject(XML_FILE_NAME);
-			System.out.println(customer2);
+			List<Customer> customerList = new ArrayList();
+			customerList = (List<Customer>)converter.convertFromXMLToObject(XML_FILE_NAME);
+//			System.out.println(customer2);
 			System.out.println("Done");
 	 
 		}

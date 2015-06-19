@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "assemblymen")
 @XmlAccessorType (XmlAccessType.FIELD)
-public class AssemblymanList {
+public class Assemblymen {
 	
 	@XmlElement(name = "assemblyman")
 	private List<Assemblyman> assemblymanList = null;

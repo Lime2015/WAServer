@@ -1,7 +1,7 @@
 <mapping>
 	<class name="vo.Customer">
 
-		<map-to xml="customer" />
+		<map-to xml="customers" />
 
 		<field name="age" type="integer">
 			<bind-xml name="age" node="attribute" />

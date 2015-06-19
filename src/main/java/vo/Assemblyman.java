@@ -1,64 +1,77 @@
 package vo;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "assemblyman")
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Assemblyman {
-	int manId;
-	String name;
-	String imgUrl;
-	String orgImg;
-	int partyId;
-	String partyName;
-	String localConstituency;
 	
-	// getter & setter
-	public int getManId() {
-		return manId;
+	private Integer assemblyman_id;
+	private String assemblyman_name;
+	private String image_url;
+	private String org_image_url;
+	private Integer party_id;
+	private String party_name;
+	private String local_constituency;
+	
+	//////////////////////////////////////////////////////////////////////
+	public int getAssemblyman_id() {
+		return assemblyman_id;
 	}
-	public void setManId(int manId) {
-		this.manId = manId;
+	public void setAssemblyman_id(int assemblyman_id) {
+		this.assemblyman_id = assemblyman_id;
 	}
-	public String getName() {
-		return name;
+	public String getAssemblyman_name() {
+		return assemblyman_name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setAssemblyman_name(String assemblyman_name) {
+		this.assemblyman_name = assemblyman_name;
 	}
-	public String getImgUrl() {
-		return imgUrl;
+	public String getImage_url() {
+		return image_url;
 	}
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
 	}
-	public String getOrgImg() {
-		return orgImg;
+	public String getOrg_image_url() {
+		return org_image_url;
 	}
-	public void setOrgImg(String orgImg) {
-		this.orgImg = orgImg;
+	public void setOrg_image_url(String org_image_url) {
+		this.org_image_url = org_image_url;
 	}
-	public int getPartyId() {
-		return partyId;
+	public int getParty_id() {
+		return party_id;
 	}
-	public void setPartyId(int partyId) {
-		this.partyId = partyId;
+	public void setParty_id(int party_id) {
+		this.party_id = party_id;
 	}
-	public String getPartyName() {
-		return partyName;
+	public String getParty_name() {
+		return party_name;
 	}
-	public void setPartyName(String partyName) {
-		this.partyName = partyName;
+	public void setParty_name(String party_name) {
+		this.party_name = party_name;
 	}
-	public String getLocalConstituency() {
-		return localConstituency;
+	public String getLocal_constituency() {
+		return local_constituency;
 	}
-	public void setLocalConstituency(String localConstituency) {
-		this.localConstituency = localConstituency;
+	public void setLocal_constituency(String local_constituency) {
+		this.local_constituency = local_constituency;
 	}
 	
+	///////////////////////////////////////////////////////////////////////////
 	@Override
 	public String toString() {
-		return "Assemblyman [manId=" + manId + ", name=" + name + ", imgUrl="
-				+ imgUrl + ", orgImg=" + orgImg + ", partyId=" + partyId
-				+ ", partyName=" + partyName + ", localConstituency="
-				+ localConstituency + "]";
+		return "Assemblyman [assemblyman_id=" + assemblyman_id
+				+ ", assemblyman_name=" + assemblyman_name + ", image_url="
+				+ image_url + ", org_image_url=" + org_image_url
+				+ ", party_id=" + party_id + ", party_name=" + party_name
+				+ ", local_constituency=" + local_constituency + "]";
 	}
+	
+	
+	
+	
 
 }
