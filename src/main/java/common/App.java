@@ -13,7 +13,7 @@ public class App {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("/config/*-context.xml");
 		XMLConverter converter = (XMLConverter) appContext.getBean("XMLConverter");
 
-
+/*
 		Customer customer = new Customer();
 
 		customer.setName("mkyong");
@@ -25,7 +25,7 @@ public class App {
 		//from object to XML file
 		converter.convertFromObjectToXML(customer, XML_FILE_NAME);
 		System.out.println("Done \n");
- 
+ */
 		System.out.println("Convert XML back to Object!");
 		//from XML to object
 		Customer customer2 = (Customer)converter.convertFromXMLToObject(XML_FILE_NAME);
