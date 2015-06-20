@@ -11,18 +11,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Assemblymen {
 	
+	public Assemblymen() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@XmlElement(name = "assemblyman")
-	private List<Assemblyman> assemblymanList = null;
+	private List<Assemblyman> assemblymen = null;
 
-	public List<Assemblyman> getAssemblymanList() {
-		return assemblymanList;
+	public List<Assemblyman> getAssemblymen() {
+		return assemblymen;
 	}
 
-
-	public void setAssemblymanList(List<Assemblyman> assemblymanList) {
-		this.assemblymanList = assemblymanList;
+	public void setAssemblymen(List<Assemblyman> assemblymen) {
+		this.assemblymen = assemblymen;
 	}
-
-	
 
 }

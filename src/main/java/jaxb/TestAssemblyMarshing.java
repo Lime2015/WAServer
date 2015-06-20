@@ -9,15 +9,14 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import vo.Assemblyman;
-import vo.AssemblymanList;
 import vo.Assemblymen;
 
 public class TestAssemblyMarshing {
 	
-	static Assemblymen assemblyList = new Assemblymen();
+	static Assemblymen assemblymen = new Assemblymen();
 	static 
 	{
-		assemblyList.setAssemblymanList(new ArrayList<Assemblyman>());
+		assemblymen.setAssemblymen(new ArrayList<Assemblyman>());
 		
 		Assemblyman man = new Assemblyman();
 		man.setAssemblyman_id(20);
@@ -28,7 +27,7 @@ public class TestAssemblyMarshing {
 		man.setParty_name("노동당");
 		man.setLocal_constituency("서울특별시");
 		
-		assemblyList.getAssemblymanList().add(man);
+		assemblymen.getAssemblymen().add(man);
 	}
 	
 	public static void main(String[] args) throws JAXBException { 
@@ -39,11 +38,11 @@ public class TestAssemblyMarshing {
 	}
 
 	private static void unMarshalingExample() throws JAXBException {
-		JAXBContext jaxbContext = JAXBContext.newInstance(AssemblymanList.class);
+		JAXBContext jaxbContext = JAXBContext.newInstance(Assemblymen.class);
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		AssemblymanList manList = (AssemblymanList) jaxbUnmarshaller.unmarshal( new File("c:/temp/assemblymen.xml") );
+		Assemblymen manList = (Assemblymen) jaxbUnmarshaller.unmarshal( new File("c:/temp/assemblymen.xml") );
 		
-		for(Assemblyman man : manList.getAssemblymanList())
+		for(Assemblyman man : manList.getAssemblymen())
 		{
 			System.out.println(man.getAssemblyman_id());
 			System.out.println(man.getAssemblyman_name());
@@ -51,13 +50,13 @@ public class TestAssemblyMarshing {
 	}
 
 	private static void marshalingExample() throws JAXBException {
-		JAXBContext jaxbContext = JAXBContext.newInstance(Employees.class);
+		JAXBContext jaxbContext = JAXBContext.newInstance(Assemblymen.class);
 		Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
  
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
  
-		jaxbMarshaller.marshal(assemblyList, System.out);
-		jaxbMarshaller.marshal(assemblyList, new File("c:/temp/assemblymen.xml"));
+		jaxbMarshaller.marshal(assemblymen, System.out);
+		jaxbMarshaller.marshal(assemblymen, new File("c:/temp/assemblymen.xml"));
 	}
 
 }

@@ -17,7 +17,7 @@ public class TestEmployeeMarshing
 		
 		Employee emp = new Employee();
 		emp.setId(1);
-		emp.setFirstName("Lokesh");
+		emp.setFirstName("로빈");
 		emp.setLastName("Gupta");
 		emp.setIncome(100.0);
 		
