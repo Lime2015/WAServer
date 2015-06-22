@@ -69,9 +69,4 @@ public class Assemblyman {
 				+ ", party_id=" + party_id + ", party_name=" + party_name
 				+ ", local_constituency=" + local_constituency + "]";
 	}
-	
-	
-	
-	
-
 }

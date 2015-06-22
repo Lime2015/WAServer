@@ -1,0 +1,18 @@
+
+drop database was;
+
+create database was;
+
+use was;
+
+create table man (	
+  assemblyman_id INT(10) NOT NULL primary key,
+  assemblyman_name VARCHAR(30) NOT NULL,
+  image_url VARCHAR(60),
+  org_image_url VARCHAR(60),
+  party_id INT(10),
+  party_name VARCHAR(30),
+  local_constituency VARCHAR(60)
+);
+
+
