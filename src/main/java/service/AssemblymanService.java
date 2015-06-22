@@ -21,6 +21,7 @@ public class AssemblymanService {
 	public int insert(Assemblyman man){
 		return assemblymanDAO.insert(man);
 	}
+/*	
 	public int update(Assemblyman man){
 		return assemblymanDAO.update(man);
 	}
@@ -30,5 +31,5 @@ public class AssemblymanService {
 	public List<Assemblyman> selectList(){
 		return assemblymanDAO.selectList();
 	}
-	
+	*/
 }

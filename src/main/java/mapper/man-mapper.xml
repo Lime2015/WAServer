@@ -5,12 +5,11 @@
 <mapper namespace="mapper.ManMapper">
 	
 	<insert id="insert" parameterType="Assemblyman">
-		insert into user(assemblyman_id, assemblyman_name, image_url, org_image_url, party_id, party_name, local_constituency)
-			values(#{assemblyman_id}, #{assemblyman_name}, #{image_url}, #{org_image_url}, #{party_id}, #{party_name}, #{local_constituency})
+		insert into man(assemblyman_id, assemblyman_name, image_url, org_image_url, party_id, party_name, local_constituency) values(#{assemblyman_id}, #{assemblyman_name}, #{image_url}, #{org_image_url}, #{party_id}, #{party_name}, #{local_constituency})
 	</insert>
-
+<!-- 
 	<update id="update" parameterType="Assemblyman">
-		update user set user_status=#{userStatus} where user_id=#{manId}
+		update man set user_status=#{userStatus} where user_id=#{manId}
 	</update>
 
 	<select id="selectList" resultMap="manMap">
@@ -26,5 +25,5 @@
 		<result property="assemblyman_name" column="assemblyman_name" />
 		<result property="image_url" column="image_url" />
 	</resultMap>
-	
+	 -->
 </mapper>

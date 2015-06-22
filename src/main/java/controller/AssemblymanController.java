@@ -9,6 +9,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +22,12 @@ import vo.Assemblymen;
 @Controller
 public class AssemblymanController {
 	
-	private static AssemblymanService assemblymanService;
+	private AssemblymanService assemblymanService;
 	static Assemblymen assemblymen = new Assemblymen();
 	
 	@Autowired
-	public void setAssemblymanService(AssemblymanService abmService) {
-		this.assemblymanService = abmService;
+	public void setAssemblymanService(AssemblymanService assemblymanService) {
+		this.assemblymanService = assemblymanService;
 	}
 	
 	// saveAssemblyman.do
@@ -43,9 +44,9 @@ public class AssemblymanController {
 			System.out.println(assemblymen);
 			
 			for(Assemblyman man : assemblymen.getAssemblymen()) {
-				if(man == null){
+				
+				System.out.println(man);
 					assemblymanService.insert(man);
-				} 
 			}
 		}
 

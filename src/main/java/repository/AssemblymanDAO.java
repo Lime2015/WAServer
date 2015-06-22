@@ -1,8 +1,5 @@
 package repository;
 
-import java.nio.channels.SeekableByteChannel;
-import java.util.List;
-
 import mapper.ManMapper;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -25,22 +22,22 @@ public class AssemblymanDAO {
 
 	public int insert(Assemblyman man) {
 		ManMapper mapper = session.getMapper(ManMapper.class);
-		return insert(man);
+		return mapper.insert(man);
 	}
 
-	public int update(Assemblyman man) {
+/*	public int update(Assemblyman man) {
 		ManMapper mapper = session.getMapper(ManMapper.class);
-		return update(man);
+		return mapper.update(man);
 	}
 
 	public int selectAssemblyman(Assemblyman man) {
 		ManMapper mapper = session.getMapper(ManMapper.class);
-		return selectAssemblyman(man);
+		return mapper.selectAssemblyman(man);
 	}
 
 	public List<Assemblyman> selectList() {
 		ManMapper mapper=session.getMapper(ManMapper.class);
 		return mapper.selectList();
 	}
-
+*/
 }

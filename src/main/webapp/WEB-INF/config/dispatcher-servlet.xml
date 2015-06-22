@@ -12,6 +12,7 @@
 	<context:component-scan base-package="org.lime.was" />
 	<context:component-scan base-package="controller"/>
 	<context:component-scan base-package="spring"/>
+	<context:component-scan base-package="service"/>
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />

@@ -6,8 +6,8 @@ import vo.Assemblyman;
 
 public interface ManMapper {
 	public int insert(Assemblyman man);
-	public int update(Assemblyman man);
-	public List<Assemblyman> selectList();
-	public Assemblyman selectMan(String manId);
+//	public int update(Assemblyman man);
+//	public List<Assemblyman> selectList();
+//	public Assemblyman selectMan(String manId);
 
 }

@@ -7,7 +7,7 @@
 <title>input form</title>
 </head>
 <body>
-	<form id="inputForm" action="/saveAssemblyman.do" method="get">
+	<form id="inputForm" action="/was/saveAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
