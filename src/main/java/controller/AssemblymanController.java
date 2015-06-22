@@ -1,10 +1,6 @@
 package controller;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +10,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,7 +18,7 @@ import service.AssemblymanService;
 import vo.Assemblyman;
 import vo.Assemblymen;
 
-
+@Controller
 public class AssemblymanController {
 	
 	private static AssemblymanService assemblymanService;
@@ -33,16 +30,14 @@ public class AssemblymanController {
 	}
 	
 	// saveAssemblyman.do
-		@RequestMapping(value = "/saveAssemblyman.do", method = RequestMethod.POST)
+		@RequestMapping(value = "saveAssemblyman.do", method = RequestMethod.GET)
 		public void saveAssemblyman(String xmlUrl, HttpServletResponse response, HttpServletRequest request) throws JAXBException {
 
 			System.out.println("saveAssemblyman.do");
 
-			xmlUrl = request.getParameter("xmlUrl");
+//			xmlUrl = request.getParameter("xmlUrl");
 			System.out.println("xmlUrl:" + xmlUrl);
 			
-//			String test = "[{\"userStatus\":\"no\",\"userName\":\"eekek\",\"userId\":\"eekek\"},{\"userStatus\":\"no\",\"userName\":\"namnam\",\"userId\":\"namnam\"}]";
-//			System.out.println("test:" + test);
 			
 			unMarshalingExample(xmlUrl);
 			System.out.println(assemblymen);
