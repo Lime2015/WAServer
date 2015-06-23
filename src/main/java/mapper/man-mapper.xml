@@ -5,7 +5,8 @@
 <mapper namespace="mapper.ManMapper">
 	
 	<insert id="insert" parameterType="Assemblyman">
-		insert into man(assemblyman_id, assemblyman_name, image_url, org_image_url, party_id, party_name, local_constituency) values(#{assemblyman_id}, #{assemblyman_name}, #{image_url}, #{org_image_url}, #{party_id}, #{party_name}, #{local_constituency})
+		insert into man(assemblyman_id, assemblyman_name, image_url, org_image_url, mod_dttm, party_id, party_name, local_constituency) 
+			values(#{assemblyman_id}, #{assemblyman_name}, #{image_url}, #{org_image_url}, #{mod_dttm}, #{party_id}, #{party_name}, #{local_constituency})
 	</insert>
 <!-- 
 	<update id="update" parameterType="Assemblyman">

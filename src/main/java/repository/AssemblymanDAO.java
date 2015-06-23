@@ -1,5 +1,7 @@
 package repository;
 
+import java.util.List;
+
 import mapper.ManMapper;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -25,19 +27,19 @@ public class AssemblymanDAO {
 		return mapper.insert(man);
 	}
 
-/*	public int update(Assemblyman man) {
+	public int update(Assemblyman man) {
 		ManMapper mapper = session.getMapper(ManMapper.class);
 		return mapper.update(man);
 	}
 
-	public int selectAssemblyman(Assemblyman man) {
+	public int selectAssemblyman(int manId) {
 		ManMapper mapper = session.getMapper(ManMapper.class);
-		return mapper.selectAssemblyman(man);
+		return mapper.selectAssemblyman(manId);
 	}
 
 	public List<Assemblyman> selectList() {
 		ManMapper mapper=session.getMapper(ManMapper.class);
 		return mapper.selectList();
 	}
-*/
+
 }

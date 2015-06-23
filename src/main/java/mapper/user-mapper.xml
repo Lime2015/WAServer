@@ -9,7 +9,7 @@
 	</insert>
 
 	<update id="update" parameterType="User">
-		update user set user_status=#{userStatus} where user_id=#{userId}
+		update user set user_name=#{userName}, user_status=#{userStatus}  where user_id=#{userId}
 	</update>
 
 	<select id="selectList" resultMap="userMap">

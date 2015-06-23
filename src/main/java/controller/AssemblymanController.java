@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.File;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,9 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import org.apache.commons.logging.Log;
+import org.lime.was.HomeController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +25,8 @@ import vo.Assemblymen;
 
 @Controller
 public class AssemblymanController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(AssemblymanController.class);
 	
 	private AssemblymanService assemblymanService;
 	static Assemblymen assemblymen = new Assemblymen();
@@ -45,39 +51,36 @@ public class AssemblymanController {
 			
 			for(Assemblyman man : assemblymen.getAssemblymen()) {
 				
+				// mo_dttm 을 insert 시간으로 변경
+				Date date = new Date();
+				man.setMod_dttm(date.toString());
 				System.out.println(man);
-					assemblymanService.insert(man);
+				System.out.println(date.toString());
+
+				assemblymanService.insert(man);
 			}
 		}
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////
+		// updateAssemblyman.do
+				@RequestMapping(value = "updateAssemblyman.do", method = RequestMethod.GET)
+				public void updateAssemblyman(String xmlUrl, HttpServletResponse response, HttpServletRequest request) throws JAXBException {
 
-//			Gson gson = new GsonBuilder().create();
-//			List<User> userList = new ArrayList<User>();
+					System.out.println("updateAssemblyman.do");
+					System.out.println("xmlUrl:" + xmlUrl);
+					
+					unMarshalingExample(xmlUrl);
+					System.out.println(assemblymen);
+					
+					for(Assemblyman man : assemblymen.getAssemblymen()) {
 
-//			userList = gson.fromJson(usersJSON, new TypeToken<List<User>>(){}.getType());
+						System.out.println(man);
 
-//			System.out.println("gson.fromJson complete");
-			
-//			for (int idx = 0; idx < assemblymen.size(); idx++) {
-//				userList.get(idx).setUserStatus("saved");
-				
-//				User user = userService.selectUser(userList.get(idx).getUserId());
-//				if(user == null)
-//					userService.insert(userList.get(idx));
-//			}
-/*
-			try {
-				PrintWriter writer = response.getWriter();
-				String result = gson.toJson(userList);
+						assemblymanService.update(man);
+					}
+				}
 
-				System.out.println("result:" + result);
 
-				writer.print(result);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		*/
 		//////////////////////////////////////////////////////////////
 		private static void unMarshalingExample(String url) throws JAXBException {
 			String xmlUrl = url;

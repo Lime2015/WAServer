@@ -21,15 +21,15 @@ public class AssemblymanService {
 	public int insert(Assemblyman man){
 		return assemblymanDAO.insert(man);
 	}
-/*	
+
 	public int update(Assemblyman man){
 		return assemblymanDAO.update(man);
 	}
-	public int selectAssemblyman(Assemblyman man){
-		return assemblymanDAO.selectAssemblyman(man);
+	public int selectAssemblyman(int manId){
+		return assemblymanDAO.selectAssemblyman(manId);
 	}
 	public List<Assemblyman> selectList(){
 		return assemblymanDAO.selectList();
 	}
-	*/
+	
 }

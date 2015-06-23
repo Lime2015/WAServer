@@ -12,9 +12,11 @@ public class Assemblyman {
 	private String assemblyman_name;
 	private String image_url;
 	private String org_image_url;
+	private String mod_dttm;
 	private Integer party_id;
 	private String party_name;
 	private String local_constituency;
+	
 	
 	//////////////////////////////////////////////////////////////////////
 	public int getAssemblyman_id() {
@@ -41,6 +43,12 @@ public class Assemblyman {
 	public void setOrg_image_url(String org_image_url) {
 		this.org_image_url = org_image_url;
 	}
+	public String getMod_dttm() {
+		return mod_dttm;
+	}
+	public void setMod_dttm(String mod_dttm) {
+		this.mod_dttm = mod_dttm;
+	}
 	public int getParty_id() {
 		return party_id;
 	}
@@ -66,7 +74,12 @@ public class Assemblyman {
 		return "Assemblyman [assemblyman_id=" + assemblyman_id
 				+ ", assemblyman_name=" + assemblyman_name + ", image_url="
 				+ image_url + ", org_image_url=" + org_image_url
-				+ ", party_id=" + party_id + ", party_name=" + party_name
-				+ ", local_constituency=" + local_constituency + "]";
+				+ ", mod_dttm=" + mod_dttm + ", party_id=" + party_id
+				+ ", party_name=" + party_name + ", local_constituency="
+				+ local_constituency + "]";
 	}
+	
+	
+	
+	
 }

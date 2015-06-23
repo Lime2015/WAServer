@@ -30,8 +30,8 @@ public class UserController {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
-	
-	@RequestMapping(value="TestDAO.do", method = RequestMethod.GET)
+	// insert.do 
+	@RequestMapping(value="testSaveDAO.do", method = RequestMethod.GET)
 	public ModelAndView TestDAO(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv = new ModelAndView();
 		
@@ -43,6 +43,24 @@ public class UserController {
 		System.out.println("TestDAO" + user);
 		
 		userService.insert(user);
+		mv.setViewName("ViewTestDAO");		
+		request.setAttribute("result", "complete insert!!");
+		return mv;
+	}
+	
+	// update.do
+	@RequestMapping(value="testUpdateDAO.do", method = RequestMethod.GET)
+	public ModelAndView TestDAO2(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv = new ModelAndView();
+		
+		User user = new User();
+		user.setUserId("20");
+		user.setUserName("karo");
+		user.setUserStatus("select");
+		
+		System.out.println("TestDAO" + user.getUserName());
+		
+		userService.update(user);
 		mv.setViewName("ViewTestDAO");		
 		request.setAttribute("result", "complete insert!!");
 		return mv;
