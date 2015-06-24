@@ -5,26 +5,33 @@
 <mapper namespace="mapper.ManMapper">
 	
 	<insert id="insert" parameterType="Assemblyman">
-		insert into man(assemblyman_id, assemblyman_name, image_url, org_image_url, mod_dttm, party_id, party_name, local_constituency) 
-			values(#{assemblyman_id}, #{assemblyman_name}, #{image_url}, #{org_image_url}, #{mod_dttm}, #{party_id}, #{party_name}, #{local_constituency})
+		insert into man(assemblyman_id, assemblyman_name, image_url, org_image_url, mod_dttm, party_id, party_name, local_constituency, update_tag) 
+			values(#{assemblyman_id}, #{assemblyman_name}, #{image_url}, #{org_image_url}, #{mod_dttm}, #{party_id}, #{party_name}, #{local_constituency}, #{update_tag})
 	</insert>
-<!-- 
+ 
 	<update id="update" parameterType="Assemblyman">
-		update man set user_status=#{userStatus} where user_id=#{manId}
+		update man set assemblyman_name=#{assemblyman_name}, image_url=#{image_url}, org_image_url=#{org_image_url}, mod_dttm=#{mod_dttm}, party_id=#{party_id}, party_name=#{party_name}, local_constituency=#{local_constituency}, update_tag=#{update_tag} 
+			where assemblyman_id=#{assemblyman_id}
 	</update>
 
 	<select id="selectList" resultMap="manMap">
 		select * from man;
 	</select>
 	
-	<select id="selectMan" parameterType="String" resultMap="manMap">
-		select * from user where user_id=#{manId}
+	<select id="selectAssemblyman" parameterType="String" resultMap="manMap">
+		select * from man where assemblyman_id=#{assemblyman_id}
 	</select>
 	
 	<resultMap type="Assemblyman" id="manMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="assemblyman_name" column="assemblyman_name" />
 		<result property="image_url" column="image_url" />
+		<result property="org_image_url" column="org_image_url" />
+		<result property="mod_dttm" column="mod_dttm" />
+		<result property="party_id" column="party_id" />
+		<result property="party_name" column="party_name" />
+		<result property="local_constituency" column="local_constituency" />
+		<result property="update_tag" column="update_tag" />
 	</resultMap>
-	 -->
+	 
 </mapper>

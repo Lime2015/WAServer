@@ -16,6 +16,7 @@ public class Assemblyman {
 	private Integer party_id;
 	private String party_name;
 	private String local_constituency;
+	private Integer update_tag;
 	
 	
 	//////////////////////////////////////////////////////////////////////
@@ -67,7 +68,12 @@ public class Assemblyman {
 	public void setLocal_constituency(String local_constituency) {
 		this.local_constituency = local_constituency;
 	}
-	
+	public Integer getUpdate_tag() {
+		return update_tag;
+	}
+	public void setUpdate_tag(Integer update_tag) {
+		this.update_tag = update_tag;
+	}
 	///////////////////////////////////////////////////////////////////////////
 	@Override
 	public String toString() {
@@ -76,10 +82,9 @@ public class Assemblyman {
 				+ image_url + ", org_image_url=" + org_image_url
 				+ ", mod_dttm=" + mod_dttm + ", party_id=" + party_id
 				+ ", party_name=" + party_name + ", local_constituency="
-				+ local_constituency + "]";
+				+ local_constituency + ", update_tag=" + update_tag + "]";
 	}
 	
-	
-	
-	
 }
+
+

@@ -15,7 +15,8 @@ create table man (
   mod_dttm VARCHAR(60),
   party_id INT(10),
   party_name VARCHAR(60),
-  local_constituency VARCHAR(60)
+  local_constituency VARCHAR(60),
+  update_tag INT(10)
 );
 
 

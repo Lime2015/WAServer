@@ -32,7 +32,7 @@ public class AssemblymanDAO {
 		return mapper.update(man);
 	}
 
-	public int selectAssemblyman(int manId) {
+	public Assemblyman selectAssemblyman(int manId) {
 		ManMapper mapper = session.getMapper(ManMapper.class);
 		return mapper.selectAssemblyman(manId);
 	}
