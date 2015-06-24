@@ -8,29 +8,43 @@
 <body>
 결과 : <%= request.getAttribute("result") %>
 
- <table class="board_view">
-      
-        <h2>게시글 상세</h2>
-            <tr>
-                <th >이미지</th>
-                <td><img src="${result.image_url}"/></td>
-                <th >이름</th>
-                <td>${result.assemblyman_name}</td>
-            </tr>
-            <tr>
-                <th scope="row">정당</th>
-                <td>${result.party_name}</td>
-                <th scope="row">지역구</th>
-                <td>${result.local_constituency}</td>
-            </tr>
-            <tr>
-                <th scope="row">버전</th>
-                <td colspan="3">${result.update_tag}</td>
-            </tr>
-            <tr>
-<%--                 <td colspan="4">${#}</td> --%>
-            </tr>
-    </table>
+ <table style="border:1px solid #ccc">
+    <colgroup>
+     	<col width="10%"/>
+        <col width="10%"/>
+        <col style="30%" />
+        <col width="15%"/>
+        <col width="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+        	<th scope="col">버전</th>
+            <th scope="col">이름</th>
+            <th scope="col">이미지</th>
+            <th scope="col">정당</th>
+            <th scope="col">지역구</th>
+        </tr>
+    </thead>
+    <tbody>
+        <c:choose>
+            <c:when test="${result} != null}">
+                    <tr>
+                        <td>${result.update_tag }</td>
+                        <td>${result.assemblyman_name }</td>
+                        <td><img src="${result.image_url }" width="100px"/></td>
+                        <td>${result.party_name }</td>
+                        <td>${result.local_constituency }</td>
+                    </tr>
+            </c:when>
+            <c:otherwise>
+                <tr>
+                    <td colspan="5">조회된 결과가 없습니다.</td>
+                </tr>
+            </c:otherwise>
+        </c:choose>
+         
+    </tbody>
+</table>
      
     <a href="#this" class="btn" id="list">목록으로</a>
     <a href="#this" class="btn" id="update">수정하기</a>

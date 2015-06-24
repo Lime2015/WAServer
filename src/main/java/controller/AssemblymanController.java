@@ -22,7 +22,6 @@ import org.springframework.web.servlet.ModelAndView;
 import service.AssemblymanService;
 import vo.Assemblyman;
 import vo.Assemblymen;
-import vo.User;
 
 @Controller
 public class AssemblymanController {
@@ -104,9 +103,9 @@ public class AssemblymanController {
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selectList.do
+	// selectListAssemblyman.do
 	@RequestMapping(value = "selectListAssemblyman.do", method = RequestMethod.GET)
-	public ModelAndView selecList(int manId, HttpServletRequest request,
+	public ModelAndView selecList(HttpServletRequest request,
 			HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
@@ -114,8 +113,8 @@ public class AssemblymanController {
 		List<Assemblyman> assemblymen = assemblymanService.selectList();
 		System.out.println("Assemblymen : " + assemblymen);
 		
-		mv.setViewName("viewAssemblymen");
-		mv.addObject("result", assemblymen);
+		mv.setViewName("viewAssemblymanList");
+		mv.addObject("list", assemblymen);
 		return mv;
 	}
 
