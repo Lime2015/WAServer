@@ -28,7 +28,28 @@ create table generalmeeting(
 	meeting_dttm VARCHAR(60),
 	attend_status VARCHAR(60),
 	update_tag INT(10)
-
 );
+
+drop table bill_info;
+
+create table bill_info(
+	assemblyman_id INT(10),
+	update_tag INT(10),
+	bill_seq INT(10),
+	bill_no INT(10),
+	bill_status VARCHAR(60),
+	bill_title VARCHAR(300),
+	proposer_info VARCHAR(60),
+	bill_class VARCHAR(60),
+	receive_date VARCHAR(60),
+	refer_date VARCHAR(60),
+	bill_date3 VARCHAR(60),
+	committee_name VARCHAR(60),
+	committee_id INT(10),
+	committee_class INT(10),
+	bill_result VARCHAR(60),
+	bill_target_url VARCHAR(300)
+);
+
 
 

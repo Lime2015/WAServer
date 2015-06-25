@@ -48,8 +48,25 @@
 			</tr>
 		</table>
 	</form>
+	==============================================================================</br>
 	
 	<form id="inputForm" action="/was/saveGeneralMeeting.do" method="get">
+
+		<table align="left">
+			<tr>
+				<td>generalMeeting:</td>
+				<td><input id="xmlUrl type="text" name="xmlUrl"></td>
+			</tr>
+			<tr>
+			<tr>
+				<td><input type="submit" name="Submit" value="select"></td>
+			</tr>
+		</table>
+	</form>
+	
+	==============================================================================</br>
+	
+	<form id="inputForm" action="/was/saveBill.do" method="get">
 
 		<table align="left">
 			<tr>
