@@ -1,4 +1,4 @@
-package jaxb;
+package jaxb2;
 
 import java.util.List;
 
@@ -8,10 +8,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "employees")
+@XmlRootElement(name = "general_meeting_attend")
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Employees 
 {
+	@XmlElementWrapper(name = "assemblymen")
 	@XmlElement(name = "employee")
 	private List<Employee> employees = null;
 

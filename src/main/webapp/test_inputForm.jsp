@@ -20,7 +20,7 @@
 			</tr>
 		</table>
 	</form>
-	
+	<!-- 
 	<form id="inputForm" action="/was/updateAssemblyman.do" method="get">
 
 		<table align="left">
@@ -34,12 +34,12 @@
 			</tr>
 		</table>
 	</form>
-	
+	 -->
 	<form id="inputForm" action="/was/selectAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
-				<td>파일경로:</td>
+				<td>의원번호:</td>
 				<td><input id="manId" type="text" name="manId"></td>
 			</tr>
 			<tr>

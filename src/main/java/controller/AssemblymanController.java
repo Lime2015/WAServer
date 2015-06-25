@@ -57,13 +57,18 @@ public class AssemblymanController {
 			man.setMod_dttm(date.toString());
 			System.out.println(date.toString());
 			System.out.println(man);
-
+			
+			try{
 			assemblymanService.insert(man);
+			} catch(Exception e) {
+				assemblymanService.update(man);
+			}
 		}
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// updateAssemblyman.do
+	/*
 	@RequestMapping(value = "updateAssemblyman.do", method = RequestMethod.GET)
 	public void updateAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
@@ -85,12 +90,12 @@ public class AssemblymanController {
 			assemblymanService.update(man);
 		}
 	}
-
+*/
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectAssemblyman.do
 	@RequestMapping(value = "selectAssemblyman.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int manId, HttpServletRequest request,
-			HttpServletResponse response) {
+	public ModelAndView selectAssemblyman(int manId,
+			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
@@ -112,7 +117,7 @@ public class AssemblymanController {
 
 		List<Assemblyman> assemblymen = assemblymanService.selectList();
 		System.out.println("Assemblymen : " + assemblymen);
-		
+
 		mv.setViewName("viewAssemblymanList");
 		mv.addObject("list", assemblymen);
 		return mv;
