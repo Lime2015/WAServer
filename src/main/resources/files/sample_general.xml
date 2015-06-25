@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<general_meeting_attend>
+	<assemblymen>
+		<assemblyman>
+			<assemblyman_id>10</assemblyman_id>
+			<meetings>
+				<meeting>
+					<meeting_id>768</meeting_id>
+					<meeting_order><![CDATA[제332회 07차]]></meeting_order>
+					<meeting_dttm>2015-04-16</meeting_dttm>
+					<mod_dttm>2015-04-21 15:58:18</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+				<meeting>
+					<meeting_id>767</meeting_id>
+					<meeting_order><![CDATA[제332회 06차]]></meeting_order>
+					<meeting_dttm>2015-04-15</meeting_dttm>
+					<mod_dttm>2015-04-21 15:56:38</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+				<meeting>
+					<meeting_id>763</meeting_id>
+					<meeting_order><![CDATA[제332회 05차]]></meeting_order>
+					<meeting_dttm>2015-04-14</meeting_dttm>
+					<mod_dttm>2015-04-21 15:54:27</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+			
+			</meetings>
+		</assemblyman>
+		<assemblyman>
+			<assemblyman_id>33</assemblyman_id>
+			<meetings>
+				<meeting>
+					<meeting_id>768</meeting_id>
+					<meeting_order><![CDATA[제332회 07차]]></meeting_order>
+					<meeting_dttm>2015-04-16</meeting_dttm>
+					<mod_dttm>2015-04-21 15:58:18</mod_dttm>
+					<attend_status><![CDATA[결석]]></attend_status>
+					</meeting>
+				<meeting>
+					<meeting_id>767</meeting_id>
+					<meeting_order><![CDATA[제332회 06차]]></meeting_order>
+					<meeting_dttm>2015-04-15</meeting_dttm>
+					<mod_dttm>2015-04-21 15:56:38</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+				<meeting>
+					<meeting_id>763</meeting_id>
+					<meeting_order><![CDATA[제332회 05차]]></meeting_order>
+					<meeting_dttm>2015-04-14</meeting_dttm>
+					<mod_dttm>2015-04-21 15:54:27</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+				
+			</meetings>
+		</assemblyman>
+		<assemblyman>
+			<assemblyman_id>45</assemblyman_id>
+			<meetings>
+				<meeting>
+					<meeting_id>768</meeting_id>
+					<meeting_order><![CDATA[제332회 07차]]></meeting_order>
+					<meeting_dttm>2015-04-16</meeting_dttm>
+					<mod_dttm>2015-04-21 15:58:18</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+				<meeting>
+					<meeting_id>767</meeting_id>
+					<meeting_order><![CDATA[제332회 06차]]></meeting_order>
+					<meeting_dttm>2015-04-15</meeting_dttm>
+					<mod_dttm>2015-04-21 15:56:38</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+				<meeting>
+					<meeting_id>763</meeting_id>
+					<meeting_order><![CDATA[제332회 05차]]></meeting_order>
+					<meeting_dttm>2015-04-14</meeting_dttm>
+					<mod_dttm>2015-04-21 15:54:27</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meeting>
+				
+			</meetings>
+		</assemblyman>
+	</assemblymen>
+</general_meeting_attend>

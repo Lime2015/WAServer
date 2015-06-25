@@ -1,4 +1,4 @@
-package jaxb2;
+package vo.general;
 
 import java.util.List;
 
@@ -10,18 +10,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "general_meeting_attend")
 @XmlAccessorType (XmlAccessType.FIELD)
-public class Employees 
-{
+public class GeneralMeetingAttend {
+	
 	@XmlElementWrapper(name = "assemblymen")
 	@XmlElement(name = "assemblyman")
-	private List<Employee> employees = null;
+	private List<GeneralAssemblyman> assemblymen = null;
 
-	public List<Employee> getEmployees() {
-		return employees;
+	public List<GeneralAssemblyman> getAssemblymen() {
+		return assemblymen;
 	}
 
-	public void setEmployees(List<Employee> employees) {
-		this.employees = employees;
+	public void setAssemblymen(List<GeneralAssemblyman> assemblymen) {
+		this.assemblymen = assemblymen;
 	}
+
 
 }

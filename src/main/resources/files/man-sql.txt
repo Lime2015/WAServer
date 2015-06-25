@@ -19,4 +19,16 @@ create table man (
   update_tag INT(10)
 );
 
+drop table generalmeeting;
+
+create table generalmeeting(
+	assemblyman_id INT(10), 
+	meeting_id INT(10),
+	meeting_order VARCHAR(60),
+	meeting_dttm VARCHAR(60),
+	attend_status VARCHAR(60),
+	update_tag INT(10)
+
+);
+
 

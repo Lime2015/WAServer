@@ -20,7 +20,6 @@ public class AssemblymanDAO {
 	}
 	
 	//////////////////////////////////////////////////
-	
 
 	public int insert(Assemblyman man) {
 		ManMapper mapper = session.getMapper(ManMapper.class);

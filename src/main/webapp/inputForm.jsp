@@ -11,7 +11,7 @@
 
 		<table align="left">
 			<tr>
-				<td>파일경로:</td>
+				<td>의원 파일경로:</td>
 				<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
 			</tr>
 			<tr>
@@ -41,6 +41,20 @@
 			<tr>
 				<td>의원번호:</td>
 				<td><input id="manId" type="text" name="manId"></td>
+			</tr>
+			<tr>
+			<tr>
+				<td><input type="submit" name="Submit" value="select"></td>
+			</tr>
+		</table>
+	</form>
+	
+	<form id="inputForm" action="/was/saveGeneralMeeting.do" method="get">
+
+		<table align="left">
+			<tr>
+				<td>generalMeeting:</td>
+				<td><input id="xmlUrl type="text" name="xmlUrl"></td>
 			</tr>
 			<tr>
 			<tr>

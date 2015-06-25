@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bill_info>
+	<assemblymen>
+		<assemblyman>
+			<assemblyman_id>478</assemblyman_id>
+			<assemblyman_name><![CDATA[우원식]]></assemblyman_name>
+			<bills>
+				<bill>
+					<bill_seq>2</bill_seq>
+					<bill_no><![CDATA[1914631]]></bill_no>
+					<bill_status><![CDATA[수정가결]]></bill_status>
+					<bill_title><![CDATA[세월호 선체의 온전한 인양을 촉구하는 결의안(우원식의원 등 158인)]]></bill_title>
+					<proposer_info><![CDATA[우원식의원 등 158인]]></proposer_info>
+					<bill_class><![CDATA[의원]]></bill_class>
+					<receive_date>2015-04-07</receive_date>
+					<refer_date>2015-04-08</refer_date>
+					<bill_date3>2015-04-16</bill_date3>
+					<committee_name><![CDATA[농림축산식품해양수산]]></committee_name>
+					<committee_id>294</committee_id>
+					<committee_class><![CDATA[2]]></committee_class>
+					<bill_result><![CDATA[수정가결]]></bill_result>
+					<bill_target_url><![CDATA[http://likms.assembly.go.kr/bill/jsp/BillDetail.jsp?bill_id=PRC_V1F5J0D4I0E7E1A6R4B9J1X2E4P4U7]]></bill_target_url>
+					<etc></etc>
+					<reg_dttm>2015-04-20 10:04:07</reg_dttm>
+					<mod_dttm>2015-04-20 10:04:07</mod_dttm>
+					</bill>
+				<bill>
+					<bill_seq>5557</bill_seq>
+					<bill_no><![CDATA[1914341]]></bill_no>
+					<bill_status><![CDATA[계류]]></bill_status>
+					<bill_title><![CDATA[환경기술 및 환경산업 지원법 일부개정법률안(우원식의원 등 10인)]]></bill_title>
+					<proposer_info><![CDATA[우원식의원 등 10인]]></proposer_info>
+					<bill_class><![CDATA[의원]]></bill_class>
+					<receive_date>2015-03-17</receive_date>
+					<refer_date>2015-03-18</refer_date>
+					<bill_date3>0000-00-00</bill_date3>
+					<committee_name><![CDATA[환경노동]]></committee_name>
+					<committee_id>14</committee_id>
+					<committee_class><![CDATA[2]]></committee_class>
+					<bill_result><![CDATA[계류]]></bill_result>
+					<bill_target_url><![CDATA[http://likms.assembly.go.kr/bill/jsp/BillDetail.jsp?bill_id=PRC_R1S5Q0U3Y1V7F1H5E3O1W4S3J3S6Z9]]></bill_target_url>
+					<etc></etc>
+					<reg_dttm>2015-04-20 10:04:07</reg_dttm>
+					<mod_dttm>2015-04-20 10:04:07</mod_dttm>
+					</bill>
+				<bill>
+					<bill_seq>5558</bill_seq>
+					<bill_no><![CDATA[1914340]]></bill_no>
+					<bill_status><![CDATA[계류]]></bill_status>
+					<bill_title><![CDATA[원자력안전법 일부개정법률안(우원식의원 등 14인)]]></bill_title>
+					<proposer_info><![CDATA[우원식의원 등 14인]]></proposer_info>
+					<bill_class><![CDATA[의원]]></bill_class>
+					<receive_date>2015-03-17</receive_date>
+					<refer_date>2015-03-18</refer_date>
+					<bill_date3>0000-00-00</bill_date3>
+					<committee_name><![CDATA[미래창조과학방송통신]]></committee_name>
+					<committee_id>293</committee_id>
+					<committee_class><![CDATA[2]]></committee_class>
+					<bill_result><![CDATA[계류]]></bill_result>
+					<bill_target_url><![CDATA[http://likms.assembly.go.kr/bill/jsp/BillDetail.jsp?bill_id=PRC_Q1V5K0B3L1B7R1L5E2U8E1G5S6I2S0]]></bill_target_url>
+					<etc></etc>
+					<reg_dttm>2015-04-20 10:04:07</reg_dttm>
+					<mod_dttm>2015-04-20 10:04:07</mod_dttm>
+					</bill>
+				</bills>
+		</assemblyman>
+		<assemblyman>
+			<assemblyman_id>458</assemblyman_id>
+			<assemblyman_name><![CDATA[조정식]]></assemblyman_name>
+			<bills>
+				<bill>
+					<bill_seq>5417</bill_seq>
+					<bill_no><![CDATA[1914481]]></bill_no>
+					<bill_status><![CDATA[계류]]></bill_status>
+					<bill_title><![CDATA[조세특례제한법 일부개정법률안(조정식의원 등 10인)]]></bill_title>
+					<proposer_info><![CDATA[조정식의원 등 10인]]></proposer_info>
+					<bill_class><![CDATA[의원]]></bill_class>
+					<receive_date>2015-03-27</receive_date>
+					<refer_date>2015-03-30</refer_date>
+					<bill_date3>0000-00-00</bill_date3>
+					<committee_name><![CDATA[기획재정]]></committee_name>
+					<committee_id>289</committee_id>
+					<committee_class><![CDATA[2]]></committee_class>
+					<bill_result><![CDATA[계류]]></bill_result>
+					<bill_target_url><![CDATA[http://likms.assembly.go.kr/bill/jsp/BillDetail.jsp?bill_id=PRC_A1G5V0X3R2D7B1N7E2I3R5Q0D2B6U8]]></bill_target_url>
+					<etc></etc>
+					<reg_dttm>2015-04-20 10:04:07</reg_dttm>
+					<mod_dttm>2015-04-20 10:04:07</mod_dttm>
+					</bill>
+				<bill>
+					<bill_seq>5443</bill_seq>
+					<bill_no><![CDATA[1914455]]></bill_no>
+					<bill_status><![CDATA[계류]]></bill_status>
+					<bill_title><![CDATA[조세특례제한법 일부개정법률안(조정식의원 등 10인)]]></bill_title>
+					<proposer_info><![CDATA[조정식의원 등 10인]]></proposer_info>
+					<bill_class><![CDATA[의원]]></bill_class>
+					<receive_date>2015-03-26</receive_date>
+					<refer_date>2015-03-30</refer_date>
+					<bill_date3>0000-00-00</bill_date3>
+					<committee_name><![CDATA[기획재정]]></committee_name>
+					<committee_id>289</committee_id>
+					<committee_class><![CDATA[2]]></committee_class>
+					<bill_result><![CDATA[계류]]></bill_result>
+					<bill_target_url><![CDATA[http://likms.assembly.go.kr/bill/jsp/BillDetail.jsp?bill_id=PRC_Y1J5X0A3X2L6I1F6H4C7Q4L3G6I5T2]]></bill_target_url>
+					<etc></etc>
+					<reg_dttm>2015-04-20 10:04:07</reg_dttm>
+					<mod_dttm>2015-04-20 10:04:07</mod_dttm>
+					</bill>
+				</bills>
+		</assemblyman>
+	</assemblymen>
+</bill_info>
+					
+					
+					
+					

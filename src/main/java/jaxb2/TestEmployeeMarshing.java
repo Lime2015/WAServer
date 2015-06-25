@@ -73,12 +73,12 @@ public class TestEmployeeMarshing
 	private static void unMarshalingExample() throws JAXBException {
 		JAXBContext jaxbContext = JAXBContext.newInstance(Employees.class);
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		Employees emps = (Employees) jaxbUnmarshaller.unmarshal( new File("c:/temp/assemblymen.xml") );
+		Employees emps = (Employees) jaxbUnmarshaller.unmarshal( new File("c:/temp/sample_general.xml") );
 		
 		for(Employee emp : emps.getEmployees())
 		{
 			System.out.println(emp.getId());
-		//	System.out.println(emp.getFirstName());
+			System.out.println(emp.getMettings());
 		}
 	}
 

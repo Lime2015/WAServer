@@ -10,6 +10,9 @@ public class Meeting {
 	
 	private String meeting_id;
 	private String meeting_order;
+	private String meeting_dttm;
+	private String mod_dttm;
+	private String attend_status;
 	
 	
 	public String getMeeting_id() {
@@ -25,12 +28,31 @@ public class Meeting {
 		this.meeting_order = meeting_order;
 	}
 	
+	public String getMeeting_dttm() {
+		return meeting_dttm;
+	}
+	public void setMeeting_dttm(String meeting_dttm) {
+		this.meeting_dttm = meeting_dttm;
+	}
+	public String getMod_dttm() {
+		return mod_dttm;
+	}
+	public void setMod_dttm(String mod_dttm) {
+		this.mod_dttm = mod_dttm;
+	}
+	public String getAttend_status() {
+		return attend_status;
+	}
+	public void setAttend_status(String attend_status) {
+		this.attend_status = attend_status;
+	}
 	@Override
 	public String toString() {
 		return "Meeting [meeting_id=" + meeting_id + ", meeting_order="
-				+ meeting_order + "]";
+				+ meeting_order + ", meeting_dttm=" + meeting_dttm
+				+ ", mod_dttm=" + mod_dttm + ", attend_status=" + attend_status
+				+ "]";
 	}
-	
 	
 
 }
