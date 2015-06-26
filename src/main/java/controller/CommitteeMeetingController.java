@@ -16,48 +16,49 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import service.GeneralMeetingService;
-import vo.general.GeneralAssemblyman;
-import vo.general.GeneralMeeting;
-import vo.general.GeneralMeetingAttend;
+import service.CommitteeMeetingService;
+import vo.committee.CommitteeAssemblyman;
+import vo.committee.CommitteeMeeting;
+import vo.committee.CommitteeMeetingAttend;
 
 @Controller
-public class GeneralMeetingController {
+public class CommitteeMeetingController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(AssemblymanController.class);
 
-	private GeneralMeetingService generalMeetingService;
-	static GeneralMeetingAttend generalMeetingAttend = new GeneralMeetingAttend();
+	private CommitteeMeetingService committeeMeetingService;
+	static CommitteeMeetingAttend committeeMeetingAttend = new CommitteeMeetingAttend();
 
 	@Autowired
-	public void setGeneralMeetingService(GeneralMeetingService generalMeetingService) {
-		this.generalMeetingService = generalMeetingService;
+	public void setGeneralMeetingService(CommitteeMeetingService committeeMeetingService) {
+		this.committeeMeetingService = committeeMeetingService;
 	}
 
-	// saveGeneralMeeting.do
-	@RequestMapping(value = "saveGeneralMeeting.do", method = RequestMethod.GET)
+	// saveCommitteeMeeting.do
+	@RequestMapping(value = "saveCommitteeMeeting.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
 
-		System.out.println("saveGeneralMeeting.do");
+		System.out.println("saveCommitteeMeeting.do");
 		System.out.println("xmlUrl:" + xmlUrl);
 
 		unMarshalingExample(xmlUrl);
-		System.out.println("unMarshingFinish : " + generalMeetingAttend);
+		System.out.println("unMarshingFinish : " + committeeMeetingAttend);
 
-		for (GeneralAssemblyman man : generalMeetingAttend.getAssemblymen()) {
+		for (CommitteeAssemblyman man : committeeMeetingAttend.getAssemblymen()) {
 			
 			System.out.println(man);
 			Integer assemblyman_id = man.getAssemblyman_id();
 			
-			for(GeneralMeeting meeting : man.getMettings()){
+			for(CommitteeMeeting meeting : man.getMettings()){
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
+				
 				//generalMeetingService.insert(meeting);
 				try{
-					generalMeetingService.insert(meeting);
+					committeeMeetingService.insert(meeting);
 				} catch(Exception e) {
-					generalMeetingService.update(meeting);
+					committeeMeetingService.update(meeting);
 				}
 			}
 		}
@@ -99,12 +100,12 @@ public class GeneralMeetingController {
 	private static void unMarshalingExample(String url) throws JAXBException {
 		String xmlUrl = url;
 		File file = new File(xmlUrl);
-		JAXBContext jaxbContext = JAXBContext.newInstance(GeneralMeetingAttend.class);
+		JAXBContext jaxbContext = JAXBContext.newInstance(CommitteeMeetingAttend.class);
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		GeneralMeetingAttend assemblymanLsit = (GeneralMeetingAttend) jaxbUnmarshaller.unmarshal(file);
-		generalMeetingAttend = null;
-		generalMeetingAttend = assemblymanLsit;
-		for (GeneralAssemblyman man : assemblymanLsit.getAssemblymen()) {
+		CommitteeMeetingAttend assemblymanLsit = (CommitteeMeetingAttend) jaxbUnmarshaller.unmarshal(file);
+		committeeMeetingAttend = null;
+		committeeMeetingAttend = assemblymanLsit;
+		for (CommitteeAssemblyman man : assemblymanLsit.getAssemblymen()) {
 			System.out.println(man.getAssemblyman_id());
 			System.out.println(man.getMettings());
 		}
@@ -112,14 +113,14 @@ public class GeneralMeetingController {
 	}
 
 	private static void marshalingExample() throws JAXBException {
-		JAXBContext jaxbContext = JAXBContext.newInstance(GeneralMeetingAttend.class);
+		JAXBContext jaxbContext = JAXBContext.newInstance(CommitteeMeetingAttend.class);
 		Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-		jaxbMarshaller.marshal(generalMeetingAttend, System.out);
+		jaxbMarshaller.marshal(committeeMeetingAttend, System.out);
 		jaxbMarshaller
-				.marshal(generalMeetingAttend, new File("c:/temp/assemblymen.xml"));
+				.marshal(committeeMeetingAttend, new File("c:/temp/assemblymen.xml"));
 	}
 
 

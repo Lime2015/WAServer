@@ -9,12 +9,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class GeneralMeeting {
 	
 	private Integer assemblyman_id;
+	private Integer update_tag;
+	
 	private Integer meeting_id;
 	private String meeting_order;
 	private String meeting_dttm;
 	private String mod_dttm;
 	private String attend_status;
-	private Integer update_tag;
+	
 
 	/////////////////////////////////////////////////////////////////////
 	public String getMod_dttm() {

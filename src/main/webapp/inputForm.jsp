@@ -7,7 +7,8 @@
 <title>input form</title>
 </head>
 <body>
-	<form id="inputForm" action="/was/saveAssemblyman.do" method="get">
+<div>
+	<form id="inputForm" action="/WASever/saveAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -21,7 +22,7 @@
 		</table>
 	</form>
 	<!-- 
-	<form id="inputForm" action="/was/updateAssemblyman.do" method="get">
+	<form id="inputForm" action="/WASever/updateAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -35,7 +36,7 @@
 		</table>
 	</form>
 	 -->
-	<form id="inputForm" action="/was/selectAssemblyman.do" method="get">
+	<form id="inputForm" action="/WASever/selectAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -48,9 +49,11 @@
 			</tr>
 		</table>
 	</form>
-	==============================================================================</br>
-	
-	<form id="inputForm" action="/was/saveGeneralMeeting.do" method="get">
+</div>
+	<br>============================================================
+
+<div>	
+	<form id="inputForm" action="/WASever/saveGeneralMeeting.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -63,10 +66,12 @@
 			</tr>
 		</table>
 	</form>
+</div>
 	
-	==============================================================================</br>
-	
-	<form id="inputForm" action="/was/saveBill.do" method="get">
+	<br> ============================================================
+
+<div>	
+	<form id="inputForm" action="/WASever/saveBill.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -79,5 +84,10 @@
 			</tr>
 		</table>
 	</form>
+</div>
+
 </body>
 </html>
+
+
+
