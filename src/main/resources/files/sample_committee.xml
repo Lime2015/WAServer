@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stand_committee_meeting_attend>
+	<assemblymen>
+		<assemblyman>
+			<assemblyman_id>10</assemblyman_id>
+			<meetings>
+				<meetings>
+					<meeting_id></meeting_id>
+					<meeting_name><![CDATA[외교통일위원회]]></meeting_name>
+					<meeting_order><![CDATA[제331회 05차]]></meeting_order>
+					<meeting_date>2015-03-13</meeting_date>
+					<mod_dttm>2015-03-23 11:09:55</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meetings>
+				<meetings>
+					<meeting_id></meeting_id>
+					<meeting_name><![CDATA[외교통일위원회]]></meeting_name>
+					<meeting_order><![CDATA[제331회 04차]]></meeting_order>
+					<meeting_date>2015-03-11</meeting_date>
+					<mod_dttm>2015-03-23 10:57:35</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meetings>
+				</meetings>
+		</assemblyman>
+		<assemblyman>
+			<assemblyman_id>33</assemblyman_id>
+			<meetings>
+				<meetings>
+					<meeting_id></meeting_id>
+					<meeting_name><![CDATA[농림축산식품해양수산위원회]]></meeting_name>
+					<meeting_order><![CDATA[제332회 01차]]></meeting_order>
+					<meeting_date>2015-04-07</meeting_date>
+					<mod_dttm>2015-04-13 10:56:09</mod_dttm>
+					<attend_status><![CDATA[결석]]></attend_status>
+					</meetings>
+				<meetings>
+					<meeting_id></meeting_id>
+					<meeting_name><![CDATA[농림축산식품해양수산위원회]]></meeting_name>
+					<meeting_order><![CDATA[제331회 03차]]></meeting_order>
+					<meeting_date>2015-03-09</meeting_date>
+					<mod_dttm>2015-03-13 16:43:54</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meetings>
+				</meetings>
+		</assemblyman>
+	</assemblymen>
+</stand_committee_meeting_attend>			
+					
+					

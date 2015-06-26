@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<party_histories>
+	<party_history>
+		<member_seq>1</member_seq>
+		<party_name><![CDATA[새천년민주당]]></party_name>
+		<in_date><![CDATA[2002-08-08]]></in_date>
+		<out_date><![CDATA[2003-09-19]]></out_date>
+		<note><![CDATA[탈당]]></note>
+	</party_history>
+	<party_history>
+		<member_seq>1</member_seq>
+		<party_name><![CDATA[열린우리당]]></party_name>
+		<in_date><![CDATA[2003-11-17]]></in_date>
+		<out_date><![CDATA[2007-02-05]]></out_date>
+		<note><![CDATA[탈당]]></note>
+	</party_history>
+	<party_history>
+		<member_seq>652</member_seq>
+		<party_name><![CDATA[무소속]]></party_name>
+		<in_date><![CDATA[2011-12-15]]></in_date>
+		<out_date><![CDATA[0000-00-00]]></out_date>
+		<note><![CDATA[]]></note>
+	</party_history>
+	<party_history>
+		<member_seq>704</member_seq>
+		<party_name><![CDATA[창조한국당]]></party_name>
+		<in_date><![CDATA[2012-02-09]]></in_date>
+		<out_date><![CDATA[0000-00-00]]></out_date>
+		<note><![CDATA[비례 승계]]></note>
+	</party_history>
+</party_histories>
