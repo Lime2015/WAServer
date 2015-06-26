@@ -70,7 +70,7 @@
 
 		<table align="left">
 			<tr>
-				<td>generalMeeting:</td>
+				<td>Bill_info :</td>
 				<td><input id="xmlUrl type="text" name="xmlUrl"></td>
 			</tr>
 			<tr>
