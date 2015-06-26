@@ -17,11 +17,11 @@ public class AssemblymanService {
 	public void setAssemblymanDAO(AssemblymanDAO assemblymanDAO) {
 		this.assemblymanDAO = assemblymanDAO;
 	}
-
+	
+	//////////////////////////////////////////////////////////////////
 	public int insert(Assemblyman man){
 		return assemblymanDAO.insert(man);
 	}
-
 	public int update(Assemblyman man){
 		return assemblymanDAO.update(man);
 	}

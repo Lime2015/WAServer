@@ -13,7 +13,6 @@ public class Assemblymen {
 	
 	public Assemblymen() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@XmlElement(name = "assemblyman")

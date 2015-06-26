@@ -73,5 +73,14 @@ create table vote(
 	assemblyman_vote VARCHAR(60)
 );
 
+create table party_history(
+	update_tag INT(10),
+	member_seq INT(10),
+	party_name VARCHAR(60),
+	in_date VARCHAR(60),
+	out_date VARCHAR(60),
+	note VARCHAR(60)
+);
+
 
 
