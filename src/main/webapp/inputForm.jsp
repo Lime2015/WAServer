@@ -8,7 +8,7 @@
 </head>
 <body>
 <div>
-	<form id="inputForm" action="/WASever/saveAssemblyman.do" method="get">
+	<form id="inputForm" action="/WAServer/saveAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -22,7 +22,7 @@
 		</table>
 	</form>
 	<!-- 
-	<form id="inputForm" action="/WASever/updateAssemblyman.do" method="get">
+	<form id="inputForm" action="/WAServer/updateAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -36,7 +36,7 @@
 		</table>
 	</form>
 	 -->
-	<form id="inputForm" action="/WASever/selectAssemblyman.do" method="get">
+	<form id="inputForm" action="/WAServer/selectAssemblyman.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -53,7 +53,7 @@
 	<br>============================================================
 
 <div>	
-	<form id="inputForm" action="/WASever/saveGeneralMeeting.do" method="get">
+	<form id="inputForm" action="/WAServer/saveGeneralMeeting.do" method="get">
 
 		<table align="left">
 			<tr>
@@ -71,7 +71,7 @@
 	<br> ============================================================
 
 <div>	
-	<form id="inputForm" action="/WASever/saveBill.do" method="get">
+	<form id="inputForm" action="/WAServer/saveBill.do" method="get">
 
 		<table align="left">
 			<tr>

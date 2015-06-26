@@ -8,6 +8,6 @@
 </head>
 <body>
 	This is AWServer index.jsp page!!
-	<% response.sendRedirect("/WASever/inputForm.jsp"); %>
+	<% response.sendRedirect("/WAServer/inputForm.jsp"); %>
 </body>
 </html>
