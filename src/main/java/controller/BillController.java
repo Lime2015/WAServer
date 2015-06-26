@@ -56,12 +56,12 @@ public class BillController {
 			for(Bill bill : man.getBills()){
 				bill.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ bill.getAssemblyman_id());
-				billService.insert(bill);
-				/*try{
+				//billService.insert(bill);
+				try{
 					billService.insert(bill);
 				} catch(Exception e) {
 					billService.update(bill);
-				}*/
+				}
 			}
 		}
 	}
