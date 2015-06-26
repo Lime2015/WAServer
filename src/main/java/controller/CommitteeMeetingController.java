@@ -54,12 +54,12 @@ public class CommitteeMeetingController {
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
 				
-				//generalMeetingService.insert(meeting);
-				try{
+				committeeMeetingService.insert(meeting);
+				/*try{
 					committeeMeetingService.insert(meeting);
 				} catch(Exception e) {
 					committeeMeetingService.update(meeting);
-				}
+				}*/
 			}
 		}
 	}

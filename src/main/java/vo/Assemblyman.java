@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Assemblyman {
 	
 	private Integer assemblyman_id;
+	private Integer update_tag;
+	
 	private String assemblyman_name;
 	private String image_url;
 	private String org_image_url;
@@ -16,8 +18,6 @@ public class Assemblyman {
 	private Integer party_id;
 	private String party_name;
 	private String local_constituency;
-	private Integer update_tag;
-	
 	
 	//////////////////////////////////////////////////////////////////////
 	public int getAssemblyman_id() {

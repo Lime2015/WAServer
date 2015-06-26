@@ -17,9 +17,6 @@ public class CommitteeMeeting {
 	private String meeting_date;
 	private String mod_dttm;
 	private String attend_status;
-	
-	
-	////////////////////////////////////////////////////////////////////////////
 	public Integer getAssemblyman_id() {
 		return assemblyman_id;
 	}
@@ -68,8 +65,6 @@ public class CommitteeMeeting {
 	public void setAttend_status(String attend_status) {
 		this.attend_status = attend_status;
 	}
-	
-	//////////////////////////////////////////////////////////////////////////////
 	@Override
 	public String toString() {
 		return "CommitteeMeeting [assemblyman_id=" + assemblyman_id
@@ -81,5 +76,4 @@ public class CommitteeMeeting {
 	}
 	
 	
-
 }

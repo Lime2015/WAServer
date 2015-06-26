@@ -5,12 +5,12 @@
 <mapper namespace="mapper.GeneralMapper">
 	
 	<insert id="insert" parameterType="GeneralMeeting">
-		insert into generalmeeting (assemblyman_id, meeting_id, meeting_order, meeting_dttm, attend_status, update_tag) 
-			values(#{assemblyman_id}, #{meeting_id}, #{meeting_order}, #{meeting_dttm}, #{attend_status}, #{update_tag})
+		insert into generalmeeting (assemblyman_id, update_tag, meeting_id, meeting_order, meeting_dttm, attend_status) 
+			values(#{assemblyman_id}, #{update_tag}, #{meeting_id}, #{meeting_order}, #{meeting_dttm}, #{attend_status})
 	</insert>
  
 	<update id="update" parameterType="GeneralMeeting">
-		update generalmeeting set meeting_id=#{meeting_id}, meeting_order=#{meeting_order}, meeting_dttm=#{meeting_dttm}, attend_status=#{attend_status}, update_tag=#{update_tag}} 
+		update generalmeeting set update_tag=#{update_tag}, meeting_id=#{meeting_id}, meeting_order=#{meeting_order}, meeting_dttm=#{meeting_dttm}, attend_status=#{attend_status} 
 			where assemblyman_id=#{assemblyman_id}
 	</update>
 
@@ -24,11 +24,11 @@
 	
 	<resultMap type="GeneralMeeting" id="generalMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
+		<result property="update_tag" column="update_tag" />
 		<result property="meeting_id" column="meeting_id" />
 		<result property="meeting_order" column="meeting_order" />
 		<result property="meeting_dttm" column="meeting_dttm" />
-		<result property="attend_statu" column="attend_statu" />
-		<result property="update_tag" column="update_tag" />
+		<result property="attend_status" column="attend_status" />
 	</resultMap>
 	 
 </mapper>

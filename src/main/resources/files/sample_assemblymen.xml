@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assemblymen>
+	<assemblyman>
+		<assemblyman_id>10</assemblyman_id>
+		<assemblyman_name><![CDATA[강창희]]></assemblyman_name>
+		<image_url><![CDATA[http://watch.peoplepower21.org/images/member/10.jpg]]></image_url>
+		<mod_dttm>2014-06-26 14:02:05</mod_dttm>
+		<org_image_url><![CDATA[]]></org_image_url>
+		<party_id></party_id>
+		<party_name><![CDATA[새누리당]]></party_name>
+		<local_constituency><![CDATA[대전 중구]]></local_constituency>
+	</assemblyman>
+	<assemblyman>
+		<assemblyman_id>33</assemblyman_id>
+		<assemblyman_name><![CDATA[김무성]]></assemblyman_name>
+		<image_url><![CDATA[http://watch.peoplepower21.org/images/member/33.jpg]]></image_url>
+		<mod_dttm>2015-04-14 16:32:04</mod_dttm>
+		<org_image_url><![CDATA[]]></org_image_url>
+		<party_id></party_id>
+		<party_name><![CDATA[새누리당]]></party_name>
+		<local_constituency><![CDATA[부산 영도구]]></local_constituency>
+	</assemblyman>
+	<assemblyman>
+		<assemblyman_id>861</assemblyman_id>
+		<assemblyman_name><![CDATA[양창영]]></assemblyman_name>
+		<image_url><![CDATA[http://watch.peoplepower21.org/images/member/861.jpg]]></image_url>
+		<mod_dttm>2014-07-11 14:11:46</mod_dttm>
+		<org_image_url><![CDATA[]]></org_image_url>
+		<party_id></party_id>
+		<party_name><![CDATA[새누리당]]></party_name>
+		<local_constituency><![CDATA[비례대표 비례]]></local_constituency>
+	</assemblyman>
+</assemblymen>

@@ -51,5 +51,27 @@ create table bill_info(
 	bill_target_url VARCHAR(300)
 );
 
+create table committee_meeting(
+	assemblyman_id INT(10), 
+	update_tag INT(10),
+	meeting_id INT(10),
+	meeting_name VARCHAR(100),
+	meeting_order VARCHAR(60),
+	meeting_date VARCHAR(60),
+	attend_status VARCHAR(60)
+	
+);
+
+create table vote(
+	assemblyman_id INT(10), 
+	update_tag INT(10),
+	bill_name VARCHAR(300),
+	bill_no INT(10),
+	vote_dttm VARCHAR(60),
+	bill_target_url VARCHAR(300),
+	result VARCHAR(60),
+	assemblyman_vote VARCHAR(60)
+);
+
 
 

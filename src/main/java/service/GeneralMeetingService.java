@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import repository.GeneralMeetingDAO;
-import vo.Assemblyman;
 import vo.general.GeneralMeeting;
 
 @Component

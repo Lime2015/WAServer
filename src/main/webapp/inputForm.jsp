@@ -1,27 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>input form</title>
 </head>
-<body>
-<div>
-	<form id="inputForm" action="/WAServer/saveAssemblyman.do" method="get">
 
-		<table align="left">
-			<tr>
-				<td>의원 파일경로:</td>
-				<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-			</tr>
-			<tr>
-			<tr>
-				<td><input type="submit" name="Submit" value="insert"></td>
-			</tr>
-		</table>
-	</form>
-	<!-- 
+<body>
+	<div style="width: 600px; height: 100%; background-color: pink;">
+		<form id="inputForm" action="/WAServer/saveAssemblyman.do"
+			method="get">
+
+			<table align="left">
+				<tr>
+					<td>의원 파일경로:</td>
+					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="insert"></td>
+				</tr>
+			</table>
+		</form>
+		<!-- 
 	<form id="inputForm" action="/WAServer/updateAssemblyman.do" method="get">
 
 		<table align="left">
@@ -36,55 +38,91 @@
 		</table>
 	</form>
 	 -->
-	<form id="inputForm" action="/WAServer/selectAssemblyman.do" method="get">
+		<form id="inputForm" action="/WAServer/selectAssemblyman.do"
+			method="get">
 
-		<table align="left">
-			<tr>
-				<td>의원번호:</td>
-				<td><input id="manId" type="text" name="manId"></td>
-			</tr>
-			<tr>
-			<tr>
-				<td><input type="submit" name="Submit" value="select"></td>
-			</tr>
-		</table>
-	</form>
-</div>
-	<br>============================================================
+			<table align="left">
+				<tr>
+					<td>의원번호:</td>
+					<td><input id="manId" type="text" name="manId"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
 
-<div>	
-	<form id="inputForm" action="/WAServer/saveGeneralMeeting.do" method="get">
+		<hr> ============================================================
 
-		<table align="left">
-			<tr>
-				<td>generalMeeting:</td>
-				<td><input id="xmlUrl type="text" name="xmlUrl"></td>
-			</tr>
-			<tr>
-			<tr>
-				<td><input type="submit" name="Submit" value="select"></td>
-			</tr>
-		</table>
-	</form>
-</div>
-	
-	<br> ============================================================
 
-<div>	
-	<form id="inputForm" action="/WAServer/saveBill.do" method="get">
+		<form id="inputForm" action="/WAServer/saveGeneralMeeting.do"
+			method="get">
 
-		<table align="left">
-			<tr>
-				<td>Bill_info :</td>
-				<td><input id="xmlUrl type="text" name="xmlUrl"></td>
-			</tr>
-			<tr>
-			<tr>
-				<td><input type="submit" name="Submit" value="select"></td>
-			</tr>
-		</table>
-	</form>
-</div>
+			<table align="left">
+				<tr>
+					<td>general :</td>
+					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
+
+
+		<br> ============================================================
+
+
+		<form id="inputForm" action="/WAServer/saveBill.do" method="get">
+
+			<table align="left">
+				<tr>
+					<td>bill :</td>
+					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
+
+		<br> ============================================================
+
+
+		<form id="inputForm" action="/WAServer/saveCommitteeMeeting.do"
+			method="get">
+
+			<table align="left">
+				<tr>
+					<td>committee :</td>
+					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
+
+		<br> ============================================================
+
+		<form id="inputForm" action="/WAServer/saveVote.do" method="get">
+
+			<table align="left">
+				<tr>
+					<td>vote :</td>
+					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
 
 </body>
 </html>
