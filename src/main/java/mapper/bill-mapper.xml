@@ -5,26 +5,27 @@
 <mapper namespace="mapper.BillMapper">
 	
 	<insert id="insert" parameterType="Bill">
-		insert into bill_info (assemblyman_id, update_tag, bill_seq, bill_no, bill_status, bill_title, proposer_info, bill_class, receive_date, refer_date, bill_date3, committee_name, committee_id, committee_class, bill_result, bill_target_url) 
+		insert into bill (assemblyman_id, update_tag, bill_seq, bill_no, bill_status, bill_title, proposer_info, bill_class, receive_date, refer_date, bill_date3, committee_name, committee_id, committee_class, bill_result, bill_target_url) 
 			values(#{assemblyman_id}, #{update_tag}, #{bill_seq}, #{bill_no}, #{bill_status}, #{bill_title}, #{proposer_info}, #{bill_class}, #{receive_date}, #{refer_date}, #{bill_date3}, #{committee_name}, #{committee_id}, #{committee_class}, #{bill_result}, #{bill_target_url})
 	</insert>
  
 	<update id="update" parameterType="Bill">
-		update bill_info set update_tag=#{update_tag}, bill_seq=#{bill_seq}, bill_no=#{bill_no}, bill_status=#{bill_status}, bill_title=#{bill_title}, proposer_info=#{proposer_info}, bill_class=#{bill_class}, receive_date=#{receive_date}, refer_date=#{refer_date}, bill_date3=#{bill_date3}, committee_name=#{committee_name}, committee_id=#{committee_id}, committee_class=#{committee_class}, bill_result=#{bill_result}, bill_target_url=#{bill_target_url} 
-			where assemblyman_id=#{assemblyman_id}
+		update bill set assemblyman_id=#{assemblyman_id}, update_tag=#{update_tag}, bill_seq=#{bill_seq}, bill_status=#{bill_status}, bill_title=#{bill_title}, proposer_info=#{proposer_info}, bill_class=#{bill_class}, receive_date=#{receive_date}, refer_date=#{refer_date}, bill_date3=#{bill_date3}, committee_name=#{committee_name}, committee_id=#{committee_id}, committee_class=#{committee_class}, bill_result=#{bill_result}, bill_target_url=#{bill_target_url} 
+			where bill_no=#{bill_no}
 	</update>
 
 	<select id="selectList" resultMap="billMap">
-		select * from bill_info;
+		select * from bill;
 	</select>
 	
-	<select id="selectGeneralMeeting" parameterType="String" resultMap="billMap">
-		select * from bill_info where assemblyman_id=#{assemblyman_id}
+	<select id="selectBill" parameterType="String" resultMap="billMap">
+		select * from bill where bill_no=#{bill_no}
 	</select>
 	
 	<resultMap type="Bill" id="billMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="update_tag" column="update_tag" />
+		
 		<result property="bill_seq" column="bill_seq" />
 		<result property="bill_no" column="bill_no" />
 		<result property="bill_status" column="bill_status" />
@@ -40,5 +41,5 @@
 		<result property="bill_result" column="bill_result" />
 		<result property="bill_target_url" column="bill_target_url" />
 	</resultMap>
-	 
 </mapper>
+

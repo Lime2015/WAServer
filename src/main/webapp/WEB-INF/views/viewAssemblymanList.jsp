@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>View Assemblymen</title>
+<title>AssemblymanList</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>

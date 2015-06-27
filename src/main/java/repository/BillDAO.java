@@ -38,6 +38,6 @@ public class BillDAO {
 
 	public List<Bill> selectList() {
 		BillMapper mapper = session.getMapper(BillMapper.class);
-		return mapper.selectList;
+		return mapper.selectList();
 	}
 }

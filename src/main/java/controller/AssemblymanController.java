@@ -43,15 +43,13 @@ public class AssemblymanController {
 			HttpServletRequest request) throws JAXBException {
 
 		System.out.println("saveAssemblyman.do");
-
-		// xmlUrl = request.getParameter("xmlUrl");
 		System.out.println("xmlUrl:" + xmlUrl);
 
 		unMarshalingExample(xmlUrl);
 		System.out.println(assemblymen);
 
 		for (Assemblyman man : assemblymen.getAssemblymen()) {
-			// man.setUpdate_tag(1);
+			
 			// mo_dttm 을 insert 시간으로 변경
 			Date date = new Date();
 			man.setMod_dttm(date.toString());
@@ -59,8 +57,17 @@ public class AssemblymanController {
 			System.out.println(man);
 			
 			try{
-			assemblymanService.insert(man);
+				//처음 insert update_tag = 1
+				man.setUpdate_tag(1);
+				assemblymanService.insert(man);
 			} catch(Exception e) {
+				
+				Integer manId = man.getAssemblyman_id();
+				Integer ver = assemblymanService.selectAssemblyman(manId).getUpdate_tag();
+				
+				System.out.println("update ver :" + ver);
+				man.setUpdate_tag(ver + 1);
+				
 				assemblymanService.update(man);
 			}
 		}

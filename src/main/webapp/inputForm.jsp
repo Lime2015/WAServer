@@ -72,6 +72,20 @@
 				</tr>
 			</table>
 		</form>
+		
+		<form id="inputForm" action="/WAServer/selectBill.do" method="get">
+
+			<table align="left">
+				<tr>
+					<td>¹ý¾È Num :</td>
+					<td><input id="bill_Id" type="text" name="bill_Id"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
 
 		==========================================================================
 

@@ -2,17 +2,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Detail Assemblyman</title>
+<title>Assemblyman</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
-<body>
-결과 : <%= request.getAttribute("result") %>
 
+<body>
+	<h2>의원 검색</h2>
  <table style="border:1px solid #ccc">
     <colgroup>
      	<col width="10%"/>
         <col width="10%"/>
-        <col style="30%" />
+        <col width="30%" />
         <col width="15%"/>
         <col width="*"/>
     </colgroup>
@@ -27,7 +28,7 @@
     </thead>
     <tbody>
         <c:choose>
-            <c:when test="${result} != null}">
+            <c:when test="${not empty result}">
                     <tr>
                         <td>${result.update_tag }</td>
                         <td>${result.assemblyman_name }</td>
@@ -42,10 +43,13 @@
                 </tr>
             </c:otherwise>
         </c:choose>
-         
+        <tr>
+        	<td colspan="5"> <%= request.getAttribute("result") %> </td>
+        </tr>
     </tbody>
+    
 </table>
-     
+<!--      
     <a href="#this" class="btn" id="list">목록으로</a>
     <a href="#this" class="btn" id="update">수정하기</a>
      
@@ -76,5 +80,7 @@
             comSubmit.submit();
         }
     </script>
+     -->
+    
 </body>
 </html>

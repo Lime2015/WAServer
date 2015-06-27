@@ -5,7 +5,6 @@ create database wadb;
 
 use wadb;
 
-drop table man;
 
 create table man (	
   assemblyman_id INT(10) NOT NULL primary key,
@@ -19,24 +18,12 @@ create table man (
   update_tag INT(10)
 );
 
-drop table generalmeeting;
 
-create table generalmeeting(
-	assemblyman_id INT(10), 
-	meeting_id INT(10),
-	meeting_order VARCHAR(60),
-	meeting_dttm VARCHAR(60),
-	attend_status VARCHAR(60),
-	update_tag INT(10)
-);
-
-drop table bill_info;
-
-create table bill_info(
+create table bill(
 	assemblyman_id INT(10),
 	update_tag INT(10),
 	bill_seq INT(10),
-	bill_no INT(10),
+	bill_no INT(10) NOT NULL primary key,
 	bill_status VARCHAR(60),
 	bill_title VARCHAR(300),
 	proposer_info VARCHAR(60),
@@ -50,6 +37,17 @@ create table bill_info(
 	bill_result VARCHAR(60),
 	bill_target_url VARCHAR(300)
 );
+
+
+create table generalmeeting(
+	assemblyman_id INT(10), 
+	meeting_id INT(10),
+	meeting_order VARCHAR(60),
+	meeting_dttm VARCHAR(60),
+	attend_status VARCHAR(60),
+	update_tag INT(10)
+);
+
 
 create table committee_meeting(
 	assemblyman_id INT(10), 
