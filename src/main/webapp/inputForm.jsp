@@ -54,6 +54,20 @@
 				</tr>
 			</table>
 		</form>
+		
+		<form id="inputForm" action="/WAServer/selectGeneralMeeting.do" method="get">
+
+			<table align="left">
+				<tr>
+					<td>회의번호 :</td>
+					<td><input id="meeting_id" type="text" name="meeting_Id"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
 
 
 		==========================================================================
@@ -77,7 +91,7 @@
 
 			<table align="left">
 				<tr>
-					<td>법안 Num :</td>
+					<td>법안번호 :</td>
 					<td><input id="bill_Id" type="text" name="bill_Id"></td>
 				</tr>
 				<tr>

@@ -6,7 +6,7 @@ create database wadb;
 use wadb;
 
 
-create table man (	
+create table assemblyman (	
   assemblyman_id INT(10) NOT NULL primary key,
   assemblyman_name VARCHAR(30) NOT NULL,
   image_url VARCHAR(60),
@@ -39,9 +39,9 @@ create table bill(
 );
 
 
-create table generalmeeting(
+create table general_meeting(
 	assemblyman_id INT(10), 
-	meeting_id INT(10),
+	meeting_id INT(10) NOT NULL primary key,
 	meeting_order VARCHAR(60),
 	meeting_dttm VARCHAR(60),
 	attend_status VARCHAR(60),

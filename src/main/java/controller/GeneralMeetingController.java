@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import service.GeneralMeetingService;
 import vo.general.GeneralAssemblyman;
@@ -65,36 +67,36 @@ public class GeneralMeetingController {
 	}
 	
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selectAssemblyman.do
-/*	@RequestMapping(value = "selectAssemblyman.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int manId,
+	// selectGeneralMeeting.do
+	@RequestMapping(value = "selectGeneralMeeting.do", method = RequestMethod.GET)
+	public ModelAndView selectAssemblyman(int meeting_id,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		Assemblyman assemblyman = assemblymanService.selectAssemblyman(manId);
-		System.out.println("AssemblymanId" + manId);
+		GeneralMeeting generalMeeting = generalMeetingService.selectGeneralMeeting(meeting_id);
+		System.out.println("meeting_id" + meeting_id);
 
-		mv.setViewName("viewAssemblyman");
-		mv.addObject("result", assemblyman);
+		mv.setViewName("generalMeeting");
+		mv.addObject("result", generalMeeting);
 		return mv;
-	}*/
+	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selectListAssemblyman.do
-/*	@RequestMapping(value = "selectListAssemblyman.do", method = RequestMethod.GET)
+	// selectListGeneralMeeting.do
+	@RequestMapping(value = "selectListGeneralMeeting.do", method = RequestMethod.GET)
 	public ModelAndView selecList(HttpServletRequest request,
 			HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		List<Assemblyman> assemblymen = assemblymanService.selectList();
-		System.out.println("Assemblymen : " + assemblymen);
+		List<GeneralMeeting> generalMeetings = generalMeetingService.selectList();
+		System.out.println("generalMeetings : " + generalMeetings);
 
-		mv.setViewName("viewAssemblymanList");
-		mv.addObject("list", assemblymen);
+		mv.setViewName("generalMeetingList");
+		mv.addObject("list", generalMeetings);
 		return mv;
-	}*/
+	}
 
 	// ////////////////////////////////////////////////////////////
 	private static void unMarshalingExample(String url) throws JAXBException {

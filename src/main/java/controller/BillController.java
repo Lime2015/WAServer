@@ -89,7 +89,7 @@ public class BillController {
 		Bill bill = billService.selectBill(bill_Id);
 		System.out.println("bill_Id" + bill_Id);
 
-		mv.setViewName("Bill");
+		mv.setViewName("bill");
 		mv.addObject("result", bill);
 		
 		return mv;
