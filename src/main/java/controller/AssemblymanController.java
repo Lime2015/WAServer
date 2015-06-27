@@ -67,31 +67,6 @@ public class AssemblymanController {
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// updateAssemblyman.do
-	/*
-	@RequestMapping(value = "updateAssemblyman.do", method = RequestMethod.GET)
-	public void updateAssemblyman(String xmlUrl, HttpServletResponse response,
-			HttpServletRequest request) throws JAXBException {
-
-		System.out.println("updateAssemblyman.do");
-		System.out.println("xmlUrl:" + xmlUrl);
-
-		unMarshalingExample(xmlUrl);
-		System.out.println(assemblymen);
-
-		for (Assemblyman man : assemblymen.getAssemblymen()) {
-
-			// mo_dttm 을 update 시간으로 변경
-			Date date = new Date();
-			man.setMod_dttm(date.toString());
-			System.out.println(date.toString());
-			System.out.println(man);
-
-			assemblymanService.update(man);
-		}
-	}
-*/
-	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectAssemblyman.do
 	@RequestMapping(value = "selectAssemblyman.do", method = RequestMethod.GET)
 	public ModelAndView selectAssemblyman(int manId,
@@ -146,8 +121,7 @@ public class AssemblymanController {
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		jaxbMarshaller.marshal(assemblymen, System.out);
-		jaxbMarshaller
-				.marshal(assemblymen, new File("c:/temp/assemblymen.xml"));
+		jaxbMarshaller.marshal(assemblymen, new File("c:/temp/assemblymen.xml"));
 	}
 
 }
