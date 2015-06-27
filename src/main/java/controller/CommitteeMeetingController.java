@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,16 +51,16 @@ public class CommitteeMeetingController {
 			System.out.println(man);
 			Integer assemblyman_id = man.getAssemblyman_id();
 			
-			for(CommitteeMeeting meeting : man.getMettings()){
+			for(CommitteeMeeting meeting : man.getMeetings()){
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
 				
-				committeeMeetingService.insert(meeting);
-				/*try{
+				//committeeMeetingService.insert(meeting);
+				try{
 					committeeMeetingService.insert(meeting);
 				} catch(Exception e) {
 					committeeMeetingService.update(meeting);
-				}*/
+				}
 			}
 		}
 	}
@@ -107,7 +108,7 @@ public class CommitteeMeetingController {
 		committeeMeetingAttend = assemblymanLsit;
 		for (CommitteeAssemblyman man : assemblymanLsit.getAssemblymen()) {
 			System.out.println(man.getAssemblyman_id());
-			System.out.println(man.getMettings());
+			System.out.println(man.getMeetings());
 		}
 
 	}
@@ -119,8 +120,7 @@ public class CommitteeMeetingController {
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		jaxbMarshaller.marshal(committeeMeetingAttend, System.out);
-		jaxbMarshaller
-				.marshal(committeeMeetingAttend, new File("c:/temp/assemblymen.xml"));
+		jaxbMarshaller.marshal(committeeMeetingAttend, new File("c:/temp/assemblymen.xml"));
 	}
 
 

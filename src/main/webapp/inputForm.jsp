@@ -8,9 +8,9 @@
 </head>
 
 <body>
-	<div style="width: 600px; height: 100%; background-color: pink;">
-		<form id="inputForm" action="/WAServer/saveAssemblyman.do"
-			method="get">
+	<div style="width: 600px; height: 650px; background-color: pink; padding: 20px 0px 0px 10px">
+	
+		<form id="inputForm" action="/WAServer/saveAssemblyman.do" method="get">
 
 			<table align="left">
 				<tr>
@@ -23,23 +23,8 @@
 				</tr>
 			</table>
 		</form>
-		<!-- 
-	<form id="inputForm" action="/WAServer/updateAssemblyman.do" method="get">
-
-		<table align="left">
-			<tr>
-				<td>파일경로:</td>
-				<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-			</tr>
-			<tr>
-			<tr>
-				<td><input type="submit" name="Submit" value="update"></td>
-			</tr>
-		</table>
-	</form>
-	 -->
-		<form id="inputForm" action="/WAServer/selectAssemblyman.do"
-			method="get">
+		
+		<form id="inputForm" action="/WAServer/selectAssemblyman.do" method="get">
 
 			<table align="left">
 				<tr>
@@ -53,11 +38,10 @@
 			</table>
 		</form>
 
-		<hr> ============================================================
+		 ==========================================================================
 
 
-		<form id="inputForm" action="/WAServer/saveGeneralMeeting.do"
-			method="get">
+		<form id="inputForm" action="/WAServer/saveGeneralMeeting.do" method="get">
 
 			<table align="left">
 				<tr>
@@ -66,13 +50,13 @@
 				</tr>
 				<tr>
 				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
+					<td><input type="submit" name="Submit" value="insert"></td>
 				</tr>
 			</table>
 		</form>
 
 
-		<br> ============================================================
+		==========================================================================
 
 
 		<form id="inputForm" action="/WAServer/saveBill.do" method="get">
@@ -84,16 +68,15 @@
 				</tr>
 				<tr>
 				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
+					<td><input type="submit" name="Submit" value="insert"></td>
 				</tr>
 			</table>
 		</form>
 
-		<br> ============================================================
+		==========================================================================
 
 
-		<form id="inputForm" action="/WAServer/saveCommitteeMeeting.do"
-			method="get">
+		<form id="inputForm" action="/WAServer/saveCommitteeMeeting.do" method="get">
 
 			<table align="left">
 				<tr>
@@ -102,12 +85,12 @@
 				</tr>
 				<tr>
 				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
+					<td><input type="submit" name="Submit" value="insert"></td>
 				</tr>
 			</table>
 		</form>
 
-		<br> ============================================================
+		==========================================================================
 
 		<form id="inputForm" action="/WAServer/saveVote.do" method="get">
 
@@ -118,12 +101,12 @@
 				</tr>
 				<tr>
 				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
+					<td><input type="submit" name="Submit" value="insert"></td>
 				</tr>
 			</table>
 		</form>
 		
-		<br> ============================================================
+		==========================================================================
 
 		<form id="inputForm" action="/WAServer/saveParty.do" method="get">
 
@@ -134,10 +117,11 @@
 				</tr>
 				<tr>
 				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
+					<td><input type="submit" name="Submit" value="insert"></td>
 				</tr>
 			</table>
 		</form>
+		
 	</div>
 
 </body>

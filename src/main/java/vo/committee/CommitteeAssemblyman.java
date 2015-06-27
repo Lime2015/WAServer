@@ -8,18 +8,20 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import vo.vote.Vote;
+
 @XmlRootElement(name = "assemblyman")
 @XmlAccessorType (XmlAccessType.FIELD)
 public class CommitteeAssemblyman {
-	
+
 	@XmlElement(name = "assemblyman_id")
 	private Integer assemblyman_id;
 	
 	@XmlElementWrapper(name="meetings")
-	@XmlElement(name = "meeting")
-	private List<CommitteeMeeting> mettings;
-
-	///////////////////////////////////////////////////////////////////////
+	@XmlElement(name = "meetings")
+	private List<CommitteeMeeting> meetings;
+	
+	/////////////////////////////////////////////////////////////////////////
 	public Integer getAssemblyman_id() {
 		return assemblyman_id;
 	}
@@ -28,14 +30,13 @@ public class CommitteeAssemblyman {
 		this.assemblyman_id = assemblyman_id;
 	}
 
-	public List<CommitteeMeeting> getMettings() {
-		return mettings;
+	public List<CommitteeMeeting> getMeetings() {
+		return meetings;
 	}
 
-	public void setMettings(List<CommitteeMeeting> mettings) {
-		this.mettings = mettings;
+	public void setMeetings(List<CommitteeMeeting> meetings) {
+		this.meetings = meetings;
 	}
 	
-
 }
 

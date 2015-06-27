@@ -40,11 +40,11 @@ public class VoteController {
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
 
-		System.out.println("saveVote.do");
-		System.out.println("xmlUrl:" + xmlUrl);
+		//System.out.println("saveVote.do");
+		//System.out.println("xmlUrl:" + xmlUrl);
 
 		unMarshalingExample(xmlUrl);
-		System.out.println("unMarshingFinish : " + voteGeneralMeeting);
+		//System.out.println("unMarshingFinish : " + voteGeneralMeeting);
 
 		for (VoteAssemblyman man : voteGeneralMeeting.getAssemblymen()) {
 			
@@ -54,7 +54,7 @@ public class VoteController {
 			for(Vote vote : man.getVotes()){
 				
 				vote.setAssemblyman_id(assemblyman_id);
-				System.out.println("meeting assembly_id : "+ vote.getAssemblyman_id());
+				//System.out.println("meeting assembly_id : "+ vote.getAssemblyman_id());
 				// voteService.insert(vote);
 				
 				try{
@@ -109,8 +109,8 @@ public class VoteController {
 		voteGeneralMeeting = null;
 		voteGeneralMeeting = assemblymanLsit;
 		for (VoteAssemblyman man : assemblymanLsit.getAssemblymen()) {
-			System.out.println(man.getAssemblyman_id());
-			System.out.println(man.getVotes());
+			//System.out.println(man.getAssemblyman_id());
+			//System.out.println(man.getVotes());
 		}
 
 	}
