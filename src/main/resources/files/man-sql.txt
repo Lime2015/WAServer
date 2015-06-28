@@ -77,8 +77,9 @@ create table vote(
 
 create table party_history(
 	update_tag INT(10),
-	member_seq INT(10),
-	party_name VARCHAR(60),
+	history_id VARCHAR(60) NOT NULL primary key,
+	member_seq INT(10) NOT NULL,
+	party_name VARCHAR(60) NOT NULL,
 	in_date VARCHAR(60),
 	out_date VARCHAR(60),
 	note VARCHAR(60)

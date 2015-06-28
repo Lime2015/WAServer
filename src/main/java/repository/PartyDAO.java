@@ -31,9 +31,9 @@ public class PartyDAO {
 		return mapper.update(his);
 	}
 
-	public PartyHistory selectParty(int member_seq) {
+	public PartyHistory selectParty(String history_id) {
 		PartyMapper mapper = session.getMapper(PartyMapper.class);
-		return mapper.selectParty(member_seq);
+		return mapper.selectParty(history_id);
 	}
 
 	public List<PartyHistory> selectList() {

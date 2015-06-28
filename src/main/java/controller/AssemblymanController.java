@@ -84,7 +84,7 @@ public class AssemblymanController {
 		Assemblyman assemblyman = assemblymanService.selectAssemblyman(manId);
 		System.out.println("AssemblymanId" + manId);
 
-		mv.setViewName("viewAssemblyman");
+		mv.setViewName("assemblyman");
 		mv.addObject("result", assemblyman);
 		return mv;
 	}
@@ -100,7 +100,7 @@ public class AssemblymanController {
 		List<Assemblyman> assemblymen = assemblymanService.selectList();
 		System.out.println("Assemblymen : " + assemblymen);
 
-		mv.setViewName("viewAssemblymanList");
+		mv.setViewName("assemblymanList");
 		mv.addObject("list", assemblymen);
 		return mv;
 	}
@@ -128,7 +128,7 @@ public class AssemblymanController {
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		jaxbMarshaller.marshal(assemblymen, System.out);
-		jaxbMarshaller.marshal(assemblymen, new File("c:/temp/assemblymen.xml"));
+		jaxbMarshaller.marshal(assemblymen, new File("c:/temp/assemblymen2.xml"));
 	}
 
 }

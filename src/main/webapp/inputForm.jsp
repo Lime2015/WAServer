@@ -8,179 +8,95 @@
 </head>
 
 <body>
-	<div style="width: 600px; height: 650px; background-color: pink; padding: 20px 0px 0px 10px">
-	
+	<div style="width: 600px; height: 100%; background-color: pink; padding: 20px 30px 150px 30px">
 		<form id="inputForm" action="/WAServer/saveAssemblyman.do" method="get">
 
-			<table align="left">
-				<tr>
-					<td>의원 파일경로:</td>
-					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="insert"></td>
-				</tr>
-			</table>
+				<h5>의원 파일경로 (assemblymen.xml)</h5> 
+				<input id="xmlUrl" type="text" name="xmlUrl">
+				<input type="submit" name="Submit" value="insert">
 		</form>
-		
+		<br/>
 		<form id="inputForm" action="/WAServer/selectAssemblyman.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>의원번호:</td>
-					<td><input id="manId" type="text" name="manId"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
-				</tr>
-			</table>
+				<h5>의원번호</h5>	
+				<input id="manId" type="text" name="manId">
+				<input type="submit" name="Submit" value="select">
 		</form>
-
-		 ==========================================================================
-
-
-		<form id="inputForm" action="/WAServer/saveGeneralMeeting.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>general :</td>
-					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="insert"></td>
-				</tr>
-			</table>
-		</form>
+		<br/>
+		<hr>
 		
-		<form id="inputForm" action="/WAServer/selectGeneralMeeting.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>회의번호 :</td>
-					<td><input id="general_id" type="text" name="general_id"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
-				</tr>
-			</table>
-		</form>
-
-
-		==========================================================================
-
-
 		<form id="inputForm" action="/WAServer/saveBill.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>bill :</td>
-					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="insert"></td>
-				</tr>
-			</table>
+				<h5>bill (bill.xml)</h5>
+				<input id="xmlUrl" type="text" name="xmlUrl">
+				<input type="submit" name="Submit" value="insert">
 		</form>
 		
 		<form id="inputForm" action="/WAServer/selectBill.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>법안번호 :</td>
-					<td><input id="bill_id" type="text" name="bill_id"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
-				</tr>
-			</table>
+				<h5>법안번호</h5> 
+				<input id="bill_id" type="text" name="bill_id">
+				<input type="submit" name="Submit" value="select">
 		</form>
+		<br/>
+		<hr>
 
-		==========================================================================
-
-
+		<form id="inputForm" action="/WAServer/saveGeneralMeeting.do" method="get">
+				<h5>general (general_meeting_attend.xml)</h5>
+				<input id="xmlUrl" type="text" name="xmlUrl">
+				<input type="submit" name="Submit" value="insert">
+		</form>
+		
+		<form id="inputForm" action="/WAServer/selectGeneralMeeting.do" method="get">
+					<h5>회의번호 </h5>
+					<input id="general_id" type="text" name="general_id">
+					<input type="submit" name="Submit" value="select">
+		</form>
+		<br/>
+		<hr>
+		
 		<form id="inputForm" action="/WAServer/saveCommitteeMeeting.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>committee :</td>
-					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="insert"></td>
-				</tr>
-			</table>
+				<h5>committee (stand_committee_meeting_attend.xml)</h5>
+				<input id="xmlUrl" type="text" name="xmlUrl">
+				<input type="submit" name="Submit" value="insert">
 		</form>
 		
 		<form id="inputForm" action="/WAServer/selectCommitteeMeeting.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>위원회번호 :</td>
-					<td><input id="committee_id" type="text" name="committee_id"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
-				</tr>
-			</table>
+				<h5>위원회번호</h5>
+				<input id="committee_id" type="text" name="committee_id">
+				<input type="submit" name="Submit" value="select">
 		</form>
 		
-
-		==========================================================================
+		<br/>
+		<hr>
 
 		<form id="inputForm" action="/WAServer/saveVote.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>vote :</td>
-					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="insert"></td>
-				</tr>
-			</table>
+				<h5>vote (general_meeting_vote.xml)</h5> 
+				<input id="xmlUrl" type="text" name="xmlUrl">
+				<input type="submit" name="Submit" value="insert">
 		</form>
 		
 		<form id="inputForm" action="/WAServer/selectVote.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>투표번호 :</td>
-					<td><input id="vote_id" type="text" name="vote_id"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="select"></td>
-				</tr>
-			</table>
+				<h5>vote num</h5>
+				<input id="vote_id" type="text" name="vote_id">
+				<input type="submit" name="Submit" value="select">
 		</form>
-		
-		==========================================================================
+		<br/>
+		<hr>
+
 
 		<form id="inputForm" action="/WAServer/saveParty.do" method="get">
-
-			<table align="left">
-				<tr>
-					<td>party :</td>
-					<td><input id="xmlUrl" type="text" name="xmlUrl"></td>
-				</tr>
-				<tr>
-				<tr>
-					<td><input type="submit" name="Submit" value="insert"></td>
-				</tr>
-			</table>
+				<h5>party (party_histories.xml)</h5>
+				<input id="xmlUrl" type="text" name="xmlUrl">
+				<input type="submit" name="Submit" value="insert">
 		</form>
 		
+		<form id="inputForm" action="/WAServer/selectVote.do" method="get">
+				<h5>상태번호</h5>
+				<input id="history_id" type="text" name="histoy_id">
+				<input type="submit" name="Submit" value="select">
+		</form>
+		<br/>
+		<hr>
+		
 	</div>
-
 </body>
 </html>
 

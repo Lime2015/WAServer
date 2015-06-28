@@ -47,52 +47,41 @@ public class PartyHistoryController {
 		for (PartyHistory his : partyHistories.getPartyHistories()) {
 
 			System.out.println(his);
+			//프라임키 생성 party_name + memver_seq + in_date
+			String history_id = his.getParty_name() +"-" + his.getMember_seq() +"-"+ his.getIn_date();
+			System.out.println("history_id : " + history_id);
+			his.setHistory_id(history_id);
 			
 			try{
-			partyService.insert(his);
+				System.out.println("insert");
+				his.setUpdate_tag(1);
+				partyService.insert(his);
+				
 			} catch(Exception e) {
+				System.out.println("update");
+				
+				Integer ver = partyService.selectParty(history_id).getUpdate_tag();
+				
+				System.out.println("update ver :" + ver);
+				his.setUpdate_tag(ver + 1);
+				
 				partyService.update(his);
 			}
 		}
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// updateAssemblyman.do
-	/*
-	@RequestMapping(value = "updateAssemblyman.do", method = RequestMethod.GET)
-	public void updateAssemblyman(String xmlUrl, HttpServletResponse response,
-			HttpServletRequest request) throws JAXBException {
-
-		System.out.println("updateAssemblyman.do");
-		System.out.println("xmlUrl:" + xmlUrl);
-
-		unMarshalingExample(xmlUrl);
-		System.out.println(assemblymen);
-
-		for (Assemblyman man : assemblymen.getAssemblymen()) {
-
-			// mo_dttm 을 update 시간으로 변경
-			Date date = new Date();
-			man.setMod_dttm(date.toString());
-			System.out.println(date.toString());
-			System.out.println(man);
-
-			assemblymanService.update(man);
-		}
-	}
-*/
-	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selecParty.do
+	// selectParty.do
 	@RequestMapping(value = "selectParty.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int member_seq,
+	public ModelAndView selectAssemblyman(String history_id,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		PartyHistory partyHistory = partyService.selectParty(member_seq);
-		System.out.println("member_seq" + member_seq);
+		PartyHistory partyHistory = partyService.selectParty(history_id);
+		System.out.println("history_id" + history_id);
 
-		mv.setViewName("viewPartyHistoy");
+		mv.setViewName("partyHistoy");
 		mv.addObject("result", partyHistory);
 		return mv;
 	}
@@ -108,7 +97,7 @@ public class PartyHistoryController {
 		List<PartyHistory> partyHistories = partyService.selectList();
 		System.out.println("partyHistories : " + partyHistories);
 
-		mv.setViewName("viewPartyHistoryList");
+		mv.setViewName("partyHistoryList");
 		mv.addObject("list", partyHistories);
 		return mv;
 	}
@@ -136,7 +125,7 @@ public class PartyHistoryController {
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		jaxbMarshaller.marshal(partyHistories, System.out);
-		jaxbMarshaller.marshal(partyHistories, new File("c:/temp/assemblymen.xml"));
+		jaxbMarshaller.marshal(partyHistories, new File("c:/temp/party_history2.xml"));
 	}
 
 }

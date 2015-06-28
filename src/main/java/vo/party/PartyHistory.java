@@ -8,25 +8,26 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType (XmlAccessType.FIELD)
 public class PartyHistory {
 	
-	private Integer assemblyman_id;
 	private Integer update_tag;
+	private String history_id;
 	
 	private Integer member_seq;
 	private String party_name;
 	private String in_date;
 	private String out_date;
 	private String note;
-	public Integer getAssemblyman_id() {
-		return assemblyman_id;
-	}
-	public void setAssemblyman_id(Integer assemblyman_id) {
-		this.assemblyman_id = assemblyman_id;
-	}
+	
 	public Integer getUpdate_tag() {
 		return update_tag;
 	}
 	public void setUpdate_tag(Integer update_tag) {
 		this.update_tag = update_tag;
+	}
+	public String getHistory_id() {
+		return history_id;
+	}
+	public void setHistory_id(String history_id) {
+		this.history_id = history_id;
 	}
 	public Integer getMember_seq() {
 		return member_seq;
@@ -61,10 +62,10 @@ public class PartyHistory {
 	
 	@Override
 	public String toString() {
-		return "PartyHistory [assemblyman_id=" + assemblyman_id
-				+ ", update_tag=" + update_tag + ", member_seq=" + member_seq
-				+ ", party_name=" + party_name + ", in_date=" + in_date
-				+ ", out_date=" + out_date + ", note=" + note + "]";
+		return "PartyHistory [update_tag=" + update_tag + ", history_id="
+				+ history_id + ", member_seq=" + member_seq + ", party_name="
+				+ party_name + ", in_date=" + in_date + ", out_date="
+				+ out_date + ", note=" + note + "]";
 	}
 
 }

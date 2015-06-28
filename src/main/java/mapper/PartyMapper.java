@@ -8,7 +8,7 @@ public interface PartyMapper {
 
 	public int insert(PartyHistory his);
 	public int update(PartyHistory his);
-	public PartyHistory selectParty(int member_seq);
+	public PartyHistory selectParty(String history_id);
 	public List<PartyHistory> selectList();
 
 }
