@@ -25,8 +25,8 @@ public class VoteService {
 	public int update(Vote vote) {
 		return voteDAO.update(vote);
 	}
-	public Vote selectVote(int bill_no) {
-		return voteDAO.selectVote(bill_no);
+	public Vote selectVote(String vote_id) {
+		return voteDAO.selectVote(vote_id);
 	}
 	public List<Vote> selectList() {
 		return voteDAO.selectList();

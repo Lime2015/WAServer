@@ -29,9 +29,9 @@ public class VoteDAO {
 		VoteMapper mapper = session.getMapper(VoteMapper.class);
 		return mapper.update(vote);
 	}
-	public Vote selectVote(int bill_no) {
+	public Vote selectVote(String vote_id) {
 		VoteMapper mapper = session.getMapper(VoteMapper.class);
-		return mapper.selectVote(bill_no);
+		return mapper.selectVote(vote_id);
 	}
 
 	public List<Vote> selectList() {

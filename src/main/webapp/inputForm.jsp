@@ -149,6 +149,20 @@
 			</table>
 		</form>
 		
+		<form id="inputForm" action="/WAServer/selectVote.do" method="get">
+
+			<table align="left">
+				<tr>
+					<td>투표번호 :</td>
+					<td><input id="vote_id" type="text" name="vote_id"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
+		
 		==========================================================================
 
 		<form id="inputForm" action="/WAServer/saveParty.do" method="get">

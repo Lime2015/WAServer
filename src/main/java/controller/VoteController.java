@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import service.VoteService;
 import vo.vote.Vote;
@@ -48,7 +50,7 @@ public class VoteController {
 
 		for (VoteAssemblyman man : voteGeneralMeeting.getAssemblymen()) {
 			
-			System.out.println(man);
+			logger.info("man :", man);
 			Integer assemblyman_id = man.getAssemblyman_id();
 			
 			for(Vote vote : man.getVotes()){
@@ -57,9 +59,22 @@ public class VoteController {
 				//System.out.println("meeting assembly_id : "+ vote.getAssemblyman_id());
 				// voteService.insert(vote);
 				
+				//프라임키 생성 assembly_id + bill_no
+				String vote_id = assemblyman_id +"-" +vote.getBill_no();
+				System.out.println("vote_id : " + vote_id);
+				vote.setVote_id(vote_id);
+				
 				try{
+					System.out.println("insert");
+					vote.setUpdate_tag(1);
 					voteService.insert(vote);
+					
 				} catch(Exception e) {
+					System.out.println("update");
+					Integer ver = voteService.selectVote(vote_id).getUpdate_tag();
+					
+					System.out.println("update ver :" + ver);
+					vote.setUpdate_tag(ver + 1);
 					voteService.update(vote);
 				}
 			}
@@ -67,36 +82,36 @@ public class VoteController {
 	}
 	
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selectAssemblyman.do
-/*	@RequestMapping(value = "selectAssemblyman.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int manId,
+	// selectVote.do
+	@RequestMapping(value = "selectVote.do", method = RequestMethod.GET)
+	public ModelAndView selectAssemblyman(String vote_id,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		Assemblyman assemblyman = assemblymanService.selectAssemblyman(manId);
-		System.out.println("AssemblymanId" + manId);
+		Vote vote = voteService.selectVote(vote_id);
+		System.out.println("vote_id" + vote_id);
 
-		mv.setViewName("viewAssemblyman");
-		mv.addObject("result", assemblyman);
+		mv.setViewName("Vote");
+		mv.addObject("result", vote);
 		return mv;
-	}*/
+	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selectListAssemblyman.do
-/*	@RequestMapping(value = "selectListAssemblyman.do", method = RequestMethod.GET)
+	// selectListVote.do
+	@RequestMapping(value = "selectListVote.do", method = RequestMethod.GET)
 	public ModelAndView selecList(HttpServletRequest request,
 			HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		List<Assemblyman> assemblymen = assemblymanService.selectList();
-		System.out.println("Assemblymen : " + assemblymen);
+		List<Vote> votes = voteService.selectList();
+		System.out.println("votes : " + votes);
 
-		mv.setViewName("viewAssemblymanList");
-		mv.addObject("list", assemblymen);
+		mv.setViewName("voteList");
+		mv.addObject("list", votes);
 		return mv;
-	}*/
+	}
 
 	// ////////////////////////////////////////////////////////////
 	private static void unMarshalingExample(String url) throws JAXBException {
@@ -123,7 +138,7 @@ public class VoteController {
 
 		jaxbMarshaller.marshal(voteGeneralMeeting, System.out);
 		jaxbMarshaller
-				.marshal(voteGeneralMeeting, new File("c:/temp/assemblymen.xml"));
+				.marshal(voteGeneralMeeting, new File("c:/temp/votes2.xml"));
 	}
 
 
