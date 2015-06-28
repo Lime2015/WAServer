@@ -62,7 +62,7 @@ public class AssemblymanController {
 				assemblymanService.insert(man);
 			} catch(Exception e) {
 				
-				Integer manId = man.getAssemblyman_id();
+				String manId = man.getAssemblyman_id();
 				Integer ver = assemblymanService.selectAssemblyman(manId).getUpdate_tag();
 				
 				System.out.println("update ver :" + ver);
@@ -76,7 +76,7 @@ public class AssemblymanController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectAssemblyman.do
 	@RequestMapping(value = "selectAssemblyman.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int manId,
+	public ModelAndView selectAssemblyman(String manId,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();

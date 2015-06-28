@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class BillAssemblyman {
 
 	@XmlElement(name = "assemblyman_id")
-	private Integer assemblyman_id;
+	private String assemblyman_id;
 	@XmlElement(name = "assemblyman_name")
 	private String assemblyman_name;
 
@@ -22,11 +22,11 @@ public class BillAssemblyman {
 	private List<Bill> bills;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////
-	public Integer getAssemblyman_id() {
+	public String getAssemblyman_id() {
 		return assemblyman_id;
 	}
 
-	public void setAssemblyman_id(Integer assemblyman_id) {
+	public void setAssemblyman_id(String assemblyman_id) {
 		this.assemblyman_id = assemblyman_id;
 	}
 

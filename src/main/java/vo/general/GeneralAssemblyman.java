@@ -13,18 +13,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class GeneralAssemblyman 
 {
 	@XmlElement(name = "assemblyman_id")
-	private Integer assemblyman_id;
+	private String assemblyman_id;
 	
 	@XmlElementWrapper(name="meetings")
 	@XmlElement(name = "meeting")
 	private List<GeneralMeeting> mettings;
 	
 	///////////////////////////////////////////////////////////////////////
-	public Integer getAssemblyman_id() {
+	public String getAssemblyman_id() {
 		return assemblyman_id;
 	}
 
-	public void setAssemblyman_id(Integer assemblyman_id) {
+	public void setAssemblyman_id(String assemblyman_id) {
 		this.assemblyman_id = assemblyman_id;
 	}
 

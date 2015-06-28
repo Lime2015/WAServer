@@ -8,11 +8,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Bill {
 	
-	private Integer assemblyman_id;
+	private String assemblyman_id;
 	private Integer update_tag;
 	
 	private Integer bill_seq;
-	private Integer bill_no;
+	private String bill_no;
 	private String bill_status;
 	private String bill_title;
 	private String proposer_info;
@@ -27,10 +27,10 @@ public class Bill {
 	private String bill_target_url;
 	
 	///////////////////////////////////////////////////////////////////////////////////
-	public Integer getAssemblyman_id() {
+	public String getAssemblyman_id() {
 		return assemblyman_id;
 	}
-	public void setAssemblyman_id(Integer assemblyman_id) {
+	public void setAssemblyman_id(String assemblyman_id) {
 		this.assemblyman_id = assemblyman_id;
 	}
 	public Integer getUpdate_tag() {
@@ -45,10 +45,10 @@ public class Bill {
 	public void setBill_seq(Integer bill_seq) {
 		this.bill_seq = bill_seq;
 	}
-	public Integer getBill_no() {
+	public String getBill_no() {
 		return bill_no;
 	}
-	public void setBill_no(Integer bill_no) {
+	public void setBill_no(String bill_no) {
 		this.bill_no = bill_no;
 	}
 	public String getBill_status() {

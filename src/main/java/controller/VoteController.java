@@ -51,7 +51,7 @@ public class VoteController {
 		for (VoteAssemblyman man : voteGeneralMeeting.getAssemblymen()) {
 			
 			logger.info("man :", man);
-			Integer assemblyman_id = man.getAssemblyman_id();
+			String assemblyman_id = man.getAssemblyman_id();
 			
 			for(Vote vote : man.getVotes()){
 				

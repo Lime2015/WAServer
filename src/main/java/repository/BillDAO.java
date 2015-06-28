@@ -31,9 +31,9 @@ public class BillDAO {
 		return mapper.update(bill);
 	}
 
-	public Bill selectBill(int bill_id) {
+	public Bill selectBill(String bill_no) {
 		BillMapper mapper = session.getMapper(BillMapper.class);
-		return mapper.selectBill(bill_id);
+		return mapper.selectBill(bill_no);
 	}
 
 	public List<Bill> selectList() {

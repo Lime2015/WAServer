@@ -42,16 +42,16 @@ public class BillController {
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
 
-		System.out.println("saveBill.do");
-		System.out.println("xmlUrl:" + xmlUrl);
+		//System.out.println("saveBill.do");
+		//System.out.println("xmlUrl:" + xmlUrl);
 
 		unMarshalingExample(xmlUrl);
-		System.out.println("unMarshingFinish : " + billInfo);
+		//System.out.println("unMarshingFinish : " + billInfo);
 
 		for (BillAssemblyman man : billInfo.getAssemblymen()) {
 			
 			logger.info("man :", man);
-			Integer assemblyman_id = man.getAssemblyman_id();
+			String assemblyman_id = man.getAssemblyman_id();
 			
 			for(Bill bill : man.getBills()){
 				
@@ -61,16 +61,20 @@ public class BillController {
 				
 				try{
 					//처음 insert update_tag = 1
+					//System.out.println(bill.getBill_no());
 					bill.setUpdate_tag(1);
 					billService.insert(bill);
 					
 				} catch(Exception e) {
-
-					Integer bill_no = bill.getBill_no();
-					Integer ver = billService.selectBill(bill_no).getUpdate_tag();
 					
+					//System.out.println("update");
+					//System.out.println(bill.getBill_no());
+
+					String bill_no = bill.getBill_no();
+					Integer ver = billService.selectBill(bill_no).getUpdate_tag();
 					System.out.println("update ver :" + ver);
-					bill.setUpdate_tag(ver + 1);
+					
+					//bill.setUpdate_tag(ver + 1);
 					
 					billService.update(bill);
 				}
@@ -81,7 +85,7 @@ public class BillController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectBill.do
 	@RequestMapping(value = "selectBill.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int bill_id, 
+	public ModelAndView selectAssemblyman(String bill_id, 
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
@@ -120,11 +124,11 @@ public class BillController {
 		BillInfo assemblymanLsit = (BillInfo) jaxbUnmarshaller.unmarshal(file);
 		billInfo = null;
 		billInfo = assemblymanLsit;
-		for (BillAssemblyman man : assemblymanLsit.getAssemblymen()) {
+		/*for (BillAssemblyman man : assemblymanLsit.getAssemblymen()) {
 			System.out.println(man.getAssemblyman_id());
 			System.out.println(man.getBills());
-		}
-
+		}*/
+		 
 	}
 
 	private static void marshalingExample() throws JAXBException {

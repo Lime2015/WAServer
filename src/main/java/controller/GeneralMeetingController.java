@@ -51,7 +51,7 @@ public class GeneralMeetingController {
 		for (GeneralAssemblyman man : generalMeetingAttend.getAssemblymen()) {
 			
 			logger.info("man :", man);
-			Integer assemblyman_id = man.getAssemblyman_id();
+			String assemblyman_id = man.getAssemblyman_id();
 			
 			for(GeneralMeeting meeting : man.getMettings()){
 				
@@ -127,10 +127,10 @@ public class GeneralMeetingController {
 		GeneralMeetingAttend assemblymanLsit = (GeneralMeetingAttend) jaxbUnmarshaller.unmarshal(file);
 		generalMeetingAttend = null;
 		generalMeetingAttend = assemblymanLsit;
-		for (GeneralAssemblyman man : assemblymanLsit.getAssemblymen()) {
+		/*for (GeneralAssemblyman man : assemblymanLsit.getAssemblymen()) {
 			System.out.println(man.getAssemblyman_id());
 			System.out.println(man.getMettings());
-		}
+		}*/
 
 	}
 

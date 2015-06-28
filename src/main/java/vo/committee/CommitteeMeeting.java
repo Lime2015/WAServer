@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType (XmlAccessType.FIELD)
 public class CommitteeMeeting {
 	
-	private Integer assemblyman_id;
+	private String assemblyman_id;
 	private Integer update_tag;
 	private String committee_id;
 
@@ -20,10 +20,10 @@ public class CommitteeMeeting {
 	private String attend_status;
 	
 	//////////////////////////////////////////////////////////////////////////////
-	public Integer getAssemblyman_id() {
+	public String getAssemblyman_id() {
 		return assemblyman_id;
 	}
-	public void setAssemblyman_id(Integer assemblyman_id) {
+	public void setAssemblyman_id(String assemblyman_id) {
 		this.assemblyman_id = assemblyman_id;
 	}
 	public Integer getUpdate_tag() {

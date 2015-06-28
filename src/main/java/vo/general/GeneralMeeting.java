@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType (XmlAccessType.FIELD)
 public class GeneralMeeting {
 	
-	private Integer assemblyman_id;
+	private String assemblyman_id;
 	private Integer update_tag;
 	private String general_id;
 	
@@ -27,10 +27,10 @@ public class GeneralMeeting {
 		this.mod_dttm = mod_dttm;
 	}
 	
-	public Integer getAssemblyman_id() {
+	public String getAssemblyman_id() {
 		return assemblyman_id;
 	}
-	public void setAssemblyman_id(Integer assemblyman_id) {
+	public void setAssemblyman_id(String assemblyman_id) {
 		this.assemblyman_id = assemblyman_id;
 	}
 	public String getGeneral_id() {

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import repository.BillDAO;
 import vo.bill.Bill;
-import vo.general.GeneralMeeting;
 
 @Component
 public class BillService {
@@ -26,8 +25,8 @@ public class BillService {
 	public int update(Bill bill) {
 		return billDAO.update(bill);
 	}
-	public Bill selectBill(int bill_id){
-		return billDAO.selectBill(bill_id);
+	public Bill selectBill(String bill_no){
+		return billDAO.selectBill(bill_no);
 	}
 	public List<Bill> selectList(){
 		return billDAO.selectList();

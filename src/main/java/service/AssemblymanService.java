@@ -25,7 +25,7 @@ public class AssemblymanService {
 	public int update(Assemblyman man){
 		return assemblymanDAO.update(man);
 	}
-	public Assemblyman selectAssemblyman(int manId){
+	public Assemblyman selectAssemblyman(String manId){
 		return assemblymanDAO.selectAssemblyman(manId);
 	}
 	public List<Assemblyman> selectList(){

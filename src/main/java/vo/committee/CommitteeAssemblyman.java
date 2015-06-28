@@ -15,18 +15,18 @@ import vo.vote.Vote;
 public class CommitteeAssemblyman {
 
 	@XmlElement(name = "assemblyman_id")
-	private Integer assemblyman_id;
+	private String assemblyman_id;
 	
 	@XmlElementWrapper(name="meetings")
 	@XmlElement(name = "meetings")
 	private List<CommitteeMeeting> meetings;
 	
 	/////////////////////////////////////////////////////////////////////////
-	public Integer getAssemblyman_id() {
+	public String getAssemblyman_id() {
 		return assemblyman_id;
 	}
 
-	public void setAssemblyman_id(Integer assemblyman_id) {
+	public void setAssemblyman_id(String assemblyman_id) {
 		this.assemblyman_id = assemblyman_id;
 	}
 

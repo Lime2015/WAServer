@@ -8,7 +8,7 @@ public interface BillMapper {
 
 	public int insert(Bill bill);
 	public int update(Bill bill);
-	public Bill selectBill(int bill_id);
+	public Bill selectBill(String bill_no);
 	public List<Bill> selectList();
 
 }

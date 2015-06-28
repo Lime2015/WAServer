@@ -50,15 +50,15 @@ public class CommitteeMeetingController {
 		for (CommitteeAssemblyman man : committeeMeetingAttend.getAssemblymen()) {
 			
 			System.out.println(man);
-			Integer assemblyman_id = man.getAssemblyman_id();
+			String assemblyman_id = man.getAssemblyman_id();
 			
 			for(CommitteeMeeting meeting : man.getMeetings()){
 				
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
 				
-				//프라임키 생성 assembly_id + meeting_id
-				String committee_id = assemblyman_id +"-" +meeting.getMeeting_date();
+				//프라임키 생성 assembly_id + meeting_name + meeting_order
+				String committee_id = assemblyman_id +"-"+meeting.getMeeting_name()+"-"+meeting.getMeeting_order();
 				System.out.println("committee : " + committee_id);
 				meeting.setCommittee_id(committee_id);
 				
@@ -122,10 +122,10 @@ public class CommitteeMeetingController {
 		CommitteeMeetingAttend assemblymanLsit = (CommitteeMeetingAttend) jaxbUnmarshaller.unmarshal(file);
 		committeeMeetingAttend = null;
 		committeeMeetingAttend = assemblymanLsit;
-		for (CommitteeAssemblyman man : assemblymanLsit.getAssemblymen()) {
+		/*for (CommitteeAssemblyman man : assemblymanLsit.getAssemblymen()) {
 			System.out.println(man.getAssemblyman_id());
 			System.out.println(man.getMeetings());
-		}
+		}*/
 
 	}
 
