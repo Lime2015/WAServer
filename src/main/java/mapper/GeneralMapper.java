@@ -8,7 +8,7 @@ public interface GeneralMapper {
 	
 	public int insert(GeneralMeeting meeting);
 	public int update(GeneralMeeting meeting);
-	public GeneralMeeting selectGeneralMeeting(int meeting_id);
+	public GeneralMeeting selectGeneralMeeting(String general_id);
 	public List<GeneralMeeting> selectList();
 
 }

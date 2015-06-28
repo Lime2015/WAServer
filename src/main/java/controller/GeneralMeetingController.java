@@ -50,32 +50,51 @@ public class GeneralMeetingController {
 
 		for (GeneralAssemblyman man : generalMeetingAttend.getAssemblymen()) {
 			
-			System.out.println(man);
+			logger.info("man :", man);
 			Integer assemblyman_id = man.getAssemblyman_id();
 			
 			for(GeneralMeeting meeting : man.getMettings()){
+				
+				//meeting 마다 assemblyman_id 를 추가 입력
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
-				//generalMeetingService.insert(meeting);
+				
+				//프라임키 생성
+				String general_id = assemblyman_id +"-" +meeting.getMeeting_id();
+				System.out.println("general_id : " + general_id);
+				meeting.setGeneral_id(general_id);
+				
 				try{
+					System.out.println("insert");
+					meeting.setUpdate_tag(1);
 					generalMeetingService.insert(meeting);
+					
 				} catch(Exception e) {
+					System.out.println("update");
+					
+					Integer ver = generalMeetingService.selectGeneralMeeting(general_id).getUpdate_tag();
+					
+					System.out.println("update ver :" + ver);
+					meeting.setUpdate_tag(ver + 1);
+					
 					generalMeetingService.update(meeting);
 				}
+				
 			}
 		}
 	}
 	
+	
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectGeneralMeeting.do
 	@RequestMapping(value = "selectGeneralMeeting.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int meeting_id,
+	public ModelAndView selectGeneralMeeting (String general_id,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		GeneralMeeting generalMeeting = generalMeetingService.selectGeneralMeeting(meeting_id);
-		System.out.println("meeting_id" + meeting_id);
+		GeneralMeeting generalMeeting = generalMeetingService.selectGeneralMeeting(general_id);
+		System.out.println("general_id" + general_id);
 
 		mv.setViewName("generalMeeting");
 		mv.addObject("result", generalMeeting);
@@ -95,6 +114,7 @@ public class GeneralMeetingController {
 
 		mv.setViewName("generalMeetingList");
 		mv.addObject("list", generalMeetings);
+		
 		return mv;
 	}
 
@@ -122,7 +142,7 @@ public class GeneralMeetingController {
 
 		jaxbMarshaller.marshal(generalMeetingAttend, System.out);
 		jaxbMarshaller
-				.marshal(generalMeetingAttend, new File("c:/temp/assemblymen.xml"));
+				.marshal(generalMeetingAttend, new File("c:/temp/general_meeting2.xml"));
 	}
 
 

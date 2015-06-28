@@ -40,12 +40,14 @@ create table bill(
 
 
 create table general_meeting(
-	assemblyman_id INT(10), 
-	meeting_id INT(10) NOT NULL primary key,
+	assemblyman_id INT(10) NOT NULL,
+	update_tag INT(10), 
+	general_id VARCHAR(60) NOT NULL primary key,	
+	meeting_id INT(10) NOT NULL,
 	meeting_order VARCHAR(60),
 	meeting_dttm VARCHAR(60),
-	attend_status VARCHAR(60),
-	update_tag INT(10)
+	attend_status VARCHAR(60)
+	
 );
 
 

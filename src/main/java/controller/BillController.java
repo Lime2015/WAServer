@@ -57,7 +57,7 @@ public class BillController {
 				
 				//bill 마다 assemblyman_id 를 추가 입력
 				bill.setAssemblyman_id(assemblyman_id);
-				System.out.println("assemblyman_id : " + assemblyman_id);
+				System.out.println("assemblyman_id : " + bill.getAssemblyman_id());
 				
 				try{
 					//처음 insert update_tag = 1

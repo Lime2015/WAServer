@@ -29,9 +29,9 @@ public class GeneralMeetingDAO {
 		GeneralMapper mapper = session.getMapper(GeneralMapper.class); 
 		return mapper.update(meeting);
 	}
-	public GeneralMeeting selectGeneralMeeting(int meeting_id) {
+	public GeneralMeeting selectGeneralMeeting(String general_id) {
 		GeneralMapper mapper = session.getMapper(GeneralMapper.class);
-		return mapper.selectGeneralMeeting(meeting_id);
+		return mapper.selectGeneralMeeting(general_id);
 	}
 	public List<GeneralMeeting> selectList() {
 		GeneralMapper mapper = session.getMapper(GeneralMapper.class);
