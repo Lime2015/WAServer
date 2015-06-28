@@ -60,7 +60,7 @@
 			<table align="left">
 				<tr>
 					<td>회의번호 :</td>
-					<td><input id="meeting_id" type="text" name="meeting_Id"></td>
+					<td><input id="general_id" type="text" name="general_id"></td>
 				</tr>
 				<tr>
 				<tr>
@@ -92,7 +92,7 @@
 			<table align="left">
 				<tr>
 					<td>법안번호 :</td>
-					<td><input id="bill_Id" type="text" name="bill_Id"></td>
+					<td><input id="bill_id" type="text" name="bill_id"></td>
 				</tr>
 				<tr>
 				<tr>
@@ -117,6 +117,21 @@
 				</tr>
 			</table>
 		</form>
+		
+		<form id="inputForm" action="/WAServer/selectCommitteeMeeting.do" method="get">
+
+			<table align="left">
+				<tr>
+					<td>위원회번호 :</td>
+					<td><input id="committee_id" type="text" name="committee_id"></td>
+				</tr>
+				<tr>
+				<tr>
+					<td><input type="submit" name="Submit" value="select"></td>
+				</tr>
+			</table>
+		</form>
+		
 
 		==========================================================================
 

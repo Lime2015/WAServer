@@ -5,13 +5,13 @@
 <mapper namespace="mapper.CommitteeMapper">
 	
 	<insert id="insert" parameterType="CommitteeMeeting">
-		insert into committee_meeting (assemblyman_id, update_tag, meeting_id, meeting_name, meeting_order, meeting_date, attend_status) 
-			values(#{assemblyman_id}, #{update_tag}, #{meeting_id}, #{meeting_name}, #{meeting_order}, #{meeting_date}, #{attend_status})
+		insert into committee_meeting (assemblyman_id, update_tag, committee_id, meeting_id, meeting_name, meeting_order, meeting_date, attend_status) 
+			values(#{assemblyman_id}, #{update_tag}, #{committee_id}, #{meeting_id}, #{meeting_name}, #{meeting_order}, #{meeting_date}, #{attend_status})
 	</insert>
  
 	<update id="update" parameterType="CommitteeMeeting">
-		update committee_meeting set update_tag=#{update_tag}, meeting_id=#{meeting_id}, meeting_name=#{meeting_name}, meeting_order=#{meeting_order}, meeting_date=#{meeting_date}, attend_status=#{attend_status}} 
-			where assemblyman_id=#{assemblyman_id}
+		update committee_meeting set assemblyman_id=#{assemblyman_id}, update_tag=#{update_tag}, meeting_id=#{meeting_id}, meeting_name=#{meeting_name}, meeting_order=#{meeting_order}, meeting_date=#{meeting_date}, attend_status=#{attend_status} 
+			where committee_id=#{committee_id}
 	</update>
 
 	<select id="selectList" resultMap="committeeMap">
@@ -19,12 +19,14 @@
 	</select>
 	
 	<select id="selectCommitteeMeeting" parameterType="String" resultMap="committeeMap">
-		select * from committee_meeting where assemblyman_id=#{assemblyman_id}
+		select * from committee_meeting where committee_id=#{committee_id}
 	</select>
 	
 	<resultMap type="CommitteeMeeting" id="committeeMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="update_tag" column="update_tag" />
+		<result property="committee_id" column="committee_id" />
+		
 		<result property="meeting_id" column="meeting_id" />
 		<result property="meeting_name" column="meeting_name" />
 		<result property="meeting_order" column="meeting_order" />

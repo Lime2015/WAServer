@@ -52,12 +52,13 @@ create table general_meeting(
 
 
 create table committee_meeting(
-	assemblyman_id INT(10), 
+	assemblyman_id INT(10) NOT NULL, 
 	update_tag INT(10),
+	committee_id VARCHAR(60) NOT NULL primary key,
 	meeting_id INT(10),
 	meeting_name VARCHAR(100),
 	meeting_order VARCHAR(60),
-	meeting_date VARCHAR(60),
+	meeting_date VARCHAR(60)  NOT NULL,
 	attend_status VARCHAR(60)
 	
 );

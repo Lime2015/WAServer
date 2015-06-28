@@ -10,7 +10,7 @@
 	</insert>
  
 	<update id="update" parameterType="GeneralMeeting">
-		update general_meeting set assemblyman_id=#{assemblyman_id}, update_tag=#{update_tag}, meeting_order=#{meeting_order}, meeting_dttm=#{meeting_dttm}, attend_status=#{attend_status} 
+		update general_meeting set assemblyman_id=#{assemblyman_id}, update_tag=#{update_tag}, meeting_id=#{meeting_id}, meeting_order=#{meeting_order}, meeting_dttm=#{meeting_dttm}, attend_status=#{attend_status} 
 			where general_id=#{general_id}
 	</update>
 
@@ -25,6 +25,7 @@
 	<resultMap type="GeneralMeeting" id="generalMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="update_tag" column="update_tag" />
+		<result property="general_id" column="general_id" />
 		
 		<result property="meeting_id" column="meeting_id" />
 		<result property="meeting_order" column="meeting_order" />

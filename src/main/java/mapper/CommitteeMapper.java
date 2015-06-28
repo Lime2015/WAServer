@@ -8,7 +8,7 @@ public interface CommitteeMapper {
 
 	public int insert(CommitteeMeeting meeting);
 	public int update(CommitteeMeeting meeting);
-	public CommitteeMeeting selectCommitteeMeeting(int meeting_id);
+	public CommitteeMeeting selectCommitteeMeeting(String committee_id);
 	public List<CommitteeMeeting> selectList();
 
 }

@@ -59,7 +59,7 @@ public class GeneralMeetingController {
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
 				
-				//프라임키 생성
+				//프라임키 생성 assembly_id + meeting_id
 				String general_id = assemblyman_id +"-" +meeting.getMeeting_id();
 				System.out.println("general_id : " + general_id);
 				meeting.setGeneral_id(general_id);

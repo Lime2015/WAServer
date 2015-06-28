@@ -81,15 +81,15 @@ public class BillController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectBill.do
 	@RequestMapping(value = "selectBill.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int bill_Id, 
+	public ModelAndView selectAssemblyman(int bill_id, 
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		Bill bill = billService.selectBill(bill_Id);
-		System.out.println("bill_Id" + bill_Id);
+		Bill bill = billService.selectBill(bill_id);
+		System.out.println("bill_id" + bill_id);
 
-		mv.setViewName("bill");
+		mv.setViewName("Bill");
 		mv.addObject("result", bill);
 		
 		return mv;

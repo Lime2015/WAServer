@@ -31,9 +31,9 @@ public class CommitteeMeetingDAO {
 		return mapper.update(meeting);
 	}
 
-	public CommitteeMeeting selectCommitteeMeeting(int meeting_id) {
+	public CommitteeMeeting selectCommitteeMeeting(String committee_id) {
 		CommitteeMapper mapper = session.getMapper(CommitteeMapper.class);
-		return mapper.selectCommitteeMeeting(meeting_id);
+		return mapper.selectCommitteeMeeting(committee_id);
 	}
 
 	public List<CommitteeMeeting> selectList() {

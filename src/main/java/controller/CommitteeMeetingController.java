@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import service.CommitteeMeetingService;
 import vo.committee.CommitteeAssemblyman;
@@ -52,13 +53,28 @@ public class CommitteeMeetingController {
 			Integer assemblyman_id = man.getAssemblyman_id();
 			
 			for(CommitteeMeeting meeting : man.getMeetings()){
+				
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
 				
-				//committeeMeetingService.insert(meeting);
+				//프라임키 생성 assembly_id + meeting_id
+				String committee_id = assemblyman_id +"-" +meeting.getMeeting_date();
+				System.out.println("committee : " + committee_id);
+				meeting.setCommittee_id(committee_id);
+				
 				try{
+					System.out.println("insert");
+					meeting.setUpdate_tag(1);
 					committeeMeetingService.insert(meeting);
+					
 				} catch(Exception e) {
+					System.out.println("update");
+					
+					Integer ver = committeeMeetingService.selectCommitteeMeeting(committee_id).getUpdate_tag();
+					
+					System.out.println("update ver :" + ver);
+					meeting.setUpdate_tag(ver + 1);
+					
 					committeeMeetingService.update(meeting);
 				}
 			}
@@ -66,36 +82,36 @@ public class CommitteeMeetingController {
 	}
 	
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selectAssemblyman.do
-/*	@RequestMapping(value = "selectAssemblyman.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(int manId,
+	// selectCommitteeMeeting.do
+	@RequestMapping(value = "selectCommitteeMeeting.do", method = RequestMethod.GET)
+	public ModelAndView selectCommitteeMeeting(String committee_id,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		Assemblyman assemblyman = assemblymanService.selectAssemblyman(manId);
-		System.out.println("AssemblymanId" + manId);
+		CommitteeMeeting committeeMeeting = committeeMeetingService.selectCommitteeMeeting(committee_id);
+		System.out.println("committee_id" + committee_id);
 
-		mv.setViewName("viewAssemblyman");
-		mv.addObject("result", assemblyman);
+		mv.setViewName("committeeMeeting");
+		mv.addObject("result", committeeMeeting);
 		return mv;
-	}*/
+	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
-	// selectListAssemblyman.do
-/*	@RequestMapping(value = "selectListAssemblyman.do", method = RequestMethod.GET)
+	// selectListCommitteeMeeting.do
+	@RequestMapping(value = "selectListCommitteeMeeting.do", method = RequestMethod.GET)
 	public ModelAndView selecList(HttpServletRequest request,
 			HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		List<Assemblyman> assemblymen = assemblymanService.selectList();
-		System.out.println("Assemblymen : " + assemblymen);
+		List<CommitteeMeeting> committeeMeetings = committeeMeetingService.selectList();
+		System.out.println("committeeMeetings : " + committeeMeetings);
 
-		mv.setViewName("viewAssemblymanList");
-		mv.addObject("list", assemblymen);
+		mv.setViewName("committeeMeetingList");
+		mv.addObject("list", committeeMeetings);
 		return mv;
-	}*/
+	}
 
 	// ////////////////////////////////////////////////////////////
 	private static void unMarshalingExample(String url) throws JAXBException {
