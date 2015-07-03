@@ -62,6 +62,9 @@ public class CommitteeMeetingController {
 				System.out.println("committee : " + committee_id);
 				meeting.setCommittee_id(committee_id);
 				
+				//select sql 구문 생성
+				//String sqlSelect = 
+				
 				try{
 					System.out.println("insert");
 					meeting.setUpdate_tag(1);
