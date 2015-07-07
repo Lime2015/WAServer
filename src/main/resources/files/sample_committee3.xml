@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stand_committee_meeting_attend>
+	<assemblymen>
+		<assemblyman>
+				<assemblyman_id>571</assemblyman_id>
+				<meetings>
+					<meetings>
+						<meeting_id></meeting_id>
+						<meeting_name><![CDATA[국민안전혁신특별위원회]]></meeting_name>
+						<meeting_order><![CDATA[제331회 10차]]></meeting_order>
+						<meeting_date>2015-03-31</meeting_date>
+						<mod_dttm>2015-04-06 11:08:24</mod_dttm>
+						<attend_status><![CDATA[출석]]></attend_status>
+						</meetings>
+					<meetings>
+						<meeting_id></meeting_id>
+						<meeting_name><![CDATA[국민안전혁신특별위원회]]></meeting_name>
+						<meeting_order><![CDATA[제331회 09차]]></meeting_order>
+						<meeting_date>2015-03-17</meeting_date>
+						<mod_dttm>2015-03-23 11:12:45</mod_dttm>
+						<attend_status><![CDATA[출석]]></attend_status>
+						</meetings>
+					<meetings>
+						<meeting_id></meeting_id>
+						<meeting_name><![CDATA[국토교통위원회]]></meeting_name>
+						<meeting_order><![CDATA[제331회 05차]]></meeting_order>
+						<meeting_date>2015-03-10</meeting_date>
+						<mod_dttm>2015-03-23 10:52:44</mod_dttm>
+						<attend_status><![CDATA[출석]]></attend_status>
+						</meetings>
+				</meetings>
+		</assemblyman>
+		<assemblyman>
+			<assemblyman_id>572</assemblyman_id>
+			<meetings>
+				<meetings>
+					<meeting_id></meeting_id>
+					<meeting_name><![CDATA[교육문화체육관광위원회]]></meeting_name>
+					<meeting_order><![CDATA[제332회 02차]]></meeting_order>
+					<meeting_date>2015-04-10</meeting_date>
+					<mod_dttm>2015-04-16 14:00:38</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meetings>
+				<meetings>
+					<meeting_id></meeting_id>
+					<meeting_name><![CDATA[교육문화체육관광위원회]]></meeting_name>
+					<meeting_order><![CDATA[제332회 01차]]></meeting_order>
+					<meeting_date>2015-04-07</meeting_date>
+					<mod_dttm>2015-04-13 10:55:21</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meetings>
+				<meetings>
+					<meeting_id></meeting_id>
+					<meeting_name><![CDATA[교육문화체육관광위원회]]></meeting_name>
+					<meeting_order><![CDATA[제331회 06차]]></meeting_order>
+					<meeting_date>2015-03-03</meeting_date>
+					<mod_dttm>2015-03-13 16:27:29</mod_dttm>
+					<attend_status><![CDATA[출석]]></attend_status>
+					</meetings>
+			</meetings>
+		</assemblyman>
+	</assemblymen>
+</stand_committee_meeting_attend>
+					

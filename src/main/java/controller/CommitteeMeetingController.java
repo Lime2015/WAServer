@@ -30,6 +30,7 @@ public class CommitteeMeetingController {
 
 	private CommitteeMeetingService committeeMeetingService;
 	static CommitteeMeetingAttend committeeMeetingAttend = new CommitteeMeetingAttend();
+	
 
 	@Autowired
 	public void setGeneralMeetingService(CommitteeMeetingService committeeMeetingService) {
@@ -40,6 +41,14 @@ public class CommitteeMeetingController {
 	@RequestMapping(value = "saveCommitteeMeeting.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
+		
+		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
+		
+		try{
+				updateTAG = committeeMeetingService.selectUpdate();
+		} catch(Exception e){
+			updateTAG = 0;
+		}
 
 		System.out.println("saveCommitteeMeeting.do");
 		System.out.println("xmlUrl:" + xmlUrl);
@@ -53,31 +62,22 @@ public class CommitteeMeetingController {
 			String assemblyman_id = man.getAssemblyman_id();
 			
 			for(CommitteeMeeting meeting : man.getMeetings()){
-				
 				meeting.setAssemblyman_id(assemblyman_id);
+				
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
+				System.out.println("updateTAG = " +  updateTAG);
 				
-				//프라임키 생성 assembly_id + meeting_name + meeting_order
-				String committee_id = assemblyman_id +"-"+meeting.getMeeting_name()+"-"+meeting.getMeeting_order();
-				System.out.println("committee : " + committee_id);
-				meeting.setCommittee_id(committee_id);
-				
-				//select sql 구문 생성
-				//String sqlSelect = 
-				
+				//meeting.setUpdate_tag(updateTAG + 1);
+				//committeeMeetingService.insert(meeting);
 				try{
 					System.out.println("insert");
-					meeting.setUpdate_tag(1);
+					meeting.setUpdate_tag(updateTAG + 1);
 					committeeMeetingService.insert(meeting);
 					
 				} catch(Exception e) {
 					System.out.println("update");
 					
-					Integer ver = committeeMeetingService.selectCommitteeMeeting(committee_id).getUpdate_tag();
-					
-					System.out.println("update ver :" + ver);
-					meeting.setUpdate_tag(ver + 1);
-					
+					meeting.setUpdate_tag(updateTAG + 1);
 					committeeMeetingService.update(meeting);
 				}
 			}
@@ -87,16 +87,16 @@ public class CommitteeMeetingController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectCommitteeMeeting.do
 	@RequestMapping(value = "selectCommitteeMeeting.do", method = RequestMethod.GET)
-	public ModelAndView selectCommitteeMeeting(String committee_id,
+	public ModelAndView selectCommitteeMeeting(Object committeeMeeting	,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		CommitteeMeeting committeeMeeting = committeeMeetingService.selectCommitteeMeeting(committee_id);
-		System.out.println("committee_id" + committee_id);
+		CommitteeMeeting committeeMeeting2 = committeeMeetingService.selectCommitteeMeeting(committeeMeeting);
+		//System.out.println("committee_id" + committee_id);
 
 		mv.setViewName("committeeMeeting");
-		mv.addObject("result", committeeMeeting);
+		mv.addObject("result", committeeMeeting2);
 		return mv;
 	}
 
@@ -139,7 +139,7 @@ public class CommitteeMeetingController {
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		jaxbMarshaller.marshal(committeeMeetingAttend, System.out);
-		jaxbMarshaller.marshal(committeeMeetingAttend, new File("c:/temp/assemblymen.xml"));
+		jaxbMarshaller.marshal(committeeMeetingAttend, new File("c:/temp/assemblymen2.xml"));
 	}
 
 

@@ -31,14 +31,19 @@ public class CommitteeMeetingDAO {
 		return mapper.update(meeting);
 	}
 
-	public CommitteeMeeting selectCommitteeMeeting(String committee_id) {
+	public CommitteeMeeting selectCommitteeMeeting(Object committeeMeeting) {
 		CommitteeMapper mapper = session.getMapper(CommitteeMapper.class);
-		return mapper.selectCommitteeMeeting(committee_id);
+		return mapper.selectCommitteeMeeting(committeeMeeting);
 	}
 
 	public List<CommitteeMeeting> selectList() {
 		CommitteeMapper mapper = session.getMapper(CommitteeMapper.class);
 		return mapper.selectList();
+	}
+
+	public int selectUpdate() {
+		CommitteeMapper mapper = session.getMapper(CommitteeMapper.class);
+		return mapper.selectUpdate();
 	}
 
 }

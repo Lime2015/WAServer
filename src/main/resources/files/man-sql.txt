@@ -55,7 +55,6 @@ create table general_meeting(
 create table committee_meeting(
 	assemblyman_id INT(10) NOT NULL, 
 	update_tag INT(10) NOT NULL,
-	committee_id VARCHAR(100),
 	meeting_id INT(10),
 	meeting_name VARCHAR(100) NOT NULL,
 	meeting_order VARCHAR(60) NOT NULL,

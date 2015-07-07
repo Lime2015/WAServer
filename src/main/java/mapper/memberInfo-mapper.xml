@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.MemberInfoMapper">
+	<insert id="insert" parameterType="MemberInfo">
+		insert into member_info(member_id, logon_type_id, member_nickname, address, birth_date, gender) values(#{memberId}, #{logonTypeId}, #{memberNickname}, #{address}, #{birthDate}, #{gender})
+	</insert>
+	<update id="update" parameterType="MemberInfo">
+		update member_info set address=#{address}, birth_date=#{birthDate}, gender=#{gender} where member_id=#{memberId}
+	</update>
+	<select id="select" parameterType="String" resultMap="MemberInfoMap">
+		select * from member_info where member_id=#{memberId}
+	</select>
+	
+	<resultMap type="MemberInfo" id="MemberInfoMap">
+		<result property="memberId" column="member_id"/>
+		<result property="logonTypeId" column="logon_type_id"/>
+		<result property="memberNickname" column="member_nickname"/>
+		<result property="address" column="address"/>
+		<result property="birthDate" column="birth_date"/>
+		<result property="gender" column="gender"/>
+	</resultMap>
+</mapper>

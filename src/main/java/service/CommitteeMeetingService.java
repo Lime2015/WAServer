@@ -25,11 +25,14 @@ public class CommitteeMeetingService {
 	public int update(CommitteeMeeting meeting) {
 		return committeeMeetingDAO.update(meeting);
 	}
-	public CommitteeMeeting selectCommitteeMeeting(String committee_id){
-		return committeeMeetingDAO.selectCommitteeMeeting(committee_id);
+	public CommitteeMeeting selectCommitteeMeeting(Object committeeMeeting){
+		return committeeMeetingDAO.selectCommitteeMeeting(committeeMeeting);
 	}
 	public List<CommitteeMeeting> selectList(){
 		return committeeMeetingDAO.selectList();
+	}
+	public int selectUpdate(){
+		return committeeMeetingDAO.selectUpdate();
 	}
 	
 }
