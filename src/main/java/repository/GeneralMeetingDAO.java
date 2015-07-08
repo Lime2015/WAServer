@@ -38,4 +38,9 @@ public class GeneralMeetingDAO {
 		return mapper.selectList();
 	}
 
+	public int selectUpdate() {
+		GeneralMapper mapper = session.getMapper(GeneralMapper.class);
+		return mapper.selectUpdate();
+	}
+
 }

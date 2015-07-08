@@ -9,5 +9,6 @@ public interface ManMapper {
 	public int update(Assemblyman man);
 	public List<Assemblyman> selectList();
 	public Assemblyman selectAssemblyman(String manId);
+	public int selectUpdate();
 
 }

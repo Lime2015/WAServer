@@ -42,6 +42,15 @@ public class GeneralMeetingController {
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
 
+		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
+		
+		try{
+				updateTAG = generalMeetingService.selectUpdate();
+		} catch(Exception e){
+			updateTAG = 0;
+		}
+
+
 		System.out.println("saveGeneralMeeting.do");
 		System.out.println("xmlUrl:" + xmlUrl);
 
@@ -59,24 +68,14 @@ public class GeneralMeetingController {
 				meeting.setAssemblyman_id(assemblyman_id);
 				System.out.println("meeting assembly_id : "+ meeting.getAssemblyman_id());
 				
-				//프라임키 생성 assembly_id + meeting_id
-				String general_id = assemblyman_id +"-" +meeting.getMeeting_id();
-				System.out.println("general_id : " + general_id);
-				meeting.setGeneral_id(general_id);
-				
 				try{
 					System.out.println("insert");
-					meeting.setUpdate_tag(1);
+					meeting.setUpdate_tag(updateTAG + 1);
 					generalMeetingService.insert(meeting);
 					
 				} catch(Exception e) {
 					System.out.println("update");
-					
-					Integer ver = generalMeetingService.selectGeneralMeeting(general_id).getUpdate_tag();
-					
-					System.out.println("update ver :" + ver);
-					meeting.setUpdate_tag(ver + 1);
-					
+					meeting.setUpdate_tag(updateTAG + 1);
 					generalMeetingService.update(meeting);
 				}
 				

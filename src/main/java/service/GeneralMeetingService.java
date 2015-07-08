@@ -31,6 +31,10 @@ public class GeneralMeetingService {
 	public List<GeneralMeeting> selectList(){
 		return generalMeetingDAO.selectList();
 	}
+
+	public int selectUpdate() {
+		return generalMeetingDAO.selectUpdate();
+	}
 	
 
 }

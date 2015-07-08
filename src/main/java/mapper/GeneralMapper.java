@@ -10,5 +10,6 @@ public interface GeneralMapper {
 	public int update(GeneralMeeting meeting);
 	public GeneralMeeting selectGeneralMeeting(String general_id);
 	public List<GeneralMeeting> selectList();
+	public int selectUpdate();
 
 }

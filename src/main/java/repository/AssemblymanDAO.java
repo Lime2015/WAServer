@@ -41,4 +41,9 @@ public class AssemblymanDAO {
 		return mapper.selectList();
 	}
 
+	public int selectUpdate() {
+		ManMapper mapper=session.getMapper(ManMapper.class);
+		return mapper.selectUpdate();
+	}
+
 }

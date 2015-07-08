@@ -22,6 +22,10 @@
 		select * from assemblyman where assemblyman_id=#{assemblyman_id}
 	</select>
 	
+	<select id="selectUpdate" resultType="int">
+		select MAX(update_tag) from assemblyman;
+	</select>
+	
 	<resultMap type="Assemblyman" id="manMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="assemblyman_name" column="assemblyman_name" />

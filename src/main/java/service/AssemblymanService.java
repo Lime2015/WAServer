@@ -31,5 +31,9 @@ public class AssemblymanService {
 	public List<Assemblyman> selectList(){
 		return assemblymanDAO.selectList();
 	}
+
+	public int selectUpdate() {
+		return assemblymanDAO.selectUpdate();
+	}
 	
 }

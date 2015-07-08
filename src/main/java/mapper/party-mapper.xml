@@ -22,6 +22,10 @@
 		select * from party_history where history_id=#{history_id}
 	</select>
 	
+	<select id="selectUpdate" resultType="int">
+		select MAX(update_tag) from general_meeting;
+	</select>
+	
 	<resultMap type="PartyHistory" id="partyMap">
 		<result property="update_tag" column="update_tag" />
 		<result property="history_id" column="history_id" />

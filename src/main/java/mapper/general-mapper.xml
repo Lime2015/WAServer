@@ -5,13 +5,13 @@
 <mapper namespace="mapper.GeneralMapper">
 	
 	<insert id="insert" parameterType="GeneralMeeting">
-		insert into general_meeting (general_id, assemblyman_id, update_tag, meeting_id, meeting_order, meeting_dttm, attend_status) 
-			values(#{general_id}, #{assemblyman_id}, #{update_tag}, #{meeting_id}, #{meeting_order}, #{meeting_dttm}, #{attend_status})
+		insert into general_meeting (assemblyman_id, update_tag, meeting_id, meeting_order, meeting_dttm, attend_status) 
+			values(#{assemblyman_id}, #{update_tag}, #{meeting_id}, #{meeting_order}, #{meeting_dttm}, #{attend_status})
 	</insert>
  
 	<update id="update" parameterType="GeneralMeeting">
 		update general_meeting set assemblyman_id=#{assemblyman_id}, update_tag=#{update_tag}, meeting_id=#{meeting_id}, meeting_order=#{meeting_order}, meeting_dttm=#{meeting_dttm}, attend_status=#{attend_status} 
-			where general_id=#{general_id}
+			where assemblyman_id=#{assemblyman_id} AND meeting_id=#{meeting_id}
 	</update>
 
 	<select id="selectList" resultMap="generalMap">
@@ -19,13 +19,16 @@
 	</select>
 	
 	<select id="selectGeneralMeeting" parameterType="String" resultMap="generalMap">
-		select * from general_meeting where general_id=#{general_id}
+		select * from general_meeting where assemblyman_id=#{assemblyman_id} AND meeting_id=#{meeting_id}
+	</select>
+	
+	<select id="selectUpdate" resultType="int">
+		select MAX(update_tag) from general_meeting;
 	</select>
 	
 	<resultMap type="GeneralMeeting" id="generalMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="update_tag" column="update_tag" />
-		<result property="general_id" column="general_id" />
 		
 		<result property="meeting_id" column="meeting_id" />
 		<result property="meeting_order" column="meeting_order" />

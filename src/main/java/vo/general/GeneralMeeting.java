@@ -10,7 +10,6 @@ public class GeneralMeeting {
 	
 	private String assemblyman_id;
 	private Integer update_tag;
-	private String general_id;
 	
 	private Integer meeting_id;
 	private String meeting_order;
@@ -32,12 +31,6 @@ public class GeneralMeeting {
 	}
 	public void setAssemblyman_id(String assemblyman_id) {
 		this.assemblyman_id = assemblyman_id;
-	}
-	public String getGeneral_id() {
-		return general_id;
-	}
-	public void setGeneral_id(String general_id) {
-		this.general_id = general_id;
 	}
 	public Integer getMeeting_id() {
 		return meeting_id;
@@ -73,11 +66,10 @@ public class GeneralMeeting {
 	@Override
 	public String toString() {
 		return "GeneralMeeting [assemblyman_id=" + assemblyman_id
-				+ ", update_tag=" + update_tag + ", general_id=" + general_id
-				+ ", meeting_id=" + meeting_id + ", meeting_order="
-				+ meeting_order + ", meeting_dttm=" + meeting_dttm
-				+ ", mod_dttm=" + mod_dttm + ", attend_status=" + attend_status
-				+ "]";
+				+ ", update_tag=" + update_tag + ", meeting_id=" + meeting_id
+				+ ", meeting_order=" + meeting_order + ", meeting_dttm="
+				+ meeting_dttm + ", mod_dttm=" + mod_dttm + ", attend_status="
+				+ attend_status + "]";
 	}
 	
 }

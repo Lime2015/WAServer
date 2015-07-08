@@ -15,7 +15,7 @@ create table assemblyman (
   party_id INT(10),
   party_name VARCHAR(60),
   local_constituency VARCHAR(60),
-  update_tag INT(10)
+  update_tag INT(10) NOT NULL
 );
 
 
@@ -42,7 +42,6 @@ create table bill(
 create table general_meeting(
 	assemblyman_id INT(10) NOT NULL,
 	update_tag INT(10) NOT NULL, 
-	general_id VARCHAR(60),	
 	meeting_id INT(10) NOT NULL,
 	meeting_order VARCHAR(60),
 	meeting_dttm VARCHAR(60),

@@ -41,6 +41,14 @@ public class AssemblymanController {
 	@RequestMapping(value = "saveAssemblyman.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
+		
+		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
+		
+		try{
+				updateTAG = assemblymanService.selectUpdate();
+		} catch(Exception e){
+			updateTAG = 0;
+		}
 
 		System.out.println("saveAssemblyman.do");
 		System.out.println("xmlUrl:" + xmlUrl);
@@ -58,15 +66,12 @@ public class AssemblymanController {
 			
 			try{
 				//처음 insert update_tag = 1
-				man.setUpdate_tag(1);
+				man.setUpdate_tag(updateTAG + 1);
 				assemblymanService.insert(man);
 			} catch(Exception e) {
 				
 				String manId = man.getAssemblyman_id();
-				Integer ver = assemblymanService.selectAssemblyman(manId).getUpdate_tag();
-				
-				System.out.println("update ver :" + ver);
-				man.setUpdate_tag(ver + 1);
+				man.setUpdate_tag(updateTAG + 1);
 				
 				assemblymanService.update(man);
 			}
