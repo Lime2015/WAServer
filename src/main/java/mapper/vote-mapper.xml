@@ -26,6 +26,10 @@
 		select MAX(update_tag) from general_meeting;
 	</select>
 	
+	<select id="selectUpdate" resultType="int">
+		select MAX(update_tag) from vote;
+	</select>
+	
 	<resultMap type="Vote" id="voteMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="update_tag" column="update_tag" />

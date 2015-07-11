@@ -41,6 +41,14 @@ public class VoteController {
 	@RequestMapping(value = "saveVote.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
+		
+		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
+		
+		try{
+				updateTAG = voteService.selectUpdate();
+		} catch(Exception e){
+			updateTAG = 0;
+		}
 
 		//System.out.println("saveVote.do");
 		//System.out.println("xmlUrl:" + xmlUrl);
@@ -57,24 +65,19 @@ public class VoteController {
 				
 				vote.setAssemblyman_id(assemblyman_id);
 				//System.out.println("meeting assembly_id : "+ vote.getAssemblyman_id());
-				// voteService.insert(vote);
+				//voteService.insert(vote);
+				System.out.println("updateTAG = " +  updateTAG);
 				
-				//프라임키 생성 assembly_id + bill_no
-				String vote_id = assemblyman_id +"-" +vote.getBill_no();
-				System.out.println("vote_id : " + vote_id);
-				vote.setVote_id(vote_id);
 				
 				try{
 					System.out.println("insert");
-					vote.setUpdate_tag(1);
+					vote.setUpdate_tag(updateTAG + 1);
 					voteService.insert(vote);
 					
 				} catch(Exception e) {
 					System.out.println("update");
-					Integer ver = voteService.selectVote(vote_id).getUpdate_tag();
 					
-					System.out.println("update ver :" + ver);
-					vote.setUpdate_tag(ver + 1);
+					vote.setUpdate_tag(updateTAG + 1);
 					voteService.update(vote);
 				}
 			}

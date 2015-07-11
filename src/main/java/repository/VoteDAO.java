@@ -39,4 +39,9 @@ public class VoteDAO {
 		return mapper.selectList();
 	}
 
+	public int selectUpdate() {
+		VoteMapper mapper = session.getMapper(VoteMapper.class);
+		return mapper.selectUpdate();
+	}
+
 }

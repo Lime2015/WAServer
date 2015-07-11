@@ -10,5 +10,6 @@ public interface VoteMapper {
 	public int update(Vote vote);
 	public Vote selectVote(String vote_id);
 	public List<Vote> selectList();
+	public int selectUpdate();
 
 }

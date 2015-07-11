@@ -40,4 +40,9 @@ public class BillDAO {
 		BillMapper mapper = session.getMapper(BillMapper.class);
 		return mapper.selectList();
 	}
+
+	public int selectUpdate() {
+		BillMapper mapper = session.getMapper(BillMapper.class);
+		return mapper.selectUpdate();
+	}
 }

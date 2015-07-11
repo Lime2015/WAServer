@@ -74,15 +74,14 @@ public class Assemblyman {
 	public void setUpdate_tag(Integer update_tag) {
 		this.update_tag = update_tag;
 	}
-	///////////////////////////////////////////////////////////////////////////
 	@Override
 	public String toString() {
 		return "Assemblyman [assemblyman_id=" + assemblyman_id
-				+ ", assemblyman_name=" + assemblyman_name + ", image_url="
-				+ image_url + ", org_image_url=" + org_image_url
-				+ ", mod_dttm=" + mod_dttm + ", party_id=" + party_id
-				+ ", party_name=" + party_name + ", local_constituency="
-				+ local_constituency + ", update_tag=" + update_tag + "]";
+				+ ", update_tag=" + update_tag + ", assemblyman_name="
+				+ assemblyman_name + ", image_url=" + image_url
+				+ ", org_image_url=" + org_image_url + ", mod_dttm=" + mod_dttm
+				+ ", party_id=" + party_id + ", party_name=" + party_name
+				+ ", local_constituency=" + local_constituency + "]";
 	}
 	
 }

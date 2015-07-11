@@ -32,4 +32,8 @@ public class BillService {
 		return billDAO.selectList();
 	}
 
+	public int selectUpdate() {
+		return billDAO.selectUpdate();
+	}
+
 }

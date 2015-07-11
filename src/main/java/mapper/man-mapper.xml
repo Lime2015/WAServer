@@ -28,6 +28,8 @@
 	
 	<resultMap type="Assemblyman" id="manMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
+		<result property="update_tag" column="update_tag" />
+		
 		<result property="assemblyman_name" column="assemblyman_name" />
 		<result property="image_url" column="image_url" />
 		<result property="org_image_url" column="org_image_url" />
@@ -35,7 +37,7 @@
 		<result property="party_id" column="party_id" />
 		<result property="party_name" column="party_name" />
 		<result property="local_constituency" column="local_constituency" />
-		<result property="update_tag" column="update_tag" />
+		
 	</resultMap>
 	 
 </mapper>

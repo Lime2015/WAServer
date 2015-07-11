@@ -32,4 +32,8 @@ public class VoteService {
 		return voteDAO.selectList();
 	}
 
+	public int selectUpdate() {
+		return voteDAO.selectUpdate();
+	}
+
 }

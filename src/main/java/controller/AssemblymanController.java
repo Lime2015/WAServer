@@ -70,7 +70,7 @@ public class AssemblymanController {
 				assemblymanService.insert(man);
 			} catch(Exception e) {
 				
-				String manId = man.getAssemblyman_id();
+//				String manId = man.getAssemblyman_id();
 				man.setUpdate_tag(updateTAG + 1);
 				
 				assemblymanService.update(man);

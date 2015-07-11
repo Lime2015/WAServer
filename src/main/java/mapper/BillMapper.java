@@ -10,5 +10,6 @@ public interface BillMapper {
 	public int update(Bill bill);
 	public Bill selectBill(String bill_no);
 	public List<Bill> selectList();
+	public int selectUpdate();
 
 }

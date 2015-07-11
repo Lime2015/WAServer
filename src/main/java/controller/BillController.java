@@ -42,6 +42,14 @@ public class BillController {
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
 
+		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
+		
+		try{
+				updateTAG = billService.selectUpdate();
+		} catch(Exception e){
+			updateTAG = 0;
+		}
+
 		//System.out.println("saveBill.do");
 		//System.out.println("xmlUrl:" + xmlUrl);
 
@@ -62,7 +70,7 @@ public class BillController {
 				try{
 					//처음 insert update_tag = 1
 					//System.out.println(bill.getBill_no());
-					bill.setUpdate_tag(1);
+					bill.setUpdate_tag(updateTAG + 1);
 					billService.insert(bill);
 					
 				} catch(Exception e) {
@@ -70,12 +78,11 @@ public class BillController {
 					//System.out.println("update");
 					//System.out.println(bill.getBill_no());
 
-					String bill_no = bill.getBill_no();
-					Integer ver = billService.selectBill(bill_no).getUpdate_tag();
-					System.out.println("update ver :" + ver);
+					//String bill_no = bill.getBill_no();
+					//Integer ver = billService.selectBill(bill_no).getUpdate_tag();
+					//System.out.println("update ver :" + ver);
 					
-					//bill.setUpdate_tag(ver + 1);
-					
+					bill.setUpdate_tag(updateTAG + 1);
 					billService.update(bill);
 				}
 			}
