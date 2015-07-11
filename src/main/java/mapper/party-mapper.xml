@@ -5,30 +5,29 @@
 <mapper namespace="mapper.PartyMapper">
 	
 	<insert id="insert" parameterType="PartyHistory">
-		insert into party_history (update_tag, history_id, member_seq, party_name, in_date, out_date, note) 
-			values(#{update_tag}, #{history_id}, #{member_seq}, #{party_name}, #{in_date}, #{out_date}, #{note})
+		insert into party_history (update_tag, member_seq, party_name, in_date, out_date, note) 
+			values(#{update_tag}, #{member_seq}, #{party_name}, #{in_date}, #{out_date}, #{note})
 	</insert>
  
 	<update id="update" parameterType="PartyHistory">
-		update party_history set update_tag=#{update_tag}, party_name=#{party_name}, in_date=#{in_date}, out_date=#{out_date}, note=#{note} 
-			where history_id=#{history_id}
+		update party_history set update_tag=#{update_tag}, member_seq=#{member_seq}, party_name=#{party_name}, in_date=#{in_date}, out_date=#{out_date}, note=#{note} 
+			where party_name=#{party_name} AND member_seq=#{member_seq} AND in_date=#{in_date}
 	</update>
 
 	<select id="selectList" resultMap="partyMap">
 		select * from party_history;
 	</select>
 	
-	<select id="selectParty" parameterType="String" resultMap="partyMap">
-		select * from party_history where history_id=#{history_id}
+	<select id="selectParty" parameterType="Object" resultMap="partyMap">
+		select * from party_history where party_name=#{party_name} AND member_seq=#{member_seq} AND in_date=#{in_date}
 	</select>
 	
 	<select id="selectUpdate" resultType="int">
-		select MAX(update_tag) from general_meeting;
+		select MAX(update_tag) from party_history;
 	</select>
 	
 	<resultMap type="PartyHistory" id="partyMap">
 		<result property="update_tag" column="update_tag" />
-		<result property="history_id" column="history_id" />
 		
 		<result property="member_seq" column="member_seq" />
 		<result property="party_name" column="party_name" />

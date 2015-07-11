@@ -45,7 +45,7 @@ public class AssemblymanController {
 		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
 		
 		try{
-				updateTAG = assemblymanService.selectUpdate();
+			updateTAG = assemblymanService.selectUpdate();
 		} catch(Exception e){
 			updateTAG = 0;
 		}

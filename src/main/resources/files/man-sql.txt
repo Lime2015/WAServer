@@ -19,7 +19,6 @@ create table assemblyman (
   
 );
 
-
 create table bill(
 	assemblyman_id INT(10) NOT NULL,
 	update_tag INT(10) NOT NULL,
@@ -39,7 +38,6 @@ create table bill(
 	bill_target_url VARCHAR(300)
 );
 
-
 create table general_meeting(
 	assemblyman_id INT(10) NOT NULL,
 	update_tag INT(10) NOT NULL, 
@@ -50,7 +48,6 @@ create table general_meeting(
 	CONSTRAINT tab_pk PRIMARY KEY (assemblyman_id, meeting_id)
 	
 );
-
 
 create table committee_meeting(
 	assemblyman_id INT(10) NOT NULL, 
@@ -63,7 +60,6 @@ create table committee_meeting(
 	CONSTRAINT tab_pk PRIMARY KEY (assemblyman_id, meeting_name, meeting_order)
 	
 );
-	
 
 create table vote(
 	assemblyman_id INT(10) NOT NULL, 
@@ -79,13 +75,13 @@ create table vote(
 );
 
 create table party_history(
-	history_id VARCHAR(60) NOT NULL primary key,
 	update_tag INT(10) NOT NULL,
 	member_seq INT(10) NOT NULL,
 	party_name VARCHAR(60) NOT NULL,
-	in_date VARCHAR(60),
+	in_date VARCHAR(60) NOT NULL,
 	out_date VARCHAR(60),
-	note VARCHAR(60)
+	note VARCHAR(60),
+	CONSTRAINT tab_pk PRIMARY KEY (party_name, member_seq, in_date)
 );
 
 

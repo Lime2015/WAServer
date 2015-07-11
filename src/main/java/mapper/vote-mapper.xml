@@ -5,25 +5,21 @@
 <mapper namespace="mapper.VoteMapper">
 	
 	<insert id="insert" parameterType="Vote">
-		insert into vote (vote_id, assemblyman_id, update_tag, bill_name, bill_no, vote_dttm, bill_target_url, result, assemblyman_vote) 
-			values(#{vote_id}, #{assemblyman_id}, #{update_tag}, #{bill_name}, #{bill_no}, #{vote_dttm}, #{bill_target_url}, #{result}, #{assemblyman_vote})
+		insert into vote (assemblyman_id, update_tag, bill_name, bill_no, vote_dttm, bill_target_url, result, assemblyman_vote) 
+			values(#{assemblyman_id}, #{update_tag}, #{bill_name}, #{bill_no}, #{vote_dttm}, #{bill_target_url}, #{result}, #{assemblyman_vote})
 	</insert>
  
 	<update id="update" parameterType="Vote">
 		update vote set assemblyman_id=#{assemblyman_id}, update_tag=#{update_tag}, bill_name=#{bill_name}, bill_no=#{bill_no}, vote_dttm=#{vote_dttm}, bill_target_url=#{bill_target_url}, result=#{result}, assemblyman_vote=#{assemblyman_vote} 
-			where vote_id=#{vote_id}
+			where assemblyman_id=#{assemblyman_id} AND bill_no=#{bill_no}
 	</update>
 
 	<select id="selectList" resultMap="voteMap">
 		select * from vote;
 	</select>
 	
-	<select id="selectVote" parameterType="String" resultMap="voteMap">
-		select * from vote where vote_id=#{vote_id}
-	</select>
-	
-	<select id="selectUpdate" resultType="int">
-		select MAX(update_tag) from general_meeting;
+	<select id="selectVote" parameterType="Object" resultMap="voteMap">
+		select * from vote where assemblyman_id=#{assemblyman_id} AND bill_no=#{bill_no}
 	</select>
 	
 	<select id="selectUpdate" resultType="int">
@@ -33,7 +29,6 @@
 	<resultMap type="Vote" id="voteMap">
 		<result property="assemblyman_id" column="assemblyman_id" />
 		<result property="update_tag" column="update_tag" />
-		<result property="vote_id" column="vote_id" />
 		
 		<result property="bill_name" column="bill_name" />
 		<result property="bill_no" column="bill_no" />

@@ -37,34 +37,35 @@ public class PartyHistoryController {
 	@RequestMapping(value = "saveParty.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws JAXBException {
+		
+		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
+		
+		try{
+			updateTAG = partyService.selectUpdate();
+		} catch(Exception e){
+			updateTAG = 0;
+		}
 
-		System.out.println("saveParty.do");
-		System.out.println("xmlUrl:" + xmlUrl);
+
+		//System.out.println("saveParty.do");
+		//System.out.println("xmlUrl:" + xmlUrl);
 
 		unMarshalingExample(xmlUrl);
-		System.out.println(partyHistories);
+		System.out.println(updateTAG);
 
 		for (PartyHistory his : partyHistories.getPartyHistories()) {
 
 			System.out.println(his);
-			//프라임키 생성 party_name + memver_seq + in_date
-			String history_id = his.getParty_name() +"-" + his.getMember_seq() +"-"+ his.getIn_date();
-			System.out.println("history_id : " + history_id);
-			his.setHistory_id(history_id);
 			
 			try{
 				System.out.println("insert");
-				his.setUpdate_tag(1);
+				his.setUpdate_tag(updateTAG + 1);
 				partyService.insert(his);
 				
 			} catch(Exception e) {
 				System.out.println("update");
 				
-				Integer ver = partyService.selectParty(history_id).getUpdate_tag();
-				
-				System.out.println("update ver :" + ver);
-				his.setUpdate_tag(ver + 1);
-				
+				his.setUpdate_tag(updateTAG + 1);
 				partyService.update(his);
 			}
 		}
@@ -73,13 +74,13 @@ public class PartyHistoryController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectParty.do
 	@RequestMapping(value = "selectParty.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(String history_id,
+	public ModelAndView selectAssemblyman(Object history,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		PartyHistory partyHistory = partyService.selectParty(history_id);
-		System.out.println("history_id" + history_id);
+		PartyHistory partyHistory = partyService.selectParty(history);
+		System.out.println("history" + history);
 
 		mv.setViewName("partyHistoy");
 		mv.addObject("result", partyHistory);
@@ -111,10 +112,10 @@ public class PartyHistoryController {
 		PartyHistories hisList = (PartyHistories) jaxbUnmarshaller.unmarshal(file);
 		partyHistories = null;
 		partyHistories = hisList;
-		for (PartyHistory his : hisList.getPartyHistories()) {
+		/*for (PartyHistory his : hisList.getPartyHistories()) {
 			System.out.println(his.getMember_seq());
 			System.out.println(his.getParty_name());
-		}
+		}*/
 
 	}
 

@@ -16,11 +16,13 @@ import service.AssemblymanService;
 import service.BillService;
 import service.CommitteeMeetingService;
 import service.GeneralMeetingService;
+import service.PartyService;
 import service.VoteService;
 import vo.Assemblyman;
 import vo.bill.Bill;
 import vo.committee.CommitteeMeeting;
 import vo.general.GeneralMeeting;
+import vo.party.PartyHistory;
 import vo.vote.Vote;
 
 import com.google.gson.Gson;
@@ -34,29 +36,28 @@ public class RequestController {
 	private CommitteeMeetingService committeeMeetingService;
 	private GeneralMeetingService generalMeetingService;
 	private VoteService voteService;
+	private PartyService partyService;
 
 	static List<Assemblyman> assemblymen;
 	static List<Bill> bills;
 	static List<CommitteeMeeting> committeeMeetings;
 	static List<GeneralMeeting> generalMeetings;
 	static List<Vote> votes;
+	static List<PartyHistory> partyHistories;
 
 	@Autowired
 	public void setAssemblymanService(AssemblymanService assemblymanService) {
 		this.assemblymanService = assemblymanService;
 	}
-
 	@Autowired
 	public void setBillService(BillService billService) {
 		this.billService = billService;
 	}
-
 	@Autowired
 	public void setGeneralMeetingService(
 			CommitteeMeetingService committeeMeetingService) {
 		this.committeeMeetingService = committeeMeetingService;
 	}
-
 	@Autowired
 	public void setGeneralMeetingService(
 			GeneralMeetingService generalMeetingService) {
@@ -66,7 +67,10 @@ public class RequestController {
 	public void setVoteService(VoteService voteService) {
 		this.voteService = voteService;
 	}
-	
+	@Autowired
+	public void setPartyService(PartyService partyService) {
+		this.partyService = partyService;
+	}
 
 	// RequestAssemblyman.do
 	@RequestMapping(value = "RequestAssemblyman.do", method = RequestMethod.GET)
@@ -143,11 +147,11 @@ public class RequestController {
 			HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("RequestGeneralMeeting.do");
 
-		votes = voteService.selectList();
-		System.out.println("votes :" + votes);
+		generalMeetings = generalMeetingService.selectList();
+		System.out.println("generalMeetings :" + generalMeetings);
 
 		Gson gson = new GsonBuilder().create();
-		String result = gson.toJson(votes);
+		String result = gson.toJson(generalMeetings);
 		System.out.println(result);
 
 		PrintWriter writer;
@@ -166,11 +170,11 @@ public class RequestController {
 			HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("RequestVote.do");
 
-		generalMeetings = generalMeetingService.selectList();
-		System.out.println("generalMeetings :" + generalMeetings);
+		votes = voteService.selectList();
+		System.out.println("votes :" + votes);
 
 		Gson gson = new GsonBuilder().create();
-		String result = gson.toJson(generalMeetings);
+		String result = gson.toJson(votes);
 		System.out.println(result);
 
 		PrintWriter writer;
@@ -182,5 +186,25 @@ public class RequestController {
 		}
 	}
 
+	// RequestParty.do
+	@RequestMapping(value = "RequestParty.do", method = RequestMethod.GET)
+	public void RequestPartyCommitteeMeeting(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("RequestParty.do");
+
+		partyHistories = partyService.selectList();
+		System.out.println("partyHistories :" + partyHistories);
+
+		Gson gson = new GsonBuilder().create();
+		String result = gson.toJson(partyHistories);
+		System.out.println(result);
+
+		PrintWriter writer;
+		try {
+			writer = response.getWriter();
+			writer.print(result);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

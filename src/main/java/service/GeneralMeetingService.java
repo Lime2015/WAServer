@@ -25,8 +25,8 @@ public class GeneralMeetingService {
 	public int update(GeneralMeeting meeting) {
 		return generalMeetingDAO.update(meeting);
 	}
-	public GeneralMeeting selectGeneralMeeting(String general_id){
-		return generalMeetingDAO.selectGeneralMeeting(general_id);
+	public GeneralMeeting selectGeneralMeeting(Object generalMeeting){
+		return generalMeetingDAO.selectGeneralMeeting(generalMeeting);
 	}
 	public List<GeneralMeeting> selectList(){
 		return generalMeetingDAO.selectList();

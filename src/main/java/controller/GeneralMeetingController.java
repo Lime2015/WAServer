@@ -87,16 +87,16 @@ public class GeneralMeetingController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectGeneralMeeting.do
 	@RequestMapping(value = "selectGeneralMeeting.do", method = RequestMethod.GET)
-	public ModelAndView selectGeneralMeeting (String general_id,
+	public ModelAndView selectGeneralMeeting (Object generalMeeting,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		GeneralMeeting generalMeeting = generalMeetingService.selectGeneralMeeting(general_id);
-		System.out.println("general_id" + general_id);
+		GeneralMeeting generalMeeting1 = generalMeetingService.selectGeneralMeeting(generalMeeting);
+		System.out.println("general_id" + generalMeeting);
 
 		mv.setViewName("generalMeeting");
-		mv.addObject("result", generalMeeting);
+		mv.addObject("result", generalMeeting1);
 		return mv;
 	}
 

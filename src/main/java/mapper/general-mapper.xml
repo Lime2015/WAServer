@@ -18,7 +18,7 @@
 		select * from general_meeting;
 	</select>
 	
-	<select id="selectGeneralMeeting" parameterType="String" resultMap="generalMap">
+	<select id="selectGeneralMeeting" parameterType="Object" resultMap="generalMap">
 		select * from general_meeting where assemblyman_id=#{assemblyman_id} AND meeting_id=#{meeting_id}
 	</select>
 	

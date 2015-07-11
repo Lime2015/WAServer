@@ -25,10 +25,14 @@ public class PartyService {
 	public int update(PartyHistory his) {
 		return partyDAO.update(his);
 	}
-	public PartyHistory selectParty(String history_id) {
-		return partyDAO.selectParty(history_id);
+	public PartyHistory selectParty(Object history) {
+		return partyDAO.selectParty(history);
 	}
 	public List<PartyHistory> selectList() {
 		return partyDAO.selectList();
+	}
+
+	public int selectUpdate() {
+		return partyDAO.selectUpdate();
 	}
 }

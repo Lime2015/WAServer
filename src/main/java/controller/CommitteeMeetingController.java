@@ -87,7 +87,7 @@ public class CommitteeMeetingController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectCommitteeMeeting.do
 	@RequestMapping(value = "selectCommitteeMeeting.do", method = RequestMethod.GET)
-	public ModelAndView selectCommitteeMeeting(Object committeeMeeting	,
+	public ModelAndView selectCommitteeMeeting(Object committeeMeeting,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();

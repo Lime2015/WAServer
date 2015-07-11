@@ -87,16 +87,16 @@ public class VoteController {
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
 	// selectVote.do
 	@RequestMapping(value = "selectVote.do", method = RequestMethod.GET)
-	public ModelAndView selectAssemblyman(String vote_id,
+	public ModelAndView selectAssemblyman(Object vote,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		ModelAndView mv = new ModelAndView();
 
-		Vote vote = voteService.selectVote(vote_id);
-		System.out.println("vote_id" + vote_id);
+		Vote vote1 = voteService.selectVote(vote);
+		System.out.println("vote_id" + vote);
 
 		mv.setViewName("Vote");
-		mv.addObject("result", vote);
+		mv.addObject("result", vote1);
 		return mv;
 	}
 

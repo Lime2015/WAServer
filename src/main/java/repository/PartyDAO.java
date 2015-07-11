@@ -31,14 +31,19 @@ public class PartyDAO {
 		return mapper.update(his);
 	}
 
-	public PartyHistory selectParty(String history_id) {
+	public PartyHistory selectParty(Object history) {
 		PartyMapper mapper = session.getMapper(PartyMapper.class);
-		return mapper.selectParty(history_id);
+		return mapper.selectParty(history);
 	}
 
 	public List<PartyHistory> selectList() {
 		PartyMapper mapper = session.getMapper(PartyMapper.class);
 		return mapper.selectList();
+	}
+
+	public int selectUpdate() {
+		PartyMapper mapper = session.getMapper(PartyMapper.class);
+		return mapper.selectUpdate();
 	}
 
 }

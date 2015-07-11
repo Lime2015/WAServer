@@ -10,7 +10,6 @@ public class Vote {
 	
 	private String assemblyman_id;
 	private Integer update_tag;
-	private String vote_id;
 	
 	private String bill_name;
 	private Integer bill_no;
@@ -32,12 +31,6 @@ public class Vote {
 	}
 	public void setUpdate_tag(Integer update_tag) {
 		this.update_tag = update_tag;
-	}
-	public String getVote_id() {
-		return vote_id;
-	}
-	public void setVote_id(String vote_id) {
-		this.vote_id = vote_id;
 	}
 	public String getBill_name() {
 		return bill_name;
@@ -85,11 +78,11 @@ public class Vote {
 	@Override
 	public String toString() {
 		return "Vote [assemblyman_id=" + assemblyman_id + ", update_tag="
-				+ update_tag + ", vote_id=" + vote_id + ", bill_name="
-				+ bill_name + ", bill_no=" + bill_no + ", vote_dttm="
-				+ vote_dttm + ", mod_dttm=" + mod_dttm + ", bill_target_url="
-				+ bill_target_url + ", result=" + result
-				+ ", assemblyman_vote=" + assemblyman_vote + "]";
+				+ update_tag + ", bill_name=" + bill_name + ", bill_no="
+				+ bill_no + ", vote_dttm=" + vote_dttm + ", mod_dttm="
+				+ mod_dttm + ", bill_target_url=" + bill_target_url
+				+ ", result=" + result + ", assemblyman_vote="
+				+ assemblyman_vote + "]";
 	}
 	
 }
