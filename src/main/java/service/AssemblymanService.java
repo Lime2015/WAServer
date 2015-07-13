@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import repository.AssemblymanDAO;
 import vo.Assemblyman;
@@ -22,6 +24,7 @@ public class AssemblymanService {
 	public int insert(Assemblyman man){
 		return assemblymanDAO.insert(man);
 	}
+	@Transactional(readOnly=false, propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
 	public int update(Assemblyman man){
 		return assemblymanDAO.update(man);
 	}

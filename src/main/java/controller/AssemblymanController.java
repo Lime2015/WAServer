@@ -15,6 +15,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,6 +26,7 @@ import vo.Assemblyman;
 import vo.Assemblymen;
 
 @Controller
+@Transactional(readOnly=true)
 public class AssemblymanController {
 
 	private static final Logger logger = LoggerFactory
@@ -38,9 +41,10 @@ public class AssemblymanController {
 	}
 
 	// saveAssemblyman.do
+	@Transactional(readOnly=false, propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
 	@RequestMapping(value = "saveAssemblyman.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
-			HttpServletRequest request) throws JAXBException {
+			HttpServletRequest request) throws Exception {
 		
 		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
 		
@@ -68,12 +72,17 @@ public class AssemblymanController {
 				//처음 insert update_tag = 1
 				man.setUpdate_tag(updateTAG + 1);
 				assemblymanService.insert(man);
+				
 			} catch(Exception e) {
 				
 //				String manId = man.getAssemblyman_id();
 				man.setUpdate_tag(updateTAG + 1);
-				
 				assemblymanService.update(man);
+				
+			} finally {
+				if(assemblymanService.update(man)==0){
+					throw new RuntimeException("insert & update 모두 error!!" + man);
+				}
 			}
 		}
 	}
@@ -119,10 +128,10 @@ public class AssemblymanController {
 		Assemblymen manList = (Assemblymen) jaxbUnmarshaller.unmarshal(file);
 		assemblymen = null;
 		assemblymen = manList;
-		for (Assemblyman man : manList.getAssemblymen()) {
+		/*for (Assemblyman man : manList.getAssemblymen()) {
 			System.out.println(man.getAssemblyman_id());
 			System.out.println(man.getAssemblyman_name());
-		}
+		}*/
 
 	}
 
