@@ -26,7 +26,7 @@ import vo.Assemblyman;
 import vo.Assemblymen;
 
 @Controller
-@Transactional(readOnly=true)
+@Transactional
 public class AssemblymanController {
 
 	private static final Logger logger = LoggerFactory
@@ -41,7 +41,7 @@ public class AssemblymanController {
 	}
 
 	// saveAssemblyman.do
-	@Transactional(readOnly=false, propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
+	@Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
 	@RequestMapping(value = "saveAssemblyman.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws Exception {
@@ -77,13 +77,16 @@ public class AssemblymanController {
 				
 //				String manId = man.getAssemblyman_id();
 				man.setUpdate_tag(updateTAG + 1);
-				assemblymanService.update(man);
-				
-			} finally {
-				if(assemblymanService.update(man)==0){
+				int result = assemblymanService.update(man);
+				if(result == 0){
 					throw new RuntimeException("insert & update 모두 error!!" + man);
 				}
 			}
+//			} finally {
+//				if(assemblymanService.update(man)==0){
+//					throw new RuntimeException("insert & update 모두 error!!" + man);
+//				}
+//			}
 		}
 	}
 

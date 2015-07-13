@@ -24,7 +24,6 @@ public class AssemblymanService {
 	public int insert(Assemblyman man){
 		return assemblymanDAO.insert(man);
 	}
-	@Transactional(readOnly=false, propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
 	public int update(Assemblyman man){
 		return assemblymanDAO.update(man);
 	}
