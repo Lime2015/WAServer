@@ -9,6 +9,7 @@ import mapper.ManMapper;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
@@ -25,6 +26,9 @@ public class AssemblymanDAO {
 	public void setSession(SqlSessionTemplate session) {
 		this.session = session;
 	}
+	
+	@Autowired
+	private DataSourceTransactionManager transactionManager;
 	
 	//////////////////////////////////////////////////
 
@@ -53,20 +57,25 @@ public class AssemblymanDAO {
 		return mapper.selectUpdate();
 	}
 	
-	public void creat(int updateTAG, Assemblymen assemblymen) {
+	public void creat(int updateTAG, Assemblymen assemblymen) throws Exception {
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 		def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
 
-		//TransactionStatus status = transactionManager.getTransaction(def);
+		TransactionStatus status = transactionManager.getTransaction(def);
 		
 		ManMapper mapper=session.getMapper(ManMapper.class);
 		for (Assemblyman man : assemblymen.getAssemblymen()) {
 			
+			try{
 			System.out.println(man);
 			man.setUpdate_tag(updateTAG + 1);
 			mapper.insert(man);
 			System.out.println("Inserted into Customer Table Successfully" + man.getAssemblyman_id());
-			
+			} catch (Exception e) {
+				transactionManager.rollback(status);
+				throw e;
+			}
+			transactionManager.commit(status);
 			/*try{
 				//처음 insert update_tag = 1
 				man.setUpdate_tag(updateTAG + 1);

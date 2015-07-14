@@ -40,8 +40,9 @@ public class AssemblymanService {
 	public int selectUpdate() {
 		return assemblymanDAO.selectUpdate();
 	}
+	
 	@Transactional
-	public void saveData(int updateTAG, Assemblymen assemblymen) {
+	public void saveData(int updateTAG, Assemblymen assemblymen) throws Exception {
 		assemblymanDAO.creat(updateTAG, assemblymen);
 		
 		/*
