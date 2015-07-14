@@ -7,15 +7,16 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
  
     <!-- Enable Annotation based Declarative Transaction Management -->
-  <!--   <tx:annotation-driven proxy-target-class="true"
+    <tx:annotation-driven proxy-target-class="true"
         transaction-manager="transactionManager" />
-  -->
+    <!-- <tx:jta-transaction-manager /> -->
+ 
     <!-- Creating TransactionManager Bean, since JDBC we are creating of type 
-         DataSourceTransactionManager -->
-    <!--<bean id="transactionManager"
+        DataSourceTransactionManager -->
+    <bean id="transactionManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
-    </bean> -->
+    </bean>
     <!--  
     MySQL DB DataSource
     <bean id="dataSource"
@@ -27,14 +28,22 @@
         <property name="password" value="fkdla1357" />
     </bean>
   -->
-  <!--   
-	<bean id="assemblymanDAO" class="repository.AssemblymanDAO">
+    
+	<bean id="customerDAO" class="repository.test.CustomerDAOImpl">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
  
-    <bean id="assemblymanService" class="service.AssemblymanService">
+    <bean id="customerManager" class="service.test.CustomerManagerImpl">
         <property name="customerDAO" ref="customerDAO"></property>
     </bean>
- -->
+<!--     
+	<bean id="assemblymanDAO" class="repository.AssemblymanDAO">
+        <property name="sqlSession" ref="sqlSession"></property>
+    </bean>
+  -->
+    <bean id="assemblymanService" class="service.AssemblymanService">
+        <property name="assemblymanDAO" ref="assemblymanDAO"></property>
+    </bean>
+
  
 </beans>

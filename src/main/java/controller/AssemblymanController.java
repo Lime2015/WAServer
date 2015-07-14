@@ -26,7 +26,6 @@ import vo.Assemblyman;
 import vo.Assemblymen;
 
 @Controller
-@Transactional
 public class AssemblymanController {
 
 	private static final Logger logger = LoggerFactory
@@ -41,7 +40,7 @@ public class AssemblymanController {
 	}
 
 	// saveAssemblyman.do
-	@Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
+	
 	@RequestMapping(value = "saveAssemblyman.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws Exception {
@@ -59,8 +58,9 @@ public class AssemblymanController {
 
 		unMarshalingExample(xmlUrl);
 		System.out.println(assemblymen);
+		assemblymanService.saveData(updateTAG, assemblymen);
 
-		for (Assemblyman man : assemblymen.getAssemblymen()) {
+/*		for (Assemblyman man : assemblymen.getAssemblymen()) {
 			
 			// mo_dttm 을 insert 시간으로 변경
 			Date date = new Date();
@@ -81,13 +81,13 @@ public class AssemblymanController {
 				if(result == 0){
 					throw new RuntimeException("insert & update 모두 error!!" + man);
 				}
-			}
+			}*/
 //			} finally {
 //				if(assemblymanService.update(man)==0){
 //					throw new RuntimeException("insert & update 모두 error!!" + man);
 //				}
 //			}
-		}
+		
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
