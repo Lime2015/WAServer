@@ -1,5 +1,6 @@
 package repository;
 
+import java.nio.channels.SeekableByteChannel;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import vo.Assemblyman;
@@ -57,44 +59,79 @@ public class AssemblymanDAO {
 		return mapper.selectUpdate();
 	}
 	
+	@Transactional(rollbackFor=Exception.class)
 	public void creat(int updateTAG, Assemblymen assemblymen) throws Exception {
+		try {
+
+			ManMapper mapper = session.getMapper(ManMapper.class);
+
+			for (Assemblyman man : assemblymen.getAssemblymen()) {
+				man.setUpdate_tag(updateTAG + 1);
+				
+				try{
+					System.out.println(man);
+					mapper.insert(man);
+					System.out.println("Inserted into Customer Table Successfully" 	+ man.getAssemblyman_id());
+				
+				} catch(Exception e){
+					int result = mapper.update(man);
+					System.out.println("Update Customer Table Successfully" + man.getAssemblyman_id());
+					
+					if(result == 0){ 
+						throw new RuntimeException("Insert & Update error!!" + man.getAssemblyman_id()); 
+						}
+					
+				}
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+
+		
+		
+		/*
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+		def.setName("SomeTxName");
 		def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
 
 		TransactionStatus status = transactionManager.getTransaction(def);
-		
-		ManMapper mapper=session.getMapper(ManMapper.class);
-		for (Assemblyman man : assemblymen.getAssemblymen()) {
-			
-			try{
-			System.out.println(man);
-			man.setUpdate_tag(updateTAG + 1);
-			mapper.insert(man);
-			System.out.println("Inserted into Customer Table Successfully" + man.getAssemblyman_id());
-			} catch (Exception e) {
-				transactionManager.rollback(status);
-				throw e;
-			}
-			transactionManager.commit(status);
-			/*try{
-				//처음 insert update_tag = 1
+
+		try {
+			ManMapper mapper = session.getMapper(ManMapper.class);
+
+			for (Assemblyman man : assemblymen.getAssemblymen()) {
+
+				System.out.println(man);
 				man.setUpdate_tag(updateTAG + 1);
 				mapper.insert(man);
-				System.out.println("Inserted into Customer Table Successfully" + man.getAssemblyman_id());
-			} catch(Exception e) {
-				
-//				String manId = man.getAssemblyman_id();
-				man.setUpdate_tag(updateTAG + 1);
-				int result = mapper.update(man);
-				System.out.println("Inserted into Customer Table Successfully" + man.getAssemblyman_id());
-				
-				if(result == 0){
-					throw new RuntimeException("insert & update 모두 error!!" + man);
-				}
-		
-			}*/
+				System.out.println("Inserted into Customer Table Successfully"
+						+ man.getAssemblyman_id());
+			}
+		} catch (Exception e) {
+			transactionManager.rollback(status);
+			throw e;
 		}
+
+		transactionManager.commit(status);
+		*/
 		
-	}
+		/*
+		 * try{ //처음 insert update_tag = 1 man.setUpdate_tag(updateTAG + 1);
+		 * mapper.insert(man);
+		 * System.out.println("Inserted into Customer Table Successfully" +
+		 * man.getAssemblyman_id()); } catch(Exception e) {
+		 * 
+		 * // String manId = man.getAssemblyman_id();
+		 * man.setUpdate_tag(updateTAG + 1); 
+		 * int result = mapper.update(man);
+		 * System.out.println("Inserted into Customer Table Successfully" +
+		 * man.getAssemblyman_id());
+		 * 
+		 * if(result == 0){ throw new
+		 * RuntimeException("insert & update 모두 error!!" + man); }
+		 * 
+		 * }
+		 */
+	}	
 
 }

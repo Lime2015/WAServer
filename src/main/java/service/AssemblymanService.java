@@ -5,15 +5,20 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import repository.AssemblymanDAO;
 import vo.Assemblyman;
 import vo.Assemblymen;
 
 @Component
+@Transactional
 public class AssemblymanService {
 	
 	private AssemblymanDAO assemblymanDAO;
@@ -22,6 +27,8 @@ public class AssemblymanService {
 	public void setAssemblymanDAO(AssemblymanDAO assemblymanDAO) {
 		this.assemblymanDAO = assemblymanDAO;
 	}
+	
+	private DataSourceTransactionManager transactionManager;
 	
 	//////////////////////////////////////////////////////////////////
 	public int insert(Assemblyman man){
@@ -41,10 +48,31 @@ public class AssemblymanService {
 		return assemblymanDAO.selectUpdate();
 	}
 	
-	@Transactional
+	@Transactional(rollbackFor=Exception.class)
 	public void saveData(int updateTAG, Assemblymen assemblymen) throws Exception {
 		assemblymanDAO.creat(updateTAG, assemblymen);
+		/*
+		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+		def.setName("SomeTxName");
+		def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+
+		TransactionStatus status = transactionManager.getTransaction(def);
 		
+		try{
+			for (Assemblyman man : assemblymen.getAssemblymen()) {
+				
+				System.out.println(man);
+				String manId = man.getAssemblyman_id();
+				man.setAssemblyman_id(manId);
+				
+					//처음 insert update_tag = 1
+					man.setUpdate_tag(updateTAG + 1);
+					assemblymanDAO.insert(man);
+					System.out.println("Inserted into Customer Table Successfully" + man.getAssemblyman_id());
+			}
+		} catch(Exception e){
+			throw e;
+		}
 		/*
 		for (Assemblyman man : assemblymen.getAssemblymen()) {
 			
@@ -53,6 +81,8 @@ public class AssemblymanService {
 			man.setMod_dttm(date.toString());
 			System.out.println(date.toString());
 			System.out.println(man);
+			String manId = man.getAssemblyman_id();
+			man.setAssemblyman_id(manId);
 			
 			try{
 				//처음 insert update_tag = 1
@@ -61,7 +91,7 @@ public class AssemblymanService {
 				
 			} catch(Exception e) {
 				
-//				String manId = man.getAssemblyman_id();
+				
 				man.setUpdate_tag(updateTAG + 1);
 				int result = assemblymanDAO.update(man);
 				

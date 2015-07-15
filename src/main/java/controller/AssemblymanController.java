@@ -42,6 +42,7 @@ public class AssemblymanController {
 	// saveAssemblyman.do
 	
 	@RequestMapping(value = "saveAssemblyman.do", method = RequestMethod.GET)
+//	@Transactional(rollbackFor=Exception.class, propagation=Propagation.REQUIRES_NEW)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
 			HttpServletRequest request) throws Exception {
 		
@@ -59,14 +60,17 @@ public class AssemblymanController {
 		unMarshalingExample(xmlUrl);
 		System.out.println(assemblymen);
 		assemblymanService.saveData(updateTAG, assemblymen);
-
-/*		for (Assemblyman man : assemblymen.getAssemblymen()) {
+/*		
+		try{
+		for (Assemblyman man : assemblymen.getAssemblymen()) {
 			
 			// mo_dttm 을 insert 시간으로 변경
 			Date date = new Date();
 			man.setMod_dttm(date.toString());
 			System.out.println(date.toString());
 			System.out.println(man);
+			String manId = man.getAssemblyman_id();
+			man.setAssemblyman_id(manId);
 			
 			try{
 				//처음 insert update_tag = 1
@@ -75,18 +79,22 @@ public class AssemblymanController {
 				
 			} catch(Exception e) {
 				
-//				String manId = man.getAssemblyman_id();
 				man.setUpdate_tag(updateTAG + 1);
 				int result = assemblymanService.update(man);
+				
 				if(result == 0){
 					throw new RuntimeException("insert & update 모두 error!!" + man);
 				}
+			}
+		}
+		} catch(Exception e) {
+			throw e;
+		}*/
+		/*finally {
+			if(assemblymanService.update(man)==0){
+				throw new RuntimeException("insert & update 모두 error!!" + man);
+				}
 			}*/
-//			} finally {
-//				if(assemblymanService.update(man)==0){
-//					throw new RuntimeException("insert & update 모두 error!!" + man);
-//				}
-//			}
 		
 	}
 
