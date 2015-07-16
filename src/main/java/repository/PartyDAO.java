@@ -67,12 +67,13 @@ public class PartyDAO {
 					mapper.insert(his);
 					System.out.println("Inserted into Date Table Successfully" 	+ his.getParty_name());
 
-				} catch (Exception e) {
+				} catch (Exception e) { 
 					int result = mapper.update(his);
 					System.out.println("Update Date Table Successfully" + his.getParty_name());
 					
 					if(result == 0){ 
-						throw new RuntimeException("Insert & Update error!!" + his.getParty_name());
+						throw new RuntimeException("Insert & Update error!!" + 
+					"party_name" + his.getParty_name() + "In_date" + his.getIn_date());
 						}
 				}
 			}

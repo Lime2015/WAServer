@@ -1,5 +1,6 @@
 package repository;
 
+import java.util.Date;
 import java.util.List;
 
 import mapper.ManMapper;
@@ -59,7 +60,12 @@ public class AssemblymanDAO {
 			ManMapper mapper = session.getMapper(ManMapper.class);
 
 			for (Assemblyman man : assemblymen.getAssemblymen()) {
+				
+				// mo_dttm 을 insert 시간으로 변경
+				Date date = new Date();
+				man.setMod_dttm(date.toString());
 				man.setUpdate_tag(updateTAG + 1);
+				System.out.println("updateTAG :" + updateTAG);
 				
 				try{
 					System.out.println(man);
