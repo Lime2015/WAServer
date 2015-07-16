@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import repository.GeneralMeetingDAO;
 import vo.general.GeneralMeeting;
+import vo.general.GeneralMeetingAttend;
 
 @Component
 public class GeneralMeetingService {
@@ -34,6 +35,12 @@ public class GeneralMeetingService {
 
 	public int selectUpdate() {
 		return generalMeetingDAO.selectUpdate();
+	}
+
+	public void saveData(int updateTAG,
+			GeneralMeetingAttend generalMeetingAttend) throws Exception {
+		generalMeetingDAO.create(updateTAG, generalMeetingAttend);
+		
 	}
 	
 

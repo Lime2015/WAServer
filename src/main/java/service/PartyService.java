@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import repository.PartyDAO;
+import vo.party.PartyHistories;
 import vo.party.PartyHistory;
 
 @Component
@@ -34,5 +35,10 @@ public class PartyService {
 
 	public int selectUpdate() {
 		return partyDAO.selectUpdate();
+	}
+
+	public void saveData(int updateTAG, PartyHistories partyHistories) throws Exception {
+		partyDAO.create(updateTAG, partyHistories);
+		
 	}
 }

@@ -37,7 +37,7 @@ public class CommitteeMeetingService {
 	}
 
 	public void saveData(int updateTAG,
-			CommitteeMeetingAttend committeeMeetingAttend) {
+			CommitteeMeetingAttend committeeMeetingAttend) throws Exception {
 		committeeMeetingDAO.create(updateTAG, committeeMeetingAttend);
 		
 	}

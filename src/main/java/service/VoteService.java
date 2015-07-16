@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import repository.VoteDAO;
 import vo.vote.Vote;
+import vo.vote.VoteGeneralMeeting;
 
 @Component
 public class VoteService {
@@ -34,6 +35,10 @@ public class VoteService {
 
 	public int selectUpdate() {
 		return voteDAO.selectUpdate();
+	}
+
+	public void saveData(int updateTAG, VoteGeneralMeeting voteGeneralMeeting) throws Exception {
+		voteDAO.create(updateTAG, voteGeneralMeeting);
 	}
 
 }

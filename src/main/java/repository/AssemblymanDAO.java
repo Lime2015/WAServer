@@ -64,11 +64,11 @@ public class AssemblymanDAO {
 				try{
 					System.out.println(man);
 					mapper.insert(man);
-					System.out.println("Inserted into Customer Table Successfully" 	+ man.getAssemblyman_id());
+					System.out.println("Inserted into Date Table Successfully" 	+ man.getAssemblyman_id());
 				
 				} catch(Exception e){
 					int result = mapper.update(man);
-					System.out.println("Update Customer Table Successfully" + man.getAssemblyman_id());
+					System.out.println("Update Customer Date Successfully" + man.getAssemblyman_id());
 					
 					if(result == 0){ 
 						throw new RuntimeException("Insert & Update error!!" + man.getAssemblyman_id()); 

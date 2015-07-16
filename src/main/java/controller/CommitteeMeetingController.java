@@ -40,12 +40,12 @@ public class CommitteeMeetingController {
 	// saveCommitteeMeeting.do
 	@RequestMapping(value = "saveCommitteeMeeting.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
-			HttpServletRequest request) throws JAXBException {
+			HttpServletRequest request) throws Exception {
 		
 		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
 		
 		try{
-				updateTAG = committeeMeetingService.selectUpdate();
+			updateTAG = committeeMeetingService.selectUpdate();
 		} catch(Exception e){
 			updateTAG = 0;
 		}

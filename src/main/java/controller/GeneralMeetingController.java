@@ -40,12 +40,12 @@ public class GeneralMeetingController {
 	// saveGeneralMeeting.do
 	@RequestMapping(value = "saveGeneralMeeting.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
-			HttpServletRequest request) throws JAXBException {
+			HttpServletRequest request) throws Exception {
 
 		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
 		
 		try{
-				updateTAG = generalMeetingService.selectUpdate();
+			updateTAG = generalMeetingService.selectUpdate();
 		} catch(Exception e){
 			updateTAG = 0;
 		}
@@ -56,8 +56,9 @@ public class GeneralMeetingController {
 
 		unMarshalingExample(xmlUrl);
 		System.out.println("unMarshingFinish : " + generalMeetingAttend);
+		generalMeetingService.saveData(updateTAG, generalMeetingAttend);
 
-		for (GeneralAssemblyman man : generalMeetingAttend.getAssemblymen()) {
+		/*for (GeneralAssemblyman man : generalMeetingAttend.getAssemblymen()) {
 			
 			logger.info("man :", man);
 			String assemblyman_id = man.getAssemblyman_id();
@@ -80,7 +81,7 @@ public class GeneralMeetingController {
 				}
 				
 			}
-		}
+		}*/
 	}
 	
 	

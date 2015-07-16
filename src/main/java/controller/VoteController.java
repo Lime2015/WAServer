@@ -40,7 +40,7 @@ public class VoteController {
 	// saveVote.do
 	@RequestMapping(value = "saveVote.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
-			HttpServletRequest request) throws JAXBException {
+			HttpServletRequest request) throws Exception {
 		
 		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
 		
@@ -55,7 +55,9 @@ public class VoteController {
 
 		unMarshalingExample(xmlUrl);
 		//System.out.println("unMarshingFinish : " + voteGeneralMeeting);
-
+		voteService.saveData(updateTAG, voteGeneralMeeting);
+		
+		/*
 		for (VoteAssemblyman man : voteGeneralMeeting.getAssemblymen()) {
 			
 			logger.info("man :", man);
@@ -81,7 +83,7 @@ public class VoteController {
 					voteService.update(vote);
 				}
 			}
-		}
+		}*/
 	}
 	
 	// ///////////////////////////////////////////////////////////////////////////////////////////////

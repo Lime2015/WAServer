@@ -36,7 +36,7 @@ public class PartyHistoryController {
 	// saveParty.do
 	@RequestMapping(value = "saveParty.do", method = RequestMethod.GET)
 	public void saveAssemblyman(String xmlUrl, HttpServletResponse response,
-			HttpServletRequest request) throws JAXBException {
+			HttpServletRequest request) throws Exception {
 		
 		int updateTAG; //가장 마지막 update_tag 넘버 가져옴 
 		
@@ -51,8 +51,10 @@ public class PartyHistoryController {
 		//System.out.println("xmlUrl:" + xmlUrl);
 
 		unMarshalingExample(xmlUrl);
-		System.out.println(updateTAG);
-
+		System.out.println("unMarshingFinish : " + partyHistories);
+		partyService.saveData(updateTAG, partyHistories);
+		
+		/*
 		for (PartyHistory his : partyHistories.getPartyHistories()) {
 
 			System.out.println(his);
@@ -68,7 +70,7 @@ public class PartyHistoryController {
 				his.setUpdate_tag(updateTAG + 1);
 				partyService.update(his);
 			}
-		}
+		}*/
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////
