@@ -1,24 +1,15 @@
 package service;
 
-import java.lang.annotation.Target;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import repository.AssemblymanDAO;
 import vo.Assemblyman;
 import vo.Assemblymen;
 
 @Component
-@Transactional
 public class AssemblymanService {
 	
 	private AssemblymanDAO assemblymanDAO;
@@ -28,7 +19,7 @@ public class AssemblymanService {
 		this.assemblymanDAO = assemblymanDAO;
 	}
 	
-	private DataSourceTransactionManager transactionManager;
+//	private DataSourceTransactionManager transactionManager;
 	
 	//////////////////////////////////////////////////////////////////
 	public int insert(Assemblyman man){
@@ -48,9 +39,9 @@ public class AssemblymanService {
 		return assemblymanDAO.selectUpdate();
 	}
 	
-	@Transactional(rollbackFor=Exception.class)
+//	@Transactional(rollbackFor=Exception.class)
 	public void saveData(int updateTAG, Assemblymen assemblymen) throws Exception {
-		assemblymanDAO.creat(updateTAG, assemblymen);
+		assemblymanDAO.create(updateTAG, assemblymen);
 		/*
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 		def.setName("SomeTxName");

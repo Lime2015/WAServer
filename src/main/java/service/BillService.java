@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import repository.BillDAO;
 import vo.bill.Bill;
+import vo.bill.BillInfo;
 
 @Component
 public class BillService {
@@ -34,6 +35,10 @@ public class BillService {
 
 	public int selectUpdate() {
 		return billDAO.selectUpdate();
+	}
+
+	public void saveData(int updateTAG, BillInfo billInfo) throws Exception {
+		billDAO.create(updateTAG, billInfo);
 	}
 
 }

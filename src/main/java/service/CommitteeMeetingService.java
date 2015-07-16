@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import repository.CommitteeMeetingDAO;
 import vo.committee.CommitteeMeeting;
+import vo.committee.CommitteeMeetingAttend;
 
 @Component
 public class CommitteeMeetingService {
@@ -33,6 +34,12 @@ public class CommitteeMeetingService {
 	}
 	public int selectUpdate(){
 		return committeeMeetingDAO.selectUpdate();
+	}
+
+	public void saveData(int updateTAG,
+			CommitteeMeetingAttend committeeMeetingAttend) {
+		committeeMeetingDAO.create(updateTAG, committeeMeetingAttend);
+		
 	}
 	
 }

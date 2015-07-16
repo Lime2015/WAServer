@@ -1,10 +1,6 @@
 package repository;
 
-import java.nio.channels.SeekableByteChannel;
-import java.util.Date;
 import java.util.List;
-
-import javax.annotation.Resource;
 
 import mapper.ManMapper;
 
@@ -12,10 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import vo.Assemblyman;
 import vo.Assemblymen;
@@ -60,7 +53,7 @@ public class AssemblymanDAO {
 	}
 	
 	@Transactional(rollbackFor=Exception.class)
-	public void creat(int updateTAG, Assemblymen assemblymen) throws Exception {
+	public void create(int updateTAG, Assemblymen assemblymen) throws Exception {
 		try {
 
 			ManMapper mapper = session.getMapper(ManMapper.class);

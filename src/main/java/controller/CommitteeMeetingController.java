@@ -55,7 +55,8 @@ public class CommitteeMeetingController {
 
 		unMarshalingExample(xmlUrl);
 		System.out.println("unMarshingFinish : " + committeeMeetingAttend);
-
+		committeeMeetingService.saveData(updateTAG, committeeMeetingAttend);
+/*
 		for (CommitteeAssemblyman man : committeeMeetingAttend.getAssemblymen()) {
 			
 			System.out.println(man);
@@ -81,7 +82,7 @@ public class CommitteeMeetingController {
 					committeeMeetingService.update(meeting);
 				}
 			}
-		}
+		}*/
 	}
 	
 	// ///////////////////////////////////////////////////////////////////////////////////////////////

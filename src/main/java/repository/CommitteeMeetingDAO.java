@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import vo.committee.CommitteeMeeting;
+import vo.committee.CommitteeMeetingAttend;
 
 @Component
 public class CommitteeMeetingDAO {
@@ -44,6 +45,12 @@ public class CommitteeMeetingDAO {
 	public int selectUpdate() {
 		CommitteeMapper mapper = session.getMapper(CommitteeMapper.class);
 		return mapper.selectUpdate();
+	}
+
+	public void create(int updateTAG,
+			CommitteeMeetingAttend committeeMeetingAttend) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
