@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.ReplyMapper">
+	
+	<insert id="insert" parameterType="Reply">
+		insert into assemblyman_reply (assemblyman_id, member_id, image_url, modt, comment) 
+			values(#{assemblyman_id}, #{member_id}, #{image_url}, #{modt}, #{comment})
+	</insert>
+ 
+	<update id="update" parameterType="Reply">
+		update assemblyman_reply set assemblyman_id=#{assemblyman_id}, member_id=#{member_id}, image_url=#{image_url}, modt=#{modt}, comment=#{comment} 
+			where reply_id=#{reply_id}
+	</update>
+
+	<select id="selectList" resultMap="replyMap">
+		select * from assemblyman_reply;
+	</select>
+	
+	<select id="selectReply" parameterType="int" resultMap="replyMap">
+		select * from assemblyman_reply where reply_id=#{reply_id}
+	</select>
+	
+	<resultMap type="Reply" id="replyMap">
+		<result property="reply_id" column="reply_id" />
+		<result property="assemblyman_id" column="assemblyman_id" />
+		
+		<result property="member_id" column="member_id" />
+		<result property="member_img" column="member_img" />
+		<result property="modt" column="modt" />
+		<result property="mod_dttm" column="mod_dttm" />
+		<result property="comment" column="comment" />
+		
+	</resultMap>
+	 
+</mapper>

@@ -84,5 +84,15 @@ create table party_history(
 	CONSTRAINT tab_pk PRIMARY KEY (party_name, member_seq, in_date)
 );
 
+create table assemblyman_reply(
+	reply_id INT(10) NOT NULL AUTO_INCREMEN,
+	assemblyman_id VARCHAR(60) NOT NULL,
+	member_id INT(10) NOT NULL,
+	image_url VARCHAR(60),
+	modt VARCHAR(60),
+	comment VARCHAR(200),
+	PRIMARY KEY (reply_id)
+);
+
 
 

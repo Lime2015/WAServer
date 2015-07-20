@@ -23,8 +23,8 @@ public class AssemblymanDAO {
 		this.session = session;
 	}
 	
-	@Autowired
-	private DataSourceTransactionManager transactionManager;
+//	@Autowired
+//	private DataSourceTransactionManager transactionManager;
 	
 	//////////////////////////////////////////////////
 
