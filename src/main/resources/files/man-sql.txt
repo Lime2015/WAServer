@@ -85,14 +85,25 @@ create table party_history(
 );
 
 create table assemblyman_reply(
-	reply_id INT(10) NOT NULL AUTO_INCREMEN,
+	reply_id INT(10) NOT NULL AUTO_INCREMENT,
 	assemblyman_id VARCHAR(60) NOT NULL,
 	member_id INT(10) NOT NULL,
 	image_url VARCHAR(60),
 	modt VARCHAR(60),
 	comment VARCHAR(200),
+	report INT(10),
 	PRIMARY KEY (reply_id)
 );
 
+create table bill_reply(
+	reply_id INT(10) NOT NULL AUTO_INCREMENT,
+	assemblyman_id VARCHAR(60) NOT NULL,
+	member_id INT(10) NOT NULL,
+	image_url VARCHAR(60),
+	modt VARCHAR(60),
+	comment VARCHAR(200),
+	report INT(10),
+	PRIMARY KEY (reply_id)
+);
 
 

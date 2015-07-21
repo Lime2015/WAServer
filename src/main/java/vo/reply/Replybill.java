@@ -1,7 +1,7 @@
 package vo.reply;
 
-public class Reply {
-	
+public class Replybill {
+
 	private String assemblyman_id;
 	private int member_id;
 	private String member_img;
@@ -10,10 +10,10 @@ public class Reply {
 	private int report;
 	
 	
-	public Reply() {}
+	public Replybill() {}
 	
 
-	public Reply(String assemblyman_id, int member_id, String member_img,
+	public Replybill(String assemblyman_id, int member_id, String member_img,
 			String modt, String comment, int report) {
 		super();
 		this.assemblyman_id = assemblyman_id;
@@ -23,6 +23,7 @@ public class Reply {
 		this.comment = comment;
 		this.report = report;
 	}
+	
 	public String getAssemblyman_id() {
 		return assemblyman_id;
 	}
@@ -67,6 +68,5 @@ public class Reply {
 				+ ", comment=" + comment + ", report=" + report + "]";
 	}
 	
+
 }
-
-

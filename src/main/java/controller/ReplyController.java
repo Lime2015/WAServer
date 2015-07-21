@@ -7,13 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import service.ReplyService;
-import vo.MemberInfo;
 import vo.reply.Reply;
 import vo.reply.ReplyList;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Controller
 public class ReplyController {
@@ -24,11 +23,6 @@ public class ReplyController {
 	@Autowired
 	public void setReplyService(ReplyService replyService) {
 		this.replyService = replyService;
-	}
-
-	// saveReply
-	public void saveRely(String ReplyJSON, HttpServletResponse response) {
-
 	}
 
 	// save Reply

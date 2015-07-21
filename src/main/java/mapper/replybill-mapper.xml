@@ -2,27 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="mapper.ReplyMapper">
+<mapper namespace="mapper.ReplybillMapper">
 	
-	<insert id="insert" parameterType="Reply">
-		insert into assemblyman_reply (assemblyman_id, member_id, image_url, modt, comment, report) 
+	<insert id="insert" parameterType="Replybill">
+		insert into bill_reply (assemblyman_id, member_id, image_url, modt, comment, report) 
 			values(#{assemblyman_id}, #{member_id}, #{image_url}, #{modt}, #{comment}, #{report})
 	</insert>
  
-	<update id="update" parameterType="Reply">
-		update assemblyman_reply set assemblyman_id=#{assemblyman_id}, member_id=#{member_id}, image_url=#{image_url}, modt=#{modt}, comment=#{comment, report=#{report} 
+	<update id="update" parameterType="Replybill">
+		update bill_reply set assemblyman_id=#{assemblyman_id}, member_id=#{member_id}, image_url=#{image_url}, modt=#{modt}, comment=#{comment, report=#{report} 
 			where reply_id=#{reply_id}
 	</update>
 
-	<select id="selectList" resultMap="replyMap">
-		select * from assemblyman_reply;
+	<select id="selectList" resultMap="replybillMap">
+		select * from bill_reply;
 	</select>
 	
-	<select id="selectReply" parameterType="int" resultMap="replyMap">
-		select * from assemblyman_reply where reply_id=#{reply_id}
+	<select id="selectReply" parameterType="int" resultMap="replybillMap">
+		select * from bill_reply where reply_id=#{reply_id}
 	</select>
 	
-	<resultMap type="Reply" id="replyMap">
+	<resultMap type="Reply" id="replybillMap">
 		<result property="reply_id" column="reply_id" />
 		<result property="assemblyman_id" column="assemblyman_id" />
 		

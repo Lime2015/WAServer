@@ -73,7 +73,7 @@ public class RequestController {
 	}
 
 	// RequestAssemblyman.do
-	@RequestMapping(value = "RequestAssemblyman.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestAssemblyman.do", method = RequestMethod.GET)
 	public void RequestAssemblyman(String assemblyman_id,
 			HttpServletRequest request, HttpServletResponse response) {
 		
@@ -98,7 +98,7 @@ public class RequestController {
 	}
 
 	// RequestBill.do
-	@RequestMapping(value = "RequestBill.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestBill.do", method = RequestMethod.GET)
 	public void RequestBill(String assemblyman_id, HttpServletRequest request,
 			HttpServletResponse response) {
 		System.out.println("RequestBill.do");
@@ -120,7 +120,7 @@ public class RequestController {
 	}
 
 	// RequestCommitteeMeeting.do
-	@RequestMapping(value = "RequestCommitteeMeeting.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestCommitteeMeeting.do", method = RequestMethod.GET)
 	public void RequestCommitteeMeeting(String assemblyman_id,
 			HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("RequestBill.do");
@@ -142,7 +142,7 @@ public class RequestController {
 	}
 
 	// RequestGeneralMeeting.do
-	@RequestMapping(value = "RequestGeneralMeeting.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestGeneralMeeting.do", method = RequestMethod.GET)
 	public void RequestGeneralMeetingCommitteeMeeting(String assemblyman_id,
 			HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("RequestGeneralMeeting.do");
@@ -165,7 +165,7 @@ public class RequestController {
 	
 
 	// RequestVote.do
-	@RequestMapping(value = "RequestVote.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestVote.do", method = RequestMethod.GET)
 	public void RequestVoteCommitteeMeeting(String assemblyman_id,
 			HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("RequestVote.do");
@@ -187,7 +187,7 @@ public class RequestController {
 	}
 
 	// RequestParty.do
-	@RequestMapping(value = "RequestParty.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestParty.do", method = RequestMethod.GET)
 	public void RequestPartyCommitteeMeeting(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("RequestParty.do");
 
