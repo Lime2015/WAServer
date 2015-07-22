@@ -5,12 +5,12 @@
 <mapper namespace="mapper.ReplybillMapper">
 	
 	<insert id="insert" parameterType="Replybill">
-		insert into bill_reply (assemblyman_id, member_id, image_url, modt, comment, report) 
-			values(#{assemblyman_id}, #{member_id}, #{image_url}, #{modt}, #{comment}, #{report})
+		insert into bill_reply (assemblyman_id, member_id, member_img, modt, comment, report) 
+			values(#{assemblyman_id}, #{member_id}, #{member_img}, #{modt}, #{comment}, #{report})
 	</insert>
  
 	<update id="update" parameterType="Replybill">
-		update bill_reply set assemblyman_id=#{assemblyman_id}, member_id=#{member_id}, image_url=#{image_url}, modt=#{modt}, comment=#{comment, report=#{report} 
+		update bill_reply set assemblyman_id=#{assemblyman_id}, member_id=#{member_id}, member_img=#{member_img}, modt=#{modt}, comment=#{comment, report=#{report} 
 			where reply_id=#{reply_id}
 	</update>
 

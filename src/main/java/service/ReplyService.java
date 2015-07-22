@@ -26,11 +26,9 @@ public class ReplyService {
 	
 	public int insert(Reply reply){
 		return replyDAO.insert(reply);
-		
 	}
 	public int update(Reply reply){
 		return replyDAO.update(reply);
-		
 	}
 	public Reply selectReply(int reply_id){
 		return replyDAO.selectReply(reply_id);

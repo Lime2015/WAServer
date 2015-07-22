@@ -5,12 +5,12 @@
 <mapper namespace="mapper.ReplyMapper">
 	
 	<insert id="insert" parameterType="Reply">
-		insert into assemblyman_reply (assemblyman_id, member_id, image_url, modt, comment, report) 
-			values(#{assemblyman_id}, #{member_id}, #{image_url}, #{modt}, #{comment}, #{report})
+		insert into assemblyman_reply (assemblyman_id, member_id, member_img, modt, comment, report) 
+			values(#{assemblyman_id}, #{member_id}, #{member_img}, #{modt}, #{comment}, #{report})
 	</insert>
  
 	<update id="update" parameterType="Reply">
-		update assemblyman_reply set assemblyman_id=#{assemblyman_id}, member_id=#{member_id}, image_url=#{image_url}, modt=#{modt}, comment=#{comment, report=#{report} 
+		update assemblyman_reply set assemblyman_id=#{assemblyman_id}, member_id=#{member_id}, member_img=#{member_img}, modt=#{modt}, comment=#{comment, report=#{report} 
 			where reply_id=#{reply_id}
 	</update>
 
