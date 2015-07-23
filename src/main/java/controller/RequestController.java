@@ -74,8 +74,7 @@ public class RequestController {
 
 	// RequestAssemblyman.do
 	@RequestMapping(value = "requestAssemblyman.do", method = RequestMethod.GET)
-	public void RequestAssemblyman(String assemblyman_id,
-			HttpServletRequest request, HttpServletResponse response) {
+	public void RequestAssemblyman(HttpServletResponse response) {
 		
 		System.out.println("RequestAssemblyman.do");
 
@@ -90,6 +89,8 @@ public class RequestController {
 
 		PrintWriter writer;
 		try {
+			response.setCharacterEncoding("UTF8"); // this line solves the problem
+		    response.setContentType("application/json");
 			writer = response.getWriter();
 			writer.print(result);
 		} catch (IOException e) {
@@ -99,8 +100,7 @@ public class RequestController {
 
 	// RequestBill.do
 	@RequestMapping(value = "requestBill.do", method = RequestMethod.GET)
-	public void RequestBill(String assemblyman_id, HttpServletRequest request,
-			HttpServletResponse response) {
+	public void RequestBill(HttpServletResponse response) {
 		System.out.println("RequestBill.do");
 
 		bills = billService.selectList();
@@ -112,6 +112,8 @@ public class RequestController {
 
 		PrintWriter writer;
 		try {
+			response.setCharacterEncoding("UTF8"); // this line solves the problem
+		    response.setContentType("application/json");
 			writer = response.getWriter();
 			writer.print(result);
 		} catch (IOException e) {
@@ -121,8 +123,7 @@ public class RequestController {
 
 	// RequestCommitteeMeeting.do
 	@RequestMapping(value = "requestCommitteeMeeting.do", method = RequestMethod.GET)
-	public void RequestCommitteeMeeting(String assemblyman_id,
-			HttpServletRequest request, HttpServletResponse response) {
+	public void RequestCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestBill.do");
 
 		committeeMeetings = committeeMeetingService.selectList();
@@ -134,6 +135,8 @@ public class RequestController {
 
 		PrintWriter writer;
 		try {
+			response.setCharacterEncoding("UTF8"); // this line solves the problem
+		    response.setContentType("application/json");
 			writer = response.getWriter();
 			writer.print(result);
 		} catch (IOException e) {
@@ -143,8 +146,7 @@ public class RequestController {
 
 	// RequestGeneralMeeting.do
 	@RequestMapping(value = "requestGeneralMeeting.do", method = RequestMethod.GET)
-	public void RequestGeneralMeetingCommitteeMeeting(String assemblyman_id,
-			HttpServletRequest request, HttpServletResponse response) {
+	public void RequestGeneralMeetingCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestGeneralMeeting.do");
 
 		generalMeetings = generalMeetingService.selectList();
@@ -156,6 +158,8 @@ public class RequestController {
 
 		PrintWriter writer;
 		try {
+			response.setCharacterEncoding("UTF8"); // this line solves the problem
+		    response.setContentType("application/json");
 			writer = response.getWriter();
 			writer.print(result);
 		} catch (IOException e) {
@@ -166,8 +170,7 @@ public class RequestController {
 
 	// RequestVote.do
 	@RequestMapping(value = "requestVote.do", method = RequestMethod.GET)
-	public void RequestVoteCommitteeMeeting(String assemblyman_id,
-			HttpServletRequest request, HttpServletResponse response) {
+	public void RequestVoteCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestVote.do");
 
 		votes = voteService.selectList();
@@ -179,6 +182,8 @@ public class RequestController {
 
 		PrintWriter writer;
 		try {
+			response.setCharacterEncoding("UTF8"); // this line solves the problem
+		    response.setContentType("application/json");
 			writer = response.getWriter();
 			writer.print(result);
 		} catch (IOException e) {
@@ -188,7 +193,7 @@ public class RequestController {
 
 	// RequestParty.do
 	@RequestMapping(value = "requestParty.do", method = RequestMethod.GET)
-	public void RequestPartyCommitteeMeeting(HttpServletRequest request, HttpServletResponse response) {
+	public void RequestPartyCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestParty.do");
 
 		partyHistories = partyService.selectList();
@@ -200,6 +205,8 @@ public class RequestController {
 
 		PrintWriter writer;
 		try {
+			response.setCharacterEncoding("UTF8"); // this line solves the problem
+		    response.setContentType("application/json");
 			writer = response.getWriter();
 			writer.print(result);
 		} catch (IOException e) {
