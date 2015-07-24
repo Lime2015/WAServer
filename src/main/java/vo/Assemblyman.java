@@ -19,6 +19,25 @@ public class Assemblyman {
 	private String party_name;
 	private String local_constituency;
 	
+	
+	public Assemblyman() { }
+	
+	public Assemblyman(String assemblyman_id, Integer update_tag,
+			String assemblyman_name, String image_url, String org_image_url,
+			String mod_dttm, Integer party_id, String party_name,
+			String local_constituency) {
+		super();
+		this.assemblyman_id = assemblyman_id;
+		this.update_tag = update_tag;
+		this.assemblyman_name = assemblyman_name;
+		this.image_url = image_url;
+		this.org_image_url = org_image_url;
+		this.mod_dttm = mod_dttm;
+		this.party_id = party_id;
+		this.party_name = party_name;
+		this.local_constituency = local_constituency;
+	}
+	
 	//////////////////////////////////////////////////////////////////////
 	public String getAssemblyman_id() {
 		return assemblyman_id;

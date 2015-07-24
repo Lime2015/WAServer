@@ -73,7 +73,7 @@ public class RequestController {
 	}
 
 	// RequestAssemblyman.do
-	@RequestMapping(value = "requestAssemblyman.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestAssemblyman.do", method = RequestMethod.POST)
 	public void RequestAssemblyman(HttpServletResponse response) {
 		
 		System.out.println("RequestAssemblyman.do");
@@ -99,7 +99,7 @@ public class RequestController {
 	}
 
 	// RequestBill.do
-	@RequestMapping(value = "requestBill.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestBill.do", method = RequestMethod.POST)
 	public void RequestBill(HttpServletResponse response) {
 		System.out.println("RequestBill.do");
 
@@ -122,7 +122,7 @@ public class RequestController {
 	}
 
 	// RequestCommitteeMeeting.do
-	@RequestMapping(value = "requestCommitteeMeeting.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestCommitteeMeeting.do", method = RequestMethod.POST)
 	public void RequestCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestBill.do");
 
@@ -145,7 +145,7 @@ public class RequestController {
 	}
 
 	// RequestGeneralMeeting.do
-	@RequestMapping(value = "requestGeneralMeeting.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestGeneralMeeting.do", method = RequestMethod.POST)
 	public void RequestGeneralMeetingCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestGeneralMeeting.do");
 
@@ -169,7 +169,7 @@ public class RequestController {
 	
 
 	// RequestVote.do
-	@RequestMapping(value = "requestVote.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestVote.do", method = RequestMethod.POST)
 	public void RequestVoteCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestVote.do");
 
@@ -192,7 +192,7 @@ public class RequestController {
 	}
 
 	// RequestParty.do
-	@RequestMapping(value = "requestParty.do", method = RequestMethod.GET)
+	@RequestMapping(value = "requestParty.do", method = RequestMethod.POST)
 	public void RequestPartyCommitteeMeeting(HttpServletResponse response) {
 		System.out.println("RequestParty.do");
 
