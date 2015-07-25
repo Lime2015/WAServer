@@ -26,6 +26,36 @@ public class Bill {
 	private String bill_result;
 	private String bill_target_url;
 	
+	
+	
+	public Bill() { }
+		
+	public Bill(String assemblyman_id, Integer update_tag, Integer bill_seq,
+			String bill_no, String bill_status, String bill_title,
+			String proposer_info, String bill_class, String receive_date,
+			String refer_date, String bill_date3, String committee_name,
+			Integer committee_id, Integer committee_class, String bill_result,
+			String bill_target_url) {
+
+		this.assemblyman_id = assemblyman_id;
+		this.update_tag = update_tag;
+		this.bill_seq = bill_seq;
+		this.bill_no = bill_no;
+		this.bill_status = bill_status;
+		this.bill_title = bill_title;
+		this.proposer_info = proposer_info;
+		this.bill_class = bill_class;
+		this.receive_date = receive_date;
+		this.refer_date = refer_date;
+		this.bill_date3 = bill_date3;
+		this.committee_name = committee_name;
+		this.committee_id = committee_id;
+		this.committee_class = committee_class;
+		this.bill_result = bill_result;
+		this.bill_target_url = bill_target_url;
+	}
+
+
 	///////////////////////////////////////////////////////////////////////////////////
 	public String getAssemblyman_id() {
 		return assemblyman_id;
